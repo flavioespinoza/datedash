@@ -1,3 +1,4 @@
+const _ = require('lodash')
 /**
  *
  * Computes input `date` converts to string and returns with specified `format`.
