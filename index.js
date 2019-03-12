@@ -1,7 +1,7 @@
 /**
  * @license
  * Datedash <https://flavioespinoza.github.io/datedash/>
- * Released under MIT license
+ * Released under MIT license <https://github.com/flavioespinoza/datedash/blob/master/LICENSE>
  * Based on Lodash by John-David Dalton, https://github.com/lodash/lodash
  * Based on Lodash.js 4.17.11 <https://raw.githubusercontent.com/lodash/lodash/4.17.11-npm/LICENSE>
  * Based on Lodash.js Copyright JS Foundation and other contributors <https://js.foundation/>

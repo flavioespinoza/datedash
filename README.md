@@ -1,5 +1,4 @@
-# datedash 
-[See the project on Github](https://github.com/flavioespinoza/datedash)
+# datedash
 lodash inspired `Date` formatting methods.
 
 ## Install
@@ -129,7 +128,7 @@ console.log(_d.date(future_timestamp)) // => 03/11/2019
 console.log(_d.date(past_timestamp)) // => 03/01/2019
 ```
 Handles `undefined` or other for 2nd arg `format`
-```js 
+```js
 console.log(_d.date(my_date, undefined)) // => 02/14/2019
 console.log(_d.date(my_date, false)) // => 02/14/2019
 console.log(_d.date(my_date, true)) // => 02/14/2019
