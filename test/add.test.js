@@ -1,5 +1,5 @@
 import assert from 'assert'
-import add from '../add'
+import add from '../methods/add'
 
 describe('add', function() {
     it('should add two numbers', function() {

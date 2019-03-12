@@ -48,29 +48,6 @@
     }
 
     /**
-     * Gets the timestamp of the number of milliseconds that have elapsed since
-     * `date` argument. If `date` is `undefined` it gives milliseconds elapsed since
-     * the Unix epoch (1 January 1970 00:00:00 UTC).
-     *
-     * @static
-     * @memberOf _d
-     * @since 1.0.0
-     * @category Date
-     * @param {date} Date to convert to timestamp .
-     * @returns {number} Returns the timestamp .
-     * @example
-     *
-     * console.log(_d.getTimestamp()) // => 1552353178563
-     * console.log(_d.getTimestamp('11/4/1973')) // => 121244400000
-     */
-    function getTimestamp(date) {
-        if (!date) {
-            return timestamp()
-        }
-        return new Date(date).getTime()
-    }
-
-    /**
      * Adds `a` to `b`
      *
      * @static
@@ -79,9 +56,23 @@
      * @category Math
      * 
      */
-    var _add = require('./add')
+    var _add = require('./methods/add')
     function add(a, b) {
         return _add(a, b)
+    }
+
+    /**
+     * Subtracts `a` from `b`
+     *
+     * @static
+     * @memberOf _d
+     * @since 1.0.0
+     * @category Math
+     * 
+     */
+    var _subtract = require('./methods/subtract')
+    function subtract(a, b) {
+        return _subtract(a, b)
     }
 
     /*--------------------------------------------------------------------------*/
@@ -100,31 +91,6 @@
     function isObject(value) {
         var type = typeof value
         return value != null && (type == 'object' || type == 'function')
-    }
-
-    /**
-     * @private
-     * @param {Object} object The object to query.
-     * @returns {Function} Returns the new accessor function.
-     */
-    function basePropertyOf(object) {
-        return function(key) {
-            return object == null ? undefined : object[key]
-        }
-    }
-
-    /**
-     * Creates a unary function that invokes `func` with its argument transformed.
-     *
-     * @private
-     * @param {Function} func The function to wrap.
-     * @param {Function} transform The argument transform.
-     * @returns {Function} Returns the new function.
-     */
-    function overArg(func, transform) {
-        return function(arg) {
-            return func(transform(arg))
-        }
     }
 
     /*--------------------------------------------------------------------------*/
@@ -191,8 +157,9 @@
 
     // Add Methods
     datedash.timestamp = timestamp
-    datedash.getTimestamp = getTimestamp
+    datedash.getTimestamp = require('./methods/getTimestamp')
     datedash.add = add
+    datedash.subtract = subtract
 
     /*--------------------------------------------------------------------------*/
 

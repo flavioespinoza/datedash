@@ -1,5 +1,5 @@
 import assert from 'assert'
-import subtract from '../subtract'
+import subtract from '../methods/subtract'
 
 describe('subtract', function() {
     it('should subtract two numbers', function() {
