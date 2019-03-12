@@ -102,6 +102,7 @@
     /*------------------------------------------------------------------------*/
 
     // Add Methods
+    datedash.date = require('./methods/date')
     datedash.timestamp = require('./methods/timestamp')
     datedash.getTimestamp = require('./methods/getTimestamp')
     datedash.add = require('./methods/add')
