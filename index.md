@@ -81,7 +81,6 @@ console.log(_d.date(any_date, 'uk')) // => 07 Jan 2019
 
 ### Valid date string inputs
 ```js
-// Works with these valid date formats (example was done on 03/06/19)
 console.log(_d.date('3/6/19')) // => 03/06/2019
 console.log(_d.date('3-6-19')) // => 03/06/2019
 console.log(_d.date('3.6.19')) // => 03/06/2019
