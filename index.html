@@ -309,13 +309,13 @@ html body a.md-link-bold {
 
 <p><a href="https://github.com/flavioespinoza/datedash">See the project on Github</a><br>
 lodash inspired <code>Date</code> formatting methods.</p>
-<h2 class="mume-header" id="install">Install</h2>
+<h3 class="mume-header" id="install">Install</h3>
 
 <p>yarn</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash">yarn add datedash
 </pre><p>npm</p>
 <pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> i datedash
-</pre><h2 class="mume-header" id="import">import</h2>
+</pre><h3 class="mume-header" id="import">import</h3>
 
 <p>using ES6 modules with <a href="https://github.com/standard-things/esm">esm</a> or typescript</p>
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> _d <span class="token keyword">from</span> <span class="token string">&apos;datedash&apos;</span>
@@ -330,7 +330,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; 1491285600000</span>
-</pre><h2 class="mume-header" id="require">require</h2>
+</pre><h3 class="mume-header" id="require">require</h3>
 
 <p>using CommonJS</p>
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> _d <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;datedash&apos;</span><span class="token punctuation">)</span>
@@ -345,7 +345,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; 1491285600000</span>
-</pre><h2 class="mume-header" id="format-options-string">Format options (string)</h2>
+</pre><h3 class="mume-header" id="format-options-string">Format options (string)</h3>
 
 <p><code>format</code> options <code>/</code>, <code>-</code>, <code>.</code>, <code>full</code>, <code>MMM DD YYYY</code>, <code>england</code>, <code>uk</code></p>
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> any_date <span class="token operator">=</span> <span class="token string">&apos;Jan 7, 2019&apos;</span>
@@ -358,7 +358,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token string">&apos;MMM DD YYYY&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; Jan 07 2019</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token string">&apos;england&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 07 Jan 2019</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 07 Jan 2019</span>
-</pre><h2 class="mume-header" id="valid-date-string-inputs">Valid date string inputs</h2>
+</pre><h3 class="mume-header" id="valid-date-string-inputs">Valid date string inputs</h3>
 
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token comment">// Works with these valid date formats (example was done on 03/06/19)</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;3/6/19&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 03/06/2019</span>
@@ -372,7 +372,7 @@ console<span class="token punctuation">.</span><span class="token function">log<
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;March 6, 2019&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 03/06/2019</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;6 Mar 2019&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 03/06/2019</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;6 March 2019&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 03/06/2019</span>
-</pre><h2 class="mume-header" id="other-valid-inputs">Other valid inputs</h2>
+</pre><h3 class="mume-header" id="other-valid-inputs">Other valid inputs</h3>
 
 <pre data-role="codeBlock" data-info="js" class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 03/06/2019</span>
 console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 03/06/2019</span>
@@ -408,16 +408,13 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#datedash">datedash</a>
-<ul>
-<li><a href="#install">Install</a></li>
-<li><a href="#import">import</a></li>
-<li><a href="#require">require</a></li>
-<li><a href="#format-options-string">Format options (string)</a></li>
-<li><a href="#valid-date-string-inputs">Valid date string inputs</a></li>
-<li><a href="#other-valid-inputs">Other valid inputs</a></li>
-</ul>
-</li>
+<li><a href="#datedash">datedash</a><br>
+* <a href="#install">Install</a><br>
+* <a href="#import">import</a><br>
+* <a href="#require">require</a><br>
+* <a href="#format-options-string">Format options (string)</a><br>
+* <a href="#valid-date-string-inputs">Valid date string inputs</a><br>
+* <a href="#other-valid-inputs">Other valid inputs</a></li>
 </ul>
 </div>
       <a id="sidebar-toc-btn">&#x2261;</a>
