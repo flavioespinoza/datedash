@@ -1,28 +1,31 @@
 {
-    "name": "datedash",
-    "version": "1.0.3",
-    "description": "lodash inspired date formatting and math methods.",
-    "main": "index.js",
-    "scripts": {
-      "test": "node test.js"
-    },
-    "repository": {
-      "type": "git",
-      "url": "git+https://github.com/flavioespinoza/datedash.git"
-    },
-    "keywords": [
-      "node",
-      "esm",
-      "es6",
-      "es5",
-      "date",
-      "moment",
-      "formatting"
-    ],
-    "author": "Flavio Espinoza <flavio.espinoza@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-      "url": "https://github.com/flavioespinoza/datedash/issues"
-    },
-    "homepage": "https://github.com/flavioespinoza/datedash#readme"
+  "name": "datedash",
+  "version": "1.0.4",
+  "description": "lodash inspired date formatting and math methods.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/flavioespinoza/datedash.git"
+  },
+  "keywords": [
+    "node",
+    "esm",
+    "es6",
+    "es5",
+    "date",
+    "moment",
+    "formatting"
+  ],
+  "author": "Flavio Espinoza <flavio.espinoza@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/flavioespinoza/datedash/issues"
+  },
+  "homepage": "https://github.com/flavioespinoza/datedash#readme",
+  "dependencies": {
+    "esm": "^3.2.14"
   }
+}
