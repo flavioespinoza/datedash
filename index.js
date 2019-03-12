@@ -5,43 +5,6 @@
     /** Used as the semantic version number. */
     var VERSION = '1.0.5'
 
-    /** Error message constants. */
-    var FUNC_ERROR_TEXT = 'Expected a function'
-
-    /** Used to compose bitmasks for value comparisons. */
-    var COMPARE_PARTIAL_FLAG = 1,
-        COMPARE_UNORDERED_FLAG = 2
-
-    /** Used to compose bitmasks for function metadata. */
-    var WRAP_BIND_FLAG = 1,
-        WRAP_PARTIAL_FLAG = 32
-
-    /** Used as references for various `Number` constants. */
-    var INFINITY = 1 / 0,
-        MAX_SAFE_INTEGER = 9007199254740991
-
-    /** `Object#toString` result references. */
-    var argsTag = '[object Arguments]',
-        arrayTag = '[object Array]',
-        asyncTag = '[object AsyncFunction]',
-        boolTag = '[object Boolean]',
-        dateTag = '[object Date]',
-        errorTag = '[object Error]',
-        funcTag = '[object Function]',
-        genTag = '[object GeneratorFunction]',
-        numberTag = '[object Number]',
-        objectTag = '[object Object]',
-        proxyTag = '[object Proxy]',
-        regexpTag = '[object RegExp]',
-        stringTag = '[object String]'
-
-    /** Used to match HTML entities and HTML characters. */
-    var reUnescapedHtml = /[&<>"']/g,
-        reHasUnescapedHtml = RegExp(reUnescapedHtml.source)
-
-    /** Used to detect unsigned integer values. */
-    var reIsUint = /^(?:0|[1-9]\d*)$/
-
     /** Used to map characters to HTML entities. */
     var htmlEscapes = {
         '&': '&amp;',
@@ -52,19 +15,19 @@
     }
 
     /** Detect free variable `global` from Node.js. */
-    const freeGlobal = typeof global == 'object' && global && global.Object === Object && global
+    var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
 
     /** Detect free variable `self`. */
-    const freeSelf = typeof self == 'object' && self && self.Object === Object && self
+    var freeSelf = typeof self == 'object' && self && self.Object === Object && self
 
     /** Used as a reference to the global object. */
-    const root = freeGlobal || freeSelf || Function('return this')()
+    var root = freeGlobal || freeSelf || Function('return this')()
 
     /** Detect free variable `exports`. */
-    const freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
+    var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
 
     /** Detect free variable `module`. */
-    const freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
+    var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
 
     /**
      * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -80,7 +43,7 @@
      * console.log(_d.timestamp()) // => 1552351582644
      * // => Logs the number of milliseconds it took for the deferred invocation.
      */
-    const timestamp = function() {
+    var timestamp = function() {
         return root.Date.now()
     }
 
@@ -100,7 +63,7 @@
      * console.log(_d.getTimestamp()) // => 1552353178563
      * console.log(_d.getTimestamp('11/4/1973')) // => 121244400000
      */
-    const getTimestamp = function(date) {
+    var getTimestamp = function(date) {
         if (!date) {
             return timestamp()
         }
@@ -186,7 +149,7 @@
      * Creates a `datedash` object which
      *
      * @name _
-     * @constructor
+     * @varructor
      * @category Seq
      * @param {*} value The value to wrap in a `datedash` instance.
      * @returns {Object} Returns the new `datedash` wrapper instance.
@@ -222,7 +185,7 @@
     })()
 
     /**
-     * The base constructor for creating `datedash` wrapper objects.
+     * The base varructor for creating `datedash` wrapper objects.
      *
      * @private
      * @param {*} value The value to wrap.
@@ -233,7 +196,7 @@
     }
 
     DatedashWrapper.prototype = baseCreate(datedash.prototype)
-    DatedashWrapper.prototype.constructor = DatedashWrapper
+    DatedashWrapper.prototype.varructor = DatedashWrapper
 
     /*------------------------------------------------------------------------*/
 
@@ -241,6 +204,15 @@
     datedash.getTimestamp = getTimestamp
 
     /*--------------------------------------------------------------------------*/
+
+    /**
+     * The semantic version number.
+     *
+     * @static
+     * @memberOf _
+     * @type {string}
+     */
+    datedash.VERSION = VERSION
 
     // Some AMD build optimizers, like r.js, check for condition patterns like:
     if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
@@ -266,5 +238,4 @@
         // Export to the global object.
         root._d = datedash
     }
-
 }.call(this))
