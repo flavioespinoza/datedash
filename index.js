@@ -25,46 +25,6 @@
     /** Detect free variable `module`. */
     var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
 
-    /*--------------------------------------------------------------------------*/
-    // Begin:  _d.methods()
-    /*--------------------------------------------------------------------------*/
-
-    /**
-     * Gets the timestamp of the number of milliseconds that have elapsed since
-     * the Unix epoch (1 January 1970 00:00:00 UTC).
-     *
-     * @static
-     * @memberOf _d
-     * @since 1.0.0
-     * @category Date
-     * @returns {number} Returns the timestamp.
-     * @example
-     *
-     * console.log(_d.timestamp()) // => 1552351582644
-     * // => Logs the number of milliseconds it took for the deferred invocation.
-     */
-    function timestamp() {
-        return root.Date.now()
-    }
-
-    /**
-     * Subtracts `a` from `b`
-     *
-     * @static
-     * @memberOf _d
-     * @since 1.0.0
-     * @category Math
-     * 
-     */
-    var _subtract = require('./methods/subtract')
-    function subtract(a, b) {
-        return _subtract(a, b)
-    }
-
-    /*--------------------------------------------------------------------------*/
-    // End:  _d.methods()
-    /*--------------------------------------------------------------------------*/
-
     /**
      * Checks if `value` is the
      * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
@@ -142,10 +102,10 @@
     /*------------------------------------------------------------------------*/
 
     // Add Methods
-    datedash.timestamp = timestamp
+    datedash.timestamp = require('./methods/timestamp')
     datedash.getTimestamp = require('./methods/getTimestamp')
     datedash.add = require('./methods/add')
-    datedash.subtract = subtract
+    datedash.subtract = require('./methods/subtract')
 
     /*--------------------------------------------------------------------------*/
 
