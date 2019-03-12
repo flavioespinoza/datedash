@@ -1,6 +1,6 @@
 {
   "name": "datedash",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "lodash inspired date formatting and math methods.",
   "main": "index.js",
   "scripts": {
@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/flavioespinoza/datedash#readme",
   "dependencies": {
-    "esm": "^3.2.14"
+    "esm": "^3.2.14",
+    "ololog": "^1.1.120"
   }
 }

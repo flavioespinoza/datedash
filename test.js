@@ -1,5 +1,5 @@
-const { timestamp, getTimestamp } = require('./index')
+const _d = require('./index')
 
-console.log(timestamp())
-console.log(getTimestamp())
-console.log(getTimestamp('11/4/1973'))
+console.log(_d.timestamp())
+console.log(_d.getTimestamp())
+console.log(_d.getTimestamp('11/4/1973'))
