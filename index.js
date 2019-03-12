@@ -1,11 +1,11 @@
 /** Detect free variable `global` from Node.js. */
-var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
+const freeGlobal = typeof global == 'object' && global && global.Object === Object && global
 
 /** Detect free variable `self`. */
-var freeSelf = typeof self == 'object' && self && self.Object === Object && self
+const freeSelf = typeof self == 'object' && self && self.Object === Object && self
 
 /** Used as a reference to the global object. */
-var root = freeGlobal || freeSelf || Function('return this')()
+const root = freeGlobal || freeSelf || Function('return this')()
 
 /**
  * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -21,7 +21,7 @@ var root = freeGlobal || freeSelf || Function('return this')()
  * console.log(timestamp()) // => 1552351582644
  * // => Logs the number of milliseconds it took for the deferred invocation.
  */
-var timestamp = function() {
+const timestamp = function() {
     return root.Date.now()
 }
 
@@ -41,7 +41,7 @@ var timestamp = function() {
  * console.log(getTimestamp()) // => 1552353178563
  * console.log(getTimestamp('11/4/1973')) // => 121244400000
  */
-var getTimestamp = function(date) {
+const getTimestamp = function(date) {
     if (!date) {
         return timestamp()
     }
