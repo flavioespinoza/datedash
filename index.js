@@ -25,4 +25,30 @@ var timestamp = function() {
     return root.Date.now()
 }
 
-module.exports = timestamp
+/**
+ * Gets the timestamp of the number of milliseconds that have elapsed since
+ * `date` argument. If `date` is `undefined` it gives milliseconds elapsed since
+ * the Unix epoch (1 January 1970 00:00:00 UTC).
+ *
+ * @static
+ * @memberOf _
+ * @since 1.0.0
+ * @category Date
+ * @param {date} Date to convert to timestamp .
+ * @returns {number} Returns the timestamp .
+ * @example
+ *
+ * console.log(getTimestamp()) // => 1552353178563
+ * console.log(getTimestamp('11/4/1973')) // => 121244400000
+ */
+var getTimestamp = function(date) {
+    if (!date) {
+        return new Date().getTime() 
+    }
+    return timestamp()
+}
+
+module.exports = {
+    timestamp,
+    getTimestamp
+}
