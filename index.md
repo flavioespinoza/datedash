@@ -93,6 +93,7 @@ console.log(_d.date('March 6 19')) // => 03/06/2019
 console.log(_d.date('March 6, 2019')) // => 03/06/2019
 console.log(_d.date('6 Mar 2019')) // => 03/06/2019
 console.log(_d.date('6 March 2019')) // => 03/06/2019
+console.log(_d.date('2019-01-07T07:00:00.000Z')) // => 03/06/2019
 ```
 
 ### Other valid inputs

@@ -4,7 +4,7 @@
  * Released under MIT license
  * Based on Lodash by John-David Dalton, https://github.com/lodash/lodash
  * Based on Lodash.js 4.17.11 <https://raw.githubusercontent.com/lodash/lodash/4.17.11-npm/LICENSE>
- * Copyright JS Foundation and other contributors <https://js.foundation/>
+ * Based on Lodash.js Copyright JS Foundation and other contributors <https://js.foundation/>
  */
 ;(function() {
     /** Used as a safe reference for `undefined` in pre-ES5 environments. */
@@ -15,8 +15,6 @@
     var __package = require('./package.json')
 
     var VERSION = __package.version
-
-    console.log('VERSION: ', VERSION)
 
     /** Detect free variable `global` from Node.js. */
     var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
@@ -46,8 +44,6 @@
         var type = typeof value
         return value != null && (type == 'object' || type == 'function')
     }
-
-    /*--------------------------------------------------------------------------*/
 
     /** Built-in value references. */
     var objectCreate = Object.create
@@ -109,10 +105,12 @@
 
     /*------------------------------------------------------------------------*/
 
-    // Add Methods
+    // Core Methods
     datedash.date = require('./methods/date')
     datedash.timestamp = require('./methods/timestamp')
     datedash.getTimestamp = require('./methods/getTimestamp')
+
+    // Math Methods
     datedash.add = require('./methods/add')
     datedash.subtract = require('./methods/subtract')
 
@@ -132,7 +130,10 @@
         // Expose datedash on the global object to prevent errors when datedash is
         // loaded by a script tag in the presence of an AMD loader.
         // See http://requirejs.org/docs/errors.html#mismatch for more details.
-        // Use `_d.noConflict` to remove datedash from the global object.
+        
+
+        // TODO:  Add `_d.noConflict`
+        // TODO:  Add to readme: Use `_d.noConflict` to remove datedash from the global object.
         root._d = datedash
 
         // Define as an anonymous module so, through path mapping, it can be
