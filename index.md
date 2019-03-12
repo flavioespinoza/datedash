@@ -140,7 +140,6 @@ _d.date(1551875334611)
 
 _d.date(_.toString(new Date()))
 // => 03/06/2019
-
 ```
 
 Any date `past`, `present` or `future`
