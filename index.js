@@ -48,20 +48,6 @@
     }
 
     /**
-     * Adds `a` to `b`
-     *
-     * @static
-     * @memberOf _d
-     * @since 1.0.0
-     * @category Math
-     * 
-     */
-    var _add = require('./methods/add')
-    function add(a, b) {
-        return _add(a, b)
-    }
-
-    /**
      * Subtracts `a` from `b`
      *
      * @static
@@ -158,7 +144,7 @@
     // Add Methods
     datedash.timestamp = timestamp
     datedash.getTimestamp = require('./methods/getTimestamp')
-    datedash.add = add
+    datedash.add = require('./methods/add')
     datedash.subtract = subtract
 
     /*--------------------------------------------------------------------------*/
