@@ -1,6 +1,6 @@
 {
   "name": "datedash",
-  "version": "1.0.18",
+  "version": "1.0.19",
   "description": "lodash inspired date formatting and math methods.",
   "main": "index.js",
   "scripts": {
