@@ -2,7 +2,7 @@
 
 lodash inspired `Date` formatting methods.
 
-### Install
+## Install
 
 yarn
 
@@ -16,7 +16,7 @@ npm
 npm i datedash
 ```
 
-### import
+## import
 
 using ES6 modules with [esm](https://github.com/standard-things/esm) or typescript
 
@@ -39,7 +39,7 @@ console.log(getTimestamp('Apr 4, 2017'))
 // => 1491285600000
 ```
 
-### require
+## require
 
 using CommonJS
 
@@ -62,7 +62,7 @@ console.log(getTimestamp('Apr 4, 2017'))
 // => 1491285600000
 ```
 
-### Format options (string)
+## Format options (string)
 
 `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
 
@@ -77,10 +77,9 @@ console.log(_d.date(any_date, 'full')) // => Mon Jan 07 2019 00:00:00 GMT-0700 (
 console.log(_d.date(any_date, 'MMM DD YYYY')) // => Jan 07 2019
 console.log(_d.date(any_date, 'england')) // => 07 Jan 2019
 console.log(_d.date(any_date, 'uk')) // => 07 Jan 2019
-
 ```
 
-### Valid date string inputs
+## Valid date string inputs
 ```js
 // Works with these valid date formats (example was done on 03/06/19)
 console.log(_d.date('3/6/19')) // => 03/06/2019
@@ -96,8 +95,7 @@ console.log(_d.date('6 Mar 2019')) // => 03/06/2019
 console.log(_d.date('6 March 2019')) // => 03/06/2019
 ```
 
-### Other valid inputs
-
+## Other valid inputs
 ```js
 console.log(_d.date()) // => 03/06/2019
 console.log(_d.date(new Date())) // => 03/06/2019
