@@ -1,3 +1,11 @@
+/**
+ * @license
+ * Datedash <https://flavioespinoza.github.io/datedash/>
+ * Released under MIT license
+ * Based on Lodash by John-David Dalton, https://github.com/lodash/lodash
+ * Based on Lodash.js 4.17.11 <https://raw.githubusercontent.com/lodash/lodash/4.17.11-npm/LICENSE>
+ * Copyright JS Foundation and other contributors <https://js.foundation/>
+ */
 ;(function() {
     /** Used as a safe reference for `undefined` in pre-ES5 environments. */
     var undefined
