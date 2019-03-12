@@ -43,9 +43,9 @@ var timestamp = function() {
  */
 var getTimestamp = function(date) {
     if (!date) {
-        return new Date().getTime() 
+        return timestamp()
     }
-    return timestamp()
+    return new Date(date).getTime() 
 }
 
 module.exports = {
