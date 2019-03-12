@@ -112,6 +112,7 @@
 
     // Math Methods
     datedash.addDays = require('./methods/addDays')
+    datedash.subtractDays = require('./methods/subtractDays')
 
     /*--------------------------------------------------------------------------*/
 
