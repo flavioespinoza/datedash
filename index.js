@@ -11,7 +11,7 @@
     var undefined
 
     /** Used as the semantic version number. */
-    
+
     var __package = require('./package.json')
 
     var VERSION = __package.version
@@ -111,8 +111,7 @@
     datedash.getTimestamp = require('./methods/getTimestamp')
 
     // Math Methods
-    datedash.add = require('./methods/add')
-    datedash.subtract = require('./methods/subtract')
+    datedash.addDays = require('./methods/addDays')
 
     /*--------------------------------------------------------------------------*/
 
@@ -130,7 +129,7 @@
         // Expose datedash on the global object to prevent errors when datedash is
         // loaded by a script tag in the presence of an AMD loader.
         // See http://requirejs.org/docs/errors.html#mismatch for more details.
-        
+
 
         // TODO:  Add `_d.noConflict`
         // TODO:  Add to readme: Use `_d.noConflict` to remove datedash from the global object.
