@@ -29,6 +29,10 @@
     /** Detect free variable `module`. */
     var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
 
+    /*--------------------------------------------------------------------------*/
+    // Begin:  _d.methods()
+    /*--------------------------------------------------------------------------*/
+
     /**
      * Gets the timestamp of the number of milliseconds that have elapsed since
      * the Unix epoch (1 January 1970 00:00:00 UTC).
@@ -43,7 +47,7 @@
      * console.log(_d.timestamp()) // => 1552351582644
      * // => Logs the number of milliseconds it took for the deferred invocation.
      */
-    var timestamp = function() {
+    function timestamp() {
         return root.Date.now()
     }
 
@@ -63,18 +67,30 @@
      * console.log(_d.getTimestamp()) // => 1552353178563
      * console.log(_d.getTimestamp('11/4/1973')) // => 121244400000
      */
-    var getTimestamp = function(date) {
+    function getTimestamp(date) {
         if (!date) {
             return timestamp()
         }
         return new Date(date).getTime()
     }
 
+    /*--------------------------------------------------------------------------*/
+    // End:  _d.methods()
+    /*--------------------------------------------------------------------------*/
+
+    /**
+     * Checks if `value` is the
+     * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
+     * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
+     *
+     * @private
+     * @param {*} value The value to check.
+     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
+     */
     function isObject(value) {
         var type = typeof value
         return value != null && (type == 'object' || type == 'function')
     }
-    /*--------------------------------------------------------------------------*/
 
     /**
      * The base implementation of `_.propertyOf` without support for deep paths.
@@ -148,7 +164,7 @@
     /**
      * Creates a `datedash` object which
      *
-     * @name _
+     * @name _d
      * @varructor
      * @category Seq
      * @param {*} value The value to wrap in a `datedash` instance.
@@ -200,6 +216,7 @@
 
     /*------------------------------------------------------------------------*/
 
+    // Add Methods
     datedash.timestamp = timestamp
     datedash.getTimestamp = getTimestamp
 
