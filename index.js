@@ -3,16 +3,12 @@
     var undefined
 
     /** Used as the semantic version number. */
-    var VERSION = '1.0.5'
+    
+    var __package = require('./package.json')
 
-    /** Used to map characters to HTML entities. */
-    var htmlEscapes = {
-        '&': '&amp;',
-        '<': '&lt;',
-        '>': '&gt;',
-        '"': '&quot;',
-        "'": '&#39;'
-    }
+    var VERSION = __package.version
+
+    console.log('VERSION: ', VERSION)
 
     /** Detect free variable `global` from Node.js. */
     var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
@@ -74,6 +70,20 @@
         return new Date(date).getTime()
     }
 
+    /**
+     * Adds `a` to `b`
+     *
+     * @static
+     * @memberOf _d
+     * @since 1.0.0
+     * @category Math
+     * 
+     */
+    var _add = require('./add')
+    function add(a, b) {
+        return _add(a, b)
+    }
+
     /*--------------------------------------------------------------------------*/
     // End:  _d.methods()
     /*--------------------------------------------------------------------------*/
@@ -93,8 +103,6 @@
     }
 
     /**
-     * The base implementation of `_.propertyOf` without support for deep paths.
-     *
      * @private
      * @param {Object} object The object to query.
      * @returns {Function} Returns the new accessor function.
@@ -104,15 +112,6 @@
             return object == null ? undefined : object[key]
         }
     }
-
-    /**
-     * Used by `_.escape` to convert characters to HTML entities.
-     *
-     * @private
-     * @param {string} chr The matched character to escape.
-     * @returns {string} Returns the escaped character.
-     */
-    var escapeHtmlChar = basePropertyOf(htmlEscapes)
 
     /**
      * Creates a unary function that invokes `func` with its argument transformed.
@@ -130,34 +129,8 @@
 
     /*--------------------------------------------------------------------------*/
 
-    /** Used for built-in method references. */
-    var arrayProto = Array.prototype
-    var objectProto = Object.prototype
-
-    /** Used to check objects for own properties. */
-    var hasOwnProperty = objectProto.hasOwnProperty
-
-    /** Used to generate unique IDs. */
-    var idCounter = 0
-
-    /**
-     * Used to resolve the
-     * [`toStringTag`](http://ecma-international.org/ecma-262/7.0/#sec-object.prototype.tostring)
-     * of values.
-     */
-    var nativeObjectToString = objectProto.toString
-
-    /** Used to restore the original `_` reference in `_.noConflict`. */
-    var oldDash = root._d
-
     /** Built-in value references. */
     var objectCreate = Object.create
-    var propertyIsEnumerable = objectProto.propertyIsEnumerable
-
-    /* Built-in method references for those with the same name as other `datedash` methods. */
-    var nativeIsFinite = root.isFinite,
-        nativeKeys = overArg(Object.keys, Object),
-        nativeMax = Math.max
 
     /*------------------------------------------------------------------------*/
 
@@ -219,6 +192,7 @@
     // Add Methods
     datedash.timestamp = timestamp
     datedash.getTimestamp = getTimestamp
+    datedash.add = add
 
     /*--------------------------------------------------------------------------*/
 
@@ -226,7 +200,7 @@
      * The semantic version number.
      *
      * @static
-     * @memberOf _
+     * @memberOf _d
      * @type {string}
      */
     datedash.VERSION = VERSION
