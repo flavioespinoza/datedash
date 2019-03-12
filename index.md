@@ -1,4 +1,5 @@
 # datedash
+[See project on GitHub](https://github.com/flavioespinoza/datedash)
 lodash inspired `Date` formatting methods.
 
 ## Install
