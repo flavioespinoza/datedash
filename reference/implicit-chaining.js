@@ -1,5 +1,6 @@
 const _ = require('lodash')
 const uuid = require('uuid')
+const isDate = require('../methods/isDate')
 
 const reservations = [
 	{
@@ -40,10 +41,7 @@ const HiltonReservations = reservationsList => {
 	return _(reservationsList)
 		.filter(obj => {
 			// Filter out invalid dates
-			return (
-				_.toString(new Date(obj.arrivalDate)) !== 'Invalid Date' &&
-				_.toString(new Date(obj.departureDate)) !== 'Invalid Date'
-			)
+			return isDate(obj.arrivalDate) && isDate(obj.departureDate)
 		})
 		.filter(obj => {
 			// Filter out `hotel names` that do not include the word `hilton`

@@ -10,28 +10,28 @@ const _ = require('lodash')
  * @returns {boolean} Returns `true` if `value` is a `Date object` & valid `Date`, else `false`.
  * @example
  *
- * isDate(new Date())
+ * _d.isDate(new Date())
  * // => true
  *
- * isDate('Jul 4, 1776')
+ * _d.isDate('Jul 4, 1776')
  * // => true
  *
- * isDate('3/3/19')
+ * _d.isDate('3/3/19')
  * // => true
  *
- * isDate(25200000)
+ * _d.isDate(25200000)
  * // => true
  *
- * isDate('3/33/19')
+ * _d.isDate('3/33/19')
  * // => false
  *
  * function getDate() {
  *     return '1/1/19'
  * }
- * isDate(getDate)
+ * _d.isDate(getDate)
  * // => false
  *
- * isDate(getDate())
+ * _d.isDate(getDate())
  * // => true
  */
 function isDate(value) {
