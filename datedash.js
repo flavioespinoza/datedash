@@ -1,11 +1,10 @@
 /**
  * @license
- * Lodash (Custom Build) <https://lodash.com/>
- * Build: `lodash strict category="date" exports="global, node" -d -o ./lodash.js`
+ * datedash <https://github.com/flavioespinoza/datedash>
  * Copyright JS Foundation and other contributors <https://js.foundation/>
- * Released under MIT license <https://lodash.com/license>
- * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
- * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
+ * Released under MIT license <https://github.com/flavioespinoza/datedash/blob/master/LICENSE>
+ * Based on lodash.js 5.0.0 <https://lodash.com/>
+ * Based on lodash.js by John-David Dalton <https://github.com/jdalton>
  */
 ;(function() {
 	'use strict'
@@ -41,15 +40,20 @@
 	/*------------------------------------------------------------------------*/
 
 	/**
-	 *
-	 *
+	 * @private
 	 * @name _d
 	 * @constructor
 	 * @category Seq
-	 * @param {*} value The value to wrap in a `lodash` instance.
-	 * @returns {Object} Returns the new `lodash` wrapper instance.
+	 * @param {*} value The value to wrap in a `datedash` instance.
+	 * @returns {Object} Returns the new `datedash` wrapper instance.
 	 */
-	function lodash() {
+
+	 //TODO: Change name to datedash
+	 //TODO: Change name to datedash
+	 //TODO: Change name to datedash
+	 //TODO: Change name to datedash
+
+	function datedash() {
 		// No operation performed.
 	}
 
@@ -220,32 +224,32 @@
 	/*------------------------------------------------------------------------*/
 
 	// Add methods that return unwrapped values in chain sequences.
-	lodash.date = date
-	lodash.now = now
-	lodash.getTimestamp = getTimestamp
-	lodash.isDate = isDate
-	lodash.subtractDays = subtractDays
+	datedash.date = date
+	datedash.now = now
+	datedash.getTimestamp = getTimestamp
+	datedash.isDate = isDate
+	datedash.subtractDays = subtractDays
 
 	/*------------------------------------------------------------------------*/
 
 	/**
 	 * The semantic version number.
-	 *
+	 * @private
 	 * @static
-	 * @memberOf _
+	 * @memberOf _d
 	 * @type {string}
 	 */
-	lodash.VERSION = VERSION
+	datedash.VERSION = VERSION
 
 	/*--------------------------------------------------------------------------*/
 
 	if (freeModule) {
 		// Export for Node.js.
-		;(freeModule.exports = lodash)._d = lodash
+		;(freeModule.exports = datedash)._d = datedash
 		// Export for CommonJS support.
-		freeExports._d = lodash
+		freeExports._d = datedash
 	} else {
 		// Export to the global object.
-		root._d = lodash
+		root._d = datedash
 	}
 }.call(this))

@@ -308,7 +308,7 @@ html body a.md-link-bold {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
-      <h1 class="mume-header" id="a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1027span"><a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.27</span></h1>
+      <h1 class="mume-header" id="a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1030span"><a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.30</span></h1>
 
 <h2 class="mume-header" id="date"><code>Date</code></h2>
 
@@ -323,16 +323,6 @@ html body a.md-link-bold {
 <ul>
 <li><a href="#_d-addDays"><code>_d.addDays</code></a></li>
 <li><a href="#_d-subtractDays"><code>_d.subtractDays</code></a></li>
-</ul>
-<h2 class="mume-header" id="seq"><code>Seq</code></h2>
-
-<ul>
-<li><a href="#_d"><code>_d</code></a></li>
-</ul>
-<h2 class="mume-header" id="properties"><code>Properties</code></h2>
-
-<ul>
-<li><a href="#VERSION"><code>_.VERSION</code></a></li>
 </ul>
 <h2 class="mume-header" id="date-methods"><code>&#x201C;Date&#x201D; Methods</code></h2>
 
@@ -394,8 +384,11 @@ the Unix epoch <em>(1 January <code>1970 00</code>:00:00 UTC)</em>.</p>
 <p><em>(number)</em>: Returns the timestamp .</p>
 <h4 class="mume-header" id="example-1">Example</h4>
 
-<pre data-role="codeBlock" data-info="js" class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 1552353178563</span>
-console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;11/4/1973&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 121244400000</span>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 1552353178563</span>
+
+_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;11/4/1973&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 121244400000</span>
 </pre><hr>
 <h3 id="_d-isDate"><code>_d.isDate(value)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/isDate.js">isDate.js</a>
@@ -494,37 +487,16 @@ _d<span class="token punctuation">.</span><span class="token function">subtractD
 _d<span class="token punctuation">.</span><span class="token function">subtractDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; 03.04.2019</span>
 
-<span class="token function">subtractDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
+_d<span class="token punctuation">.</span><span class="token function">subtractDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; 03 Mar 2019</span>
 </pre><hr>
-<h2 class="mume-header" id="seq-methods"><code>&#x201C;Seq&#x201D; Methods</code></h2>
-
-<h3 id="_d"><code>_d(value)</code></h3>
-<a href></a>
-<h4 class="mume-header" id="arguments-3">Arguments</h4>
-
-<ol>
-<li><code>value</code> <em>(*)</em>: The value to wrap in a <code>lodash</code> instance.</li>
-</ol>
-<h4 class="mume-header" id="returns-4">Returns</h4>
-
-<p><em>(Object)</em>: Returns the new <code>lodash</code> wrapper instance.</p>
-<hr>
-<h2 class="mume-header" id="properties-1"><code>Properties</code></h2>
-
-<h3 id="VERSION"><code>_.VERSION</code></h3>
-<a href></a>
-<p>(string): The semantic version number.</p>
-<hr>
 
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1027span">datedash v1.0.27</a>
+<li><a href="#a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1030span">datedash v1.0.30</a>
 <ul>
 <li><a href="#date"><code>Date</code></a></li>
 <li><a href="#math"><code>Math</code></a></li>
-<li><a href="#seq"><code>Seq</code></a></li>
-<li><a href="#properties"><code>Properties</code></a></li>
 <li><a href="#date-methods"><code>&#x201C;Date&#x201D; Methods</code></a><br>
 * <a href="#since">Since</a><br>
 * <a href="#arguments">Arguments</a><br>
@@ -546,10 +518,6 @@ _d<span class="token punctuation">.</span><span class="token function">subtractD
 * <a href="#example-4">Example</a><br>
 * <a href="#since-5">Since</a><br>
 * <a href="#example-5">Example</a></li>
-<li><a href="#seq-methods"><code>&#x201C;Seq&#x201D; Methods</code></a><br>
-* <a href="#arguments-3">Arguments</a><br>
-* <a href="#returns-4">Returns</a></li>
-<li><a href="#properties-1"><code>Properties</code></a></li>
 </ul>
 </li>
 </ul>

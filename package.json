@@ -1,12 +1,11 @@
 {
   "name": "datedash",
-  "version": "1.0.30",
+  "version": "1.0.31",
   "description": "lodash inspired date formatting and math methods.",
-  "main": "index.js",
+  "main": "datedash.js",
   "scripts": {
 	"test": "mocha -r esm test/*.test.js",
-	"doc": "node lib/main/build-doc site",
-	"docg": "node lib/main/build-doc github"
+	"doc": "node lib/main/build-doc site"
   },
   "repository": {
     "type": "git",

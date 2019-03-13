@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.27</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.30</span>
 
 <!-- div class="toc-container" -->
 
@@ -17,20 +17,6 @@
 ## `Math`
 * <a href="#_d-addDays">`_d.addDays`</a>
 * <a href="#_d-subtractDays">`_d.subtractDays`</a>
-
-<!-- /div -->
-
-<!-- div -->
-
-## `Seq`
-* <a href="#_d">`_d`</a>
-
-<!-- /div -->
-
-<!-- div -->
-
-## `Properties`
-* <a href="#VERSION">`_.VERSION`</a>
 
 <!-- /div -->
 
@@ -108,8 +94,11 @@ the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
 
 #### Example
 ```js
-console.log(_d.getTimestamp()) // => 1552353178563
-console.log(_d.getTimestamp('11/4/1973')) // => 121244400000
+_d.getTimestamp()
+// => 1552353178563
+
+_d.getTimestamp('11/4/1973')
+// => 121244400000
 ```
 ---
 
@@ -242,49 +231,9 @@ _d.subtractDays(any_date, 1, '-')
 _d.subtractDays(any_date, 2, '.')
 // => 03.04.2019
 
-subtractDays(any_date, 3, 'uk')
+_d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
 ```
----
-
-<!-- /div -->
-
-<!-- /div -->
-
-<!-- div -->
-
-## `“Seq” Methods`
-
-<!-- div -->
-
-<h3 id="_d"><code>_d(value)</code></h3>
-<a href=""></a>
-
-
-
-#### Arguments
-1. `value` *(&#42;)*: The value to wrap in a `lodash` instance.
-
-#### Returns
-*(Object)*: Returns the new `lodash` wrapper instance.
-
----
-
-<!-- /div -->
-
-<!-- /div -->
-
-<!-- div -->
-
-## `Properties`
-
-<!-- div -->
-
-<h3 id="VERSION"><code>_.VERSION</code></h3>
-<a href=""></a>
-
-(string): The semantic version number.
-
 ---
 
 <!-- /div -->
