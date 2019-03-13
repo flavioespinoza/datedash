@@ -96,6 +96,7 @@ the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
 ```js
 _d.getTimestamp()
 // => 1552353178563
+// returns now timestamp
 
 _d.getTimestamp('11/4/1973')
 // => 121244400000
