@@ -1,5 +1,5 @@
 <!DOCTYPE html><html><head>
-      <title>index</title>
+      <title>README</title>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
@@ -232,7 +232,7 @@ html body {
   text-decoration: none;
 }
 html body code {
-  background-color: #fdd3da;
+  background-color: gainsboro;
 }
 html body .markdown-preview h2 {
   margin-bottom: 0;
@@ -241,7 +241,7 @@ html body .markdown-preview h3 {
   margin-bottom: 4px;
 }
 html body .markdown-preview p {
-  margin-bottom: 4px;
+  margin-bottom: 0;
 }
 html body .markdown-preview ul {
   margin-bottom: 12px;
@@ -308,49 +308,51 @@ html body a.md-link-bold {
     </head>
     <body for="html-export">
       <div class="mume markdown-preview   ">
-      <h1 class="mume-header" id="datedash">datedash</h1>
+      <h1 class="mume-header" id="a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1027span"><a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.27</span></h1>
 
-<p><a href="https://github.com/flavioespinoza/datedash">See project on GitHub</a><br>
-lodash inspired <code>Date</code> formatting methods.</p>
-<h2 class="mume-header" id="install">Install</h2>
+<h2 class="mume-header" id="date"><code>Date</code></h2>
 
-<p>yarn</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash">yarn add datedash
-</pre><p>npm</p>
-<pre data-role="codeBlock" data-info="bash" class="language-bash"><span class="token function">npm</span> i datedash
-</pre><h2 class="mume-header" id="import">import</h2>
+<ul>
+<li><a href="#_d-date"><code>_d.date</code></a></li>
+<li><a href="#_d-getTimestamp"><code>_d.getTimestamp</code></a></li>
+<li><a href="#_d-isDate"><code>_d.isDate</code></a></li>
+<li><a href="#_d-now"><code>_d.now</code></a></li>
+</ul>
+<h2 class="mume-header" id="math"><code>Math</code></h2>
 
-<p>using ES6 modules with <a href="https://github.com/standard-things/esm">esm</a> or typescript</p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> _d <span class="token keyword">from</span> <span class="token string">&apos;datedash&apos;</span>
+<ul>
+<li><a href="#_d-addDays"><code>_d.addDays</code></a></li>
+<li><a href="#_d-subtractDays"><code>_d.subtractDays</code></a></li>
+</ul>
+<h2 class="mume-header" id="seq"><code>Seq</code></h2>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 04 Apr 2017</span>
+<ul>
+<li><a href="#_d"><code>_d</code></a></li>
+</ul>
+<h2 class="mume-header" id="properties"><code>Properties</code></h2>
 
-_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 1491285600000</span>
-</pre><p>import individual modules</p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> getTimestamp <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;datedash&apos;</span>
+<ul>
+<li><a href="#VERSION"><code>_.VERSION</code></a></li>
+</ul>
+<h2 class="mume-header" id="date-methods"><code>&#x201C;Date&#x201D; Methods</code></h2>
 
-<span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 1491285600000</span>
-</pre><h2 class="mume-header" id="require">require</h2>
+<h3 id="_d-date"><code>_d.date(Date, format)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/date.js">date.js</a>
+<p>Computes input <code>date</code> converts to string and returns with specified <code>format</code>.</p>
+<h4 class="mume-header" id="since">Since</h4>
 
-<p>using CommonJS</p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> _d <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;datedash&apos;</span><span class="token punctuation">)</span>
+<p>1.0.0</p>
+<h4 class="mume-header" id="arguments">Arguments</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 04 Apr 2017</span>
+<ol>
+<li><code>Date</code> <em>(date): <code>date</code> options are <code>new Date()</code>, <code>timestamp</code> or <code>string</code> in valid date format. See example below. *(Not sure if I put valid date string formats here)</em>*</li>
+<li><code>format</code> <em>(string)</em>: <code>format</code> options <code>/</code>, <code>-</code>, <code>.</code>, <code>full</code>, <code>MMM DD YYYY</code>, <code>england</code>, <code>uk</code></li>
+</ol>
+<h4 class="mume-header" id="returns">Returns</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 1491285600000</span>
-</pre><p>require individual modules</p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> <span class="token punctuation">{</span> getTimestamp <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">&apos;datedash&apos;</span><span class="token punctuation">)</span>
+<p><em>(string)</em>: Returns the date as a String in specified format.</p>
+<h4 class="mume-header" id="example">Example</h4>
 
-<span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;Apr 4, 2017&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 1491285600000</span>
-</pre><h2 class="mume-header" id="format-options-string">Format options (string)</h2>
-
-<p><code>format</code> options <code>/</code>, <code>-</code>, <code>.</code>, <code>MMM DD YYYY</code>, <code>england</code>, <code>uk</code>, <code>full</code></p>
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> any_date <span class="token operator">=</span> <span class="token string">&apos;Jan 7, 2019&apos;</span>
 
 _d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token string">&apos;/&apos;</span><span class="token punctuation">)</span>
@@ -373,127 +375,181 @@ _d<span class="token punctuation">.</span><span class="token function">date</spa
 
 _d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token string">&apos;full&apos;</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)</span>
-</pre><h2 class="mume-header" id="valid-date-string-inputs">Valid date string inputs</h2>
+</pre><hr>
+<h3 id="_d-getTimestamp"><code>_d.getTimestamp(Date)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/getTimestamp.js">getTimestamp.js</a>
+<p>Gets the timestamp of the number of milliseconds that have elapsed since<br>
+<code>date</code> argument. If <code>date</code> is <code>undefined</code> it gives milliseconds elapsed since<br>
+the Unix epoch <em>(1 January <code>1970 00</code>:00:00 UTC)</em>.</p>
+<h4 class="mume-header" id="since-1">Since</h4>
 
-<pre data-role="codeBlock" data-info="js" class="language-javascript">_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;3/6/19&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<p>1.0.0</p>
+<h4 class="mume-header" id="arguments-1">Arguments</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;3-6-19&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<ol>
+<li><code>Date</code> <em>(date)</em>: to convert to timestamp .</li>
+</ol>
+<h4 class="mume-header" id="returns-1">Returns</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;3.6.19&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<p><em>(number)</em>: Returns the timestamp .</p>
+<h4 class="mume-header" id="example-1">Example</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;Mar 6 19&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 1552353178563</span>
+console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;11/4/1973&apos;</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 121244400000</span>
+</pre><hr>
+<h3 id="_d-isDate"><code>_d.isDate(value)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/isDate.js">isDate.js</a>
+<p>Verifies if <code>value</code> is a valid <code>Date object</code> and valid <code>Date</code>.</p>
+<h4 class="mume-header" id="since-2">Since</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;Mar 6, 19&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<p>1.0.0</p>
+<h4 class="mume-header" id="arguments-2">Arguments</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;Mar 6 2019&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<ol>
+<li><code>value</code> <em>(*)</em>: The value to check.</li>
+</ol>
+<h4 class="mume-header" id="returns-2">Returns</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;Mar 6, 2019&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<p><em>(boolean)</em>: Returns <code>true</code> if <code>value</code> is a <code>Date object</code> &amp; valid <code>Date</code>, else <code>false</code>.</p>
+<h4 class="mume-header" id="example-2">Example</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;March 6 19&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<pre data-role="codeBlock" data-info="js" class="language-javascript">_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; true</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;March 6, 2019&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span><span class="token string">&apos;Jul 4, 1776&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; true</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;6 Mar 2019&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span><span class="token string">&apos;3/3/19&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; true</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token string">&apos;6 March 2019&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
-</pre><h2 class="mume-header" id="other-valid-inputs">Other valid inputs</h2>
+_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span><span class="token number">25200000</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; true</span>
 
-<pre data-role="codeBlock" data-info="js" class="language-javascript">_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span><span class="token string">&apos;3/33/19&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; false</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<span class="token keyword">function</span> <span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token string">&apos;1/1/19&apos;</span>
+<span class="token punctuation">}</span>
+_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span>getDate<span class="token punctuation">)</span>
+<span class="token comment">// =&gt; false</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span><span class="token number">1551875334611</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+_d<span class="token punctuation">.</span><span class="token function">isDate</span><span class="token punctuation">(</span><span class="token function">getDate</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; true</span>
+</pre><hr>
+<h3 id="_d-now"><code>_d.now()</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/now.js">now.js</a>
+<p>Gets the timestamp of the number of milliseconds that have elapsed since<br>
+the Unix epoch <em>(1 January <code>1970 00</code>:00:00 UTC)</em>.</p>
+<h4 class="mume-header" id="since-3">Since</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>_<span class="token punctuation">.</span><span class="token function">toString</span><span class="token punctuation">(</span><span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+<p>1.0.0</p>
+<h4 class="mume-header" id="returns-3">Returns</h4>
 
-</pre><p>Any date <code>past</code>, <code>present</code> or <code>future</code></p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> past_date <span class="token operator">=</span> <span class="token string">&apos;Feb 14, 2019&apos;</span>
+<p><em>(number)</em>: Returns the timestamp.</p>
+<h4 class="mume-header" id="example-3">Example</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">import</span> <span class="token punctuation">{</span> defer <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">&apos;lodash&apos;</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;/&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<span class="token function">defer</span><span class="token punctuation">(</span><span class="token keyword">function</span><span class="token punctuation">(</span><span class="token parameter">stamp</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>_d<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">-</span> stamp<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> _d<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02-14-2019</span>
+<span class="token comment">// =&gt; Logs milliseconds it took for the deferred invocation.</span>
+</pre><hr>
+<h2 class="mume-header" id="math-methods"><code>&#x201C;Math&#x201D; Methods</code></h2>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span>
- <span class="token comment">// =&gt; 02.14.2019</span>
+<h3 id="_d-addDays"><code>_d.addDays</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addDays.js">addDays.js</a>
+<p>Input <code>_date</code> add <code>nDays</code> with <code>format</code></p>
+<h4 class="mume-header" id="since-4">Since</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;MMM DD YYYY&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; Feb 14 2019</span>
+<p>1.0.0</p>
+<h4 class="mume-header" id="example-4">Example</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;england&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 14 Feb 2019</span>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> any_date <span class="token operator">=</span> <span class="token string">&apos;3/6/19&apos;</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 14 Feb 2019</span>
+_d<span class="token punctuation">.</span><span class="token function">addDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 03-07-2019</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_date<span class="token punctuation">,</span> <span class="token string">&apos;full&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; Thu Feb 14 2019 00:00:00 GMT-0700 (Mountain Standard Time)</span>
-</pre><p>Any <code>timestamp</code></p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> five_days_ms <span class="token operator">=</span> <span class="token number">4.32e8</span>
-<span class="token keyword">let</span> now_timestamp <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">now</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token comment">// =&gt; 1551875334611</span>
-<span class="token keyword">let</span> future_timestamp <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>now_timestamp<span class="token punctuation">,</span> five_days_ms<span class="token punctuation">)</span>
-<span class="token keyword">let</span> past_timestamp <span class="token operator">=</span> _<span class="token punctuation">.</span><span class="token function">subtract</span><span class="token punctuation">(</span>now_timestamp<span class="token punctuation">,</span> five_days_ms<span class="token punctuation">)</span>
+_d<span class="token punctuation">.</span><span class="token function">addDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 03.08.2019</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>now_timestamp<span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/06/2019</span>
+_d<span class="token punctuation">.</span><span class="token function">addDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 09 Mar 2019</span>
+</pre><hr>
+<h3 id="_d-subtractDays"><code>_d.subtractDays</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractDays.js">subtractDays.js</a>
+<p>Input <code>_date</code> subtract <code>nDays</code> with <code>format</code></p>
+<h4 class="mume-header" id="since-5">Since</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>future_timestamp<span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/11/2019</span>
+<p>1.0.0</p>
+<h4 class="mume-header" id="example-5">Example</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>past_timestamp<span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 03/01/2019</span>
+<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> any_date <span class="token operator">=</span> <span class="token string">&apos;3/6/19&apos;</span>
 
-</pre><p>Handles <code>undefined</code> or other for 2nd arg <code>format</code></p>
-<pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">let</span> my_date <span class="token operator">=</span> <span class="token string">&apos;02/14/2019&apos;</span>
+_d<span class="token punctuation">.</span><span class="token function">subtractDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token string">&apos;-&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 03-05-2019</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>my_date<span class="token punctuation">,</span> undefined<span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+_d<span class="token punctuation">.</span><span class="token function">subtractDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token string">&apos;.&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 03.04.2019</span>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>my_date<span class="token punctuation">,</span> <span class="token boolean">false</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<span class="token function">subtractDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; 03 Mar 2019</span>
+</pre><hr>
+<h2 class="mume-header" id="seq-methods"><code>&#x201C;Seq&#x201D; Methods</code></h2>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>my_date<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<h3 id="_d"><code>_d(value)</code></h3>
+<a href></a>
+<h4 class="mume-header" id="arguments-3">Arguments</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>my_date<span class="token punctuation">,</span> <span class="token string">&apos;foo&apos;</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<ol>
+<li><code>value</code> <em>(*)</em>: The value to wrap in a <code>lodash</code> instance.</li>
+</ol>
+<h4 class="mume-header" id="returns-4">Returns</h4>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>my_date<span class="token punctuation">,</span> <span class="token number">8</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<p><em>(Object)</em>: Returns the new <code>lodash</code> wrapper instance.</p>
+<hr>
+<h2 class="mume-header" id="properties-1"><code>Properties</code></h2>
 
-_d<span class="token punctuation">.</span><span class="token function">date</span><span class="token punctuation">(</span>my_date<span class="token punctuation">,</span> <span class="token keyword">null</span><span class="token punctuation">)</span>
-<span class="token comment">// =&gt; 02/14/2019</span>
+<h3 id="VERSION"><code>_.VERSION</code></h3>
+<a href></a>
+<p>(string): The semantic version number.</p>
+<hr>
 
-</pre>
       </div>
       <div class="md-sidebar-toc"><ul>
-<li><a href="#datedash">datedash</a>
+<li><a href="#a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1027span">datedash v1.0.27</a>
 <ul>
-<li><a href="#install">Install</a></li>
-<li><a href="#import">import</a></li>
-<li><a href="#require">require</a></li>
-<li><a href="#format-options-string">Format options (string)</a></li>
-<li><a href="#valid-date-string-inputs">Valid date string inputs</a></li>
-<li><a href="#other-valid-inputs">Other valid inputs</a></li>
+<li><a href="#date"><code>Date</code></a></li>
+<li><a href="#math"><code>Math</code></a></li>
+<li><a href="#seq"><code>Seq</code></a></li>
+<li><a href="#properties"><code>Properties</code></a></li>
+<li><a href="#date-methods"><code>&#x201C;Date&#x201D; Methods</code></a><br>
+* <a href="#since">Since</a><br>
+* <a href="#arguments">Arguments</a><br>
+* <a href="#returns">Returns</a><br>
+* <a href="#example">Example</a><br>
+* <a href="#since-1">Since</a><br>
+* <a href="#arguments-1">Arguments</a><br>
+* <a href="#returns-1">Returns</a><br>
+* <a href="#example-1">Example</a><br>
+* <a href="#since-2">Since</a><br>
+* <a href="#arguments-2">Arguments</a><br>
+* <a href="#returns-2">Returns</a><br>
+* <a href="#example-2">Example</a><br>
+* <a href="#since-3">Since</a><br>
+* <a href="#returns-3">Returns</a><br>
+* <a href="#example-3">Example</a></li>
+<li><a href="#math-methods"><code>&#x201C;Math&#x201D; Methods</code></a><br>
+* <a href="#since-4">Since</a><br>
+* <a href="#example-4">Example</a><br>
+* <a href="#since-5">Since</a><br>
+* <a href="#example-5">Example</a></li>
+<li><a href="#seq-methods"><code>&#x201C;Seq&#x201D; Methods</code></a><br>
+* <a href="#arguments-3">Arguments</a><br>
+* <a href="#returns-4">Returns</a></li>
+<li><a href="#properties-1"><code>Properties</code></a></li>
 </ul>
 </li>
 </ul>
