@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.33</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.36</span>
 
 <!-- div class="toc-container" -->
 
@@ -20,6 +20,13 @@
 
 <!-- /div -->
 
+<!-- div -->
+
+## `Methods`
+* <a href="#_d-arrayIncludes">`_d.arrayIncludes`</a>
+
+<!-- /div -->
+
 <!-- /div -->
 
 <!-- div class="doc-container" -->
@@ -30,7 +37,7 @@
 
 <!-- div -->
 
-<h3 id="_d-date"><code>_d.date(Date, format)</code></h3>
+<h3 id="_d-date"><code>_d.date(date, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/date.js">date.js</a>
 
 Computes input `date` converts to string and returns with specified `format`.
@@ -39,7 +46,7 @@ Computes input `date` converts to string and returns with specified `format`.
 1.0.0
 
 #### Arguments
-1. `Date` *(date): `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. &#42;(Not sure if I put valid date string formats here)*&#42;
+1. `date` *(date): `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. &#42;(Not sure if I put valid date string formats here)*&#42;
 2. `format` *(string)*: `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
 
 #### Returns
@@ -231,7 +238,7 @@ Input `_date` subtract `nDays` with `format`
 1.0.0
 
 #### Arguments
-1. `Date` *(date)*:
+1. `Date` *(Date)*:
 2. `days` *(number)*: to subtract
 3. `format` *(string)*:
 
@@ -248,6 +255,34 @@ _d.subtractDays(any_date, 2, '.')
 _d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
 ```
+---
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div -->
+
+## `Methods`
+
+<!-- div -->
+
+<h3 id="_d-arrayIncludes"><code>_d.arrayIncludes([array], target)</code></h3>
+<a href=""></a>
+
+A specialized version of `_.includes` for arrays without support for
+specifying an index to search from.
+
+#### Since
+1.0.0
+
+#### Arguments
+1. `[array]` *(Array)*: The array to inspect.
+2. `target` *(&#42;)*: The value to search for.
+
+#### Returns
+*(boolean)*: Returns `true` if `target` is found, else `false`.
+
 ---
 
 <!-- /div -->

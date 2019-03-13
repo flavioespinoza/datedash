@@ -61,7 +61,7 @@
 	 * @memberOf _d
 	 * @since 1.0.0
 	 * @category Date
-	 * @param {date} Date `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. (Not sure if I put valid date string formats here)
+	 * @param {date} date `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. (Not sure if I put valid date string formats here)
 	 * @param {string} format `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
 	 * @returns {string} Returns the date as a String in specified format.
 	 * @example
@@ -207,7 +207,7 @@
 	 * @memberOf _d
 	 * @since 1.0.0
 	 * @category Math
-	 * @param {date} Date
+	 * @param {Date} Date
 	 * @param {number} days to subtract
 	 * @param {string} format
 	 * @example
@@ -225,6 +225,21 @@
 	 */
 	const subtractDays = require('./methods/subtractDays')
 
+	/**
+	 * A specialized version of `_.includes` for arrays without support for
+	 * specifying an index to search from.
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @param {Array} [array] The array to inspect.
+	 * @param {*} target The value to search for.
+	 * @returns {boolean} Returns `true` if `target` is found, else `false`.
+	 */
+	function arrayIncludes(array, value) {
+		var length = array == null ? 0 : array.length
+		return !!length && baseIndexOf(array, value, 0) > -1
+	}
+
 	/*------------------------------------------------------------------------*/
 
 	// Add methods that return unwrapped values in chain sequences.
@@ -233,6 +248,7 @@
 	datedash.getTimestamp = getTimestamp
 	datedash.isDate = isDate
 	datedash.subtractDays = subtractDays
+	datedash.arrayIncludes = arrayIncludes
 
 	/*------------------------------------------------------------------------*/
 
