@@ -1,312 +1,185 @@
 /**
  * @license
- * Datedash <https://flavioespinoza.github.io/datedash/>
- * Released under MIT license <https://github.com/flavioespinoza/datedash/blob/master/LICENSE>
- * Based on Lodash by John-David Dalton, https://github.com/lodash/lodash
- * Based on Lodash.js 4.17.11 <https://raw.githubusercontent.com/lodash/lodash/4.17.11-npm/LICENSE>
- * Based on Lodash.js Copyright JS Foundation and other contributors <https://js.foundation/>
+ * Lodash (Custom Build) <https://lodash.com/>
+ * Build: `lodash strict category="date" exports="global, node" -d -o ./lodash.js`
+ * Copyright JS Foundation and other contributors <https://js.foundation/>
+ * Released under MIT license <https://lodash.com/license>
+ * Based on Underscore.js 1.8.3 <http://underscorejs.org/LICENSE>
+ * Copyright Jeremy Ashkenas, DocumentCloud and Investigative Reporters & Editors
  */
 ;(function() {
-    /** Used as a safe reference for `undefined` in pre-ES5 environments. */
-    var undefined
+	'use strict'
 
-    /** Used as the semantic version number. */
+	/** Used as the semantic version number. */
+	var __package = require('./package.json')
 
-    var __package = require('./package.json')
+	var VERSION = __package.version
 
-    var VERSION = __package.version
+	/** Detect free variable `global` from Node.js. */
+	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
 
-    /** Detect free variable `global` from Node.js. */
-    var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
+	/** Detect free variable `self`. */
+	var freeSelf = typeof self == 'object' && self && self.Object === Object && self
 
-    /** Detect free variable `self`. */
-    var freeSelf = typeof self == 'object' && self && self.Object === Object && self
+	/** Used as a reference to the global object. */
+	var root = freeGlobal || freeSelf || Function('return this')()
 
-    /** Used as a reference to the global object. */
-    var root = freeGlobal || freeSelf || Function('return this')()
+	/** Detect free variable `exports`. */
+	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
 
-    /** Detect free variable `exports`. */
-    var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
+	/** Detect free variable `module`. */
+	var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
 
-    /** Detect free variable `module`. */
-    var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
+	/*--------------------------------------------------------------------------*/
 
-    /**
-     * Checks if `value` is the
-     * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
-     * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-     *
-     * @private
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-     */
-    function isObject(value) {
-        var type = typeof value
-        return value != null && (type == 'object' || type == 'function')
-    }
+	/** Built-in value references. */
+	var Symbol = root.Symbol
 
-    /** Built-in value references. */
-    var objectCreate = Object.create
+	/** Used to lookup unminified function names. */
+	var realNames = {}
 
-    /*------------------------------------------------------------------------*/
+	/*------------------------------------------------------------------------*/
 
-    /**
-     * Creates a `datedash` object which
-     *
-     * @name _d
-     * @varructor
-     * @category Seq
-     * @param {*} value The value to wrap in a `datedash` instance.
-     * @returns {Object} Returns the new `datedash` wrapper instance.
-     * @example
-     *
-     */
-    function datedash(value) {
-        return value instanceof DatedashWrapper ? value : new DatedashWrapper(value)
-    }
+	/**
+	 *
+	 *
+	 * @name _d
+	 * @constructor
+	 * @category Seq
+	 * @param {*} value The value to wrap in a `lodash` instance.
+	 * @returns {Object} Returns the new `lodash` wrapper instance.
+	 */
+	function lodash() {
+		// No operation performed.
+	}
 
-    /**
-     * The base implementation of `_.create` without support for assigning
-     * properties to the created object.
-     *
-     * @private
-     * @param {Object} proto The object to inherit from.
-     * @returns {Object} Returns the new object.
-     */
-    var baseCreate = (function() {
-        function object() {}
-        return function(proto) {
-            if (!isObject(proto)) {
-                return {}
-            }
-            if (objectCreate) {
-                return objectCreate(proto)
-            }
-            object.prototype = proto
-            var result = new object()
-            object.prototype = undefined
-            return result
-        }
-    })()
+	/*------------------------------------------------------------------------*/
 
-    /**
-     * The base varructor for creating `datedash` wrapper objects.
-     *
-     * @private
-     * @param {*} value The value to wrap.
-     * @param {boolean} [chainAll] Enable explicit method chain sequences.
-     */
-    function DatedashWrapper(value, chainAll) {
-        return value instanceof DatedashWrapper ? value : new DatedashWrapper(value)
-    }
+	/**
+	 *
+	 * Computes input `date` converts to string and returns with specified `format`.
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Date
+	 * @param {date} Date `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. (Not sure if I put valid date string formats here)
+	 * @param {format} String `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
+	 * @returns {string} Returns the date as a String in specified format.
+	 * @example
+	 *
+	 * // If no value is given for both `date` and `format` defaults to now date (example was done on 03/06/19)
+	 * console.log(_d.date()) // => 03/06/2019
+	 *
+	 * // If no value is given for `format` defaults to now date formatted with the `/` option
+	 * console.log(date('Jan 7, 2019')) // => 01/07/2019
+	 *
+	 * // Formatting options
+	 * let any_date = 'Jan 7, 2019'
+	 * console.log(_d.date(any_date)) // => 01/07/2019
+	 * console.log(_d.date(any_date, '/')) // => 01/07/2019
+	 * console.log(_d.date(any_date, '-')) // => 01-07-2019
+	 * console.log(_d.date(any_date, '.')) // => 01.07.2019
+	 * console.log(_d.date(any_date, 'full')) // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
+	 * console.log(_d.date(any_date, 'MMM DD YYYY')) // => Jan 07 2019
+	 * console.log(_d.date(any_date, 'england')) // => 07 Jan 2019
+	 * console.log(_d.date(any_date, 'uk')) // => 07 Jan 2019
+	 * console.log(_d.date(any_date, 'foo')) // => 01/07/2019
+	 *
+	 * // Works with these valid date formats (example was done on 03/06/19)
+	 * console.log(_d.date()) // => 03/06/2019
+	 * console.log(_d.date(new Date())) // => 03/06/2019
+	 * console.log(_d.date(1551875334611)) // => 03/06/2019
+	 * console.log(_d.date(_.toString(new Date()))) // => 03/06/2019
+	 * console.log(_d.date('3/6/19')) // => 03/06/2019
+	 * console.log(_d.date('3-6-19')) // => 03/06/2019
+	 * console.log(_d.date('3.6.19')) // => 03/06/2019
+	 * console.log(_d.date('Mar 6 19')) // => 03/06/2019
+	 * console.log(_d.date('Mar 6, 19')) // => 03/06/2019
+	 * console.log(_d.date('Mar 6 2019')) // => 03/06/2019
+	 * console.log(_d.date('Mar 6, 2019')) // => 03/06/2019
+	 * console.log(_d.date('March 6 19')) // => 03/06/2019
+	 * console.log(_d.date('March 6, 2019')) // => 03/06/2019
+	 * console.log(_d.date('6 Mar 2019')) // => 03/06/2019
+	 * console.log(_d.date('6 March 2019')) // => 03/06/2019
+	 *
+	 * // Any date past, present or future
+	 * let past_date = 'Feb 14, 2019'
+	 * console.log(_d.date(past_date)) // => 02/14/2019
+	 * console.log(_d.date(past_date, '/')) // => 02/14/2019
+	 * console.log(_d.date(past_date, '-')) // => 02-14-2019
+	 * console.log(_d.date(past_date, '.')) // => 02.14.2019
+	 * console.log(_d.date(past_date, 'full')) // => Thu Feb 14 2019 00:00:00 GMT-0700 (Mountain Standard Time)
+	 * console.log(_d.date(past_date, 'MMM DD YYYY')) // => Feb 14 2019
+	 * console.log(_d.date(past_date, 'england')) // => 14 Feb 2019
+	 * console.log(_d.date(past_date, 'uk')) // => 14 Feb 2019
+	 *
+	 * // Any timestamp
+	 * let five_days_ms = 4.32e+8
+	 * let now_timestamp = _.now() // => 1551875334611
+	 * let future_timestamp = _.add(now_timestamp, five_days_ms)
+	 * let past_timestamp = _.subtract(now_timestamp, five_days_ms)
+	 * console.log(_d.date(now_timestamp)) // => 03/06/2019
+	 * console.log(_d.date(future_timestamp)) // => 03/11/2019
+	 * console.log(_d.date(past_timestamp)) // => 03/01/2019
+	 *
+	 * // Handles undefined or other for 2nd arg 'format'
+	 * console.log(_d.date(my_date, undefined)) // => 02/14/2019
+	 * console.log(_d.date(my_date, false)) // => 02/14/2019
+	 * console.log(_d.date(my_date, true)) // => 02/14/2019
+	 * console.log(_d.date(my_date, 'foo')) // => 02/14/2019
+	 * console.log(_d.date(my_date, 8)) // => 02/14/2019
+	 * console.log(_d.date(my_date, null)) // => 02/14/2019
+	 */
+	const date = require('./methods/date')
 
-    DatedashWrapper.prototype = baseCreate(datedash.prototype)
-    DatedashWrapper.prototype.varructor = DatedashWrapper
+	/**
+	 * Gets the timestamp of the number of milliseconds that have elapsed since
+	 * the Unix epoch (1 January 1970 00:00:00 UTC).
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Date
+	 * @returns {number} Returns the timestamp.
+	 * @example
+	 *
+	 * import { defer } from 'lodash'
+	 *
+	 * defer(function(stamp) {
+	 *   console.log(_d.now() - stamp)
+	 * }, _d.now())
+	 *
+	 * // => Logs milliseconds it took for the deferred invocation.
+	 */
+	const now = require('./methods/now')
 
-    /*------------------------------------------------------------------------*/
+	/*------------------------------------------------------------------------*/
 
-    // Core Methods
-	datedash.date = require('./methods/date')
-	datedash.isDate = require('./methods/isDate')
-    datedash.timestamp = require('./methods/timestamp')
-    datedash.getTimestamp = require('./methods/getTimestamp')
+	// Add methods that return unwrapped values in chain sequences.
+	lodash.date = date
+	lodash.now = now
 
-    // Math Methods
-    datedash.addDays = require('./methods/addDays')
-    datedash.subtractDays = require('./methods/subtractDays')
+	/*------------------------------------------------------------------------*/
 
-    /*--------------------------------------------------------------------------*/
+	/**
+	 * The semantic version number.
+	 *
+	 * @static
+	 * @memberOf _
+	 * @type {string}
+	 */
+	lodash.VERSION = VERSION
 
-    /**
-     * The semantic version number.
-     *
-     * @static
-     * @memberOf _d
-     * @type {string}
-     */
-    datedash.VERSION = VERSION
+	/*--------------------------------------------------------------------------*/
 
-    // Some AMD build optimizers, like r.js, check for condition patterns like:
-    if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
-        // Expose datedash on the global object to prevent errors when datedash is
-        // loaded by a script tag in the presence of an AMD loader.
-        // See http://requirejs.org/docs/errors.html#mismatch for more details.
-
-
-        // TODO:  Add `_d.noConflict`
-        // TODO:  Add to readme: Use `_d.noConflict` to remove datedash from the global object.
-        root._d = datedash
-
-        // Define as an anonymous module so, through path mapping, it can be
-        // referenced as the "underscore" module.
-        define(function() {
-            return datedash
-        })
-    }
-    // Check for `exports` after `define` in case a build optimizer adds it.
-    else if (freeModule) {
-        // Export for Node.js.
-        ;(freeModule.exports = datedash)._d = datedash
-        // Export for CommonJS support.
-        freeExports._d = datedash
-    } else {
-        // Export to the global object.
-        root._d = datedash
-    }
-}.call(this))
-/**
- * @license
- * Datedash <https://flavioespinoza.github.io/datedash/>
- * Released under MIT license <https://github.com/flavioespinoza/datedash/blob/master/LICENSE>
- * Based on Lodash by John-David Dalton, https://github.com/lodash/lodash
- * Based on Lodash.js 4.17.11 <https://raw.githubusercontent.com/lodash/lodash/4.17.11-npm/LICENSE>
- * Based on Lodash.js Copyright JS Foundation and other contributors <https://js.foundation/>
- */
-;(function() {
-    /** Used as a safe reference for `undefined` in pre-ES5 environments. */
-    var undefined
-
-    /** Used as the semantic version number. */
-
-    var __package = require('./package.json')
-
-    var VERSION = __package.version
-
-    /** Detect free variable `global` from Node.js. */
-    var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
-
-    /** Detect free variable `self`. */
-    var freeSelf = typeof self == 'object' && self && self.Object === Object && self
-
-    /** Used as a reference to the global object. */
-    var root = freeGlobal || freeSelf || Function('return this')()
-
-    /** Detect free variable `exports`. */
-    var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
-
-    /** Detect free variable `module`. */
-    var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
-
-    /**
-     * Checks if `value` is the
-     * [language type](http://www.ecma-international.org/ecma-262/7.0/#sec-ecmascript-language-types)
-     * of `Object`. (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
-     *
-     * @private
-     * @param {*} value The value to check.
-     * @returns {boolean} Returns `true` if `value` is an object, else `false`.
-     */
-    function isObject(value) {
-        var type = typeof value
-        return value != null && (type == 'object' || type == 'function')
-    }
-
-    /** Built-in value references. */
-    var objectCreate = Object.create
-
-    /*------------------------------------------------------------------------*/
-
-    /**
-     * Creates a `datedash` object which
-     *
-     * @name _d
-     * @varructor
-     * @category Seq
-     * @param {*} value The value to wrap in a `datedash` instance.
-     * @returns {Object} Returns the new `datedash` wrapper instance.
-     * @example
-     *
-     */
-    function datedash(value) {
-        return value instanceof DatedashWrapper ? value : new DatedashWrapper(value)
-    }
-
-    /**
-     * The base implementation of `_.create` without support for assigning
-     * properties to the created object.
-     *
-     * @private
-     * @param {Object} proto The object to inherit from.
-     * @returns {Object} Returns the new object.
-     */
-    var baseCreate = (function() {
-        function object() {}
-        return function(proto) {
-            if (!isObject(proto)) {
-                return {}
-            }
-            if (objectCreate) {
-                return objectCreate(proto)
-            }
-            object.prototype = proto
-            var result = new object()
-            object.prototype = undefined
-            return result
-        }
-    })()
-
-    /**
-     * The base varructor for creating `datedash` wrapper objects.
-     *
-     * @private
-     * @param {*} value The value to wrap.
-     * @param {boolean} [chainAll] Enable explicit method chain sequences.
-     */
-    function DatedashWrapper(value, chainAll) {
-        return value instanceof DatedashWrapper ? value : new DatedashWrapper(value)
-    }
-
-    DatedashWrapper.prototype = baseCreate(datedash.prototype)
-    DatedashWrapper.prototype.varructor = DatedashWrapper
-
-    /*------------------------------------------------------------------------*/
-
-    // Core Methods
-	datedash.date = require('./methods/date')
-	datedash.isDate = require('./methods/isDate')
-    datedash.timestamp = require('./methods/timestamp')
-    datedash.getTimestamp = require('./methods/getTimestamp')
-
-    // Math Methods
-    datedash.addDays = require('./methods/addDays')
-    datedash.subtractDays = require('./methods/subtractDays')
-
-    /*--------------------------------------------------------------------------*/
-
-    /**
-     * The semantic version number.
-     *
-     * @static
-     * @memberOf _d
-     * @type {string}
-     */
-    datedash.VERSION = VERSION
-
-    // Some AMD build optimizers, like r.js, check for condition patterns like:
-    if (typeof define == 'function' && typeof define.amd == 'object' && define.amd) {
-        // Expose datedash on the global object to prevent errors when datedash is
-        // loaded by a script tag in the presence of an AMD loader.
-        // See http://requirejs.org/docs/errors.html#mismatch for more details.
-
-
-        // TODO:  Add `_d.noConflict`
-        // TODO:  Add to readme: Use `_d.noConflict` to remove datedash from the global object.
-        root._d = datedash
-
-        // Define as an anonymous module so, through path mapping, it can be
-        // referenced as the "underscore" module.
-        define(function() {
-            return datedash
-        })
-    }
-    // Check for `exports` after `define` in case a build optimizer adds it.
-    else if (freeModule) {
-        // Export for Node.js.
-        ;(freeModule.exports = datedash)._d = datedash
-        // Export for CommonJS support.
-        freeExports._d = datedash
-    } else {
-        // Export to the global object.
-        root._d = datedash
-    }
+	if (freeModule) {
+		// Export for Node.js.
+		;(freeModule.exports = lodash)._d = lodash
+		// Export for CommonJS support.
+		freeExports._d = lodash
+	} else {
+		// Export to the global object.
+		root._d = lodash
+	}
 }.call(this))

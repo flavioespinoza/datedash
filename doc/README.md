@@ -34,8 +34,8 @@
 
 <!-- div -->
 
-<h3 id="_d-date"><a href="#_d-date" class="fa fa-link"></a><code>_d.date(Date, String)</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/date.js#L132" class="md-link">https://github.com/flavioespinoza/datedash/blob/master/methods/date.js#L132</a> https://github.com/flavioespinoza/datedash/blob/master/methods/date.js
+<h3 id="_d-date"><code>_d.date(Date, String)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/date.js">date.js</a>
 
 Computes input `date` converts to string and returns with specified `format`.
 
@@ -120,8 +120,8 @@ console.log(_d.date(my_date, null)) // => 02/14/2019
 
 <!-- div -->
 
-<h3 id="_d-now"><a href="#_d-now" class="fa fa-link"></a><code>_d.now()</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/now.js#L153" class="md-link">https://github.com/flavioespinoza/datedash/blob/master/methods/now.js#L153</a> https://github.com/flavioespinoza/datedash/blob/master/methods/now.js
+<h3 id="_d-now"><code>_d.now()</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/now.js">now.js</a>
 
 Gets the timestamp of the number of milliseconds that have elapsed since
 the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
@@ -154,8 +154,8 @@ defer(function(stamp) {
 
 <!-- div -->
 
-<h3 id="_d"><a href="#_d" class="fa fa-link"></a><code>_d(value)</code></h3>
-<a href="#L50" class="md-link">#L50</a>
+<h3 id="_d"><code>_d(value)</code></h3>
+<a href=""></a>
 
 
 
@@ -177,8 +177,8 @@ defer(function(stamp) {
 
 <!-- div -->
 
-<h3 id="VERSION"><a href="#VERSION" class="fa fa-link"></a><code>_.VERSION</code></h3>
-<a href="#L172" class="md-link">#L172</a>
+<h3 id="VERSION"><code>_.VERSION</code></h3>
+<a href=""></a>
 
 (string): The semantic version number.
 
