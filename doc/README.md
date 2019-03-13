@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.31</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.33</span>
 
 <!-- div class="toc-container" -->
 
@@ -99,6 +99,9 @@ _d.getTimestamp()
 
 _d.getTimestamp('11/4/1973')
 // => 121244400000
+
+_d.getTimestamp('July 4, 1776')
+// => -6106035604000
 ```
 ---
 
@@ -186,13 +189,18 @@ defer(function(stamp) {
 
 <!-- div -->
 
-<h3 id="_d-addDays"><code>_d.addDays</code></h3>
+<h3 id="_d-addDays"><code>_d.addDays(Date, days, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addDays.js">addDays.js</a>
 
 Input `_date` add `nDays` with `format`
 
 #### Since
 1.0.0
+
+#### Arguments
+1. `Date` *(date)*:
+2. `days` *(number)*: to add
+3. `format` *(string)*:
 
 #### Example
 ```js
@@ -213,13 +221,18 @@ _d.addDays(any_date, 3, 'uk')
 
 <!-- div -->
 
-<h3 id="_d-subtractDays"><code>_d.subtractDays</code></h3>
+<h3 id="_d-subtractDays"><code>_d.subtractDays(Date, days, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractDays.js">subtractDays.js</a>
 
 Input `_date` subtract `nDays` with `format`
 
 #### Since
 1.0.0
+
+#### Arguments
+1. `Date` *(date)*:
+2. `days` *(number)*: to subtract
+3. `format` *(string)*:
 
 #### Example
 ```js

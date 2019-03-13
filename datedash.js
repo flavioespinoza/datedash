@@ -47,12 +47,6 @@
 	 * @param {*} value The value to wrap in a `datedash` instance.
 	 * @returns {Object} Returns the new `datedash` wrapper instance.
 	 */
-
-	 //TODO: Change name to datedash
-	 //TODO: Change name to datedash
-	 //TODO: Change name to datedash
-	 //TODO: Change name to datedash
-
 	function datedash() {
 		// No operation performed.
 	}
@@ -137,6 +131,9 @@
 	 *
 	 * _d.getTimestamp('11/4/1973')
 	 * // => 121244400000
+	 *
+	 * _d.getTimestamp('July 4, 1776')
+	 * // => -6106035604000
 	 */
 	const getTimestamp = require('./methods/getTimestamp')
 
@@ -184,6 +181,9 @@
 	 * @memberOf _d
 	 * @since 1.0.0
 	 * @category Math
+	 * @param {date} Date
+	 * @param {number} days to add
+	 * @param {string} format
 	 * @example
 	 *
 	 * const any_date = '3/6/19'
@@ -206,6 +206,9 @@
 	 * @memberOf _d
 	 * @since 1.0.0
 	 * @category Math
+	 * @param {date} Date
+	 * @param {number} days to subtract
+	 * @param {string} format
 	 * @example
 	 *
 	 * const any_date = '3/6/19'
