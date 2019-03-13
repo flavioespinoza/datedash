@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.36</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.35</span>
 
 <!-- div class="toc-container" -->
 
@@ -17,13 +17,6 @@
 ## `Math`
 * <a href="#_d-addDays">`_d.addDays`</a>
 * <a href="#_d-subtractDays">`_d.subtractDays`</a>
-
-<!-- /div -->
-
-<!-- div -->
-
-## `Methods`
-* <a href="#_d-arrayIncludes">`_d.arrayIncludes`</a>
 
 <!-- /div -->
 
@@ -255,34 +248,6 @@ _d.subtractDays(any_date, 2, '.')
 _d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
 ```
----
-
-<!-- /div -->
-
-<!-- /div -->
-
-<!-- div -->
-
-## `Methods`
-
-<!-- div -->
-
-<h3 id="_d-arrayIncludes"><code>_d.arrayIncludes([array], target)</code></h3>
-<a href=""></a>
-
-A specialized version of `_.includes` for arrays without support for
-specifying an index to search from.
-
-#### Since
-1.0.0
-
-#### Arguments
-1. `[array]` *(Array)*: The array to inspect.
-2. `target` *(&#42;)*: The value to search for.
-
-#### Returns
-*(boolean)*: Returns `true` if `target` is found, else `false`.
-
 ---
 
 <!-- /div -->
