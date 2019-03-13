@@ -308,7 +308,7 @@ font-weight: bold;
   </head>
   <body for="html-export">
 	<div class="mume markdown-preview   ">
-	<h1 class="mume-header" id="a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1031span"><a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.31</span></h1>
+	<h1 class="mume-header" id="a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1033span"><a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.33</span></h1>
 
 <h2 class="mume-header" id="date"><code>Date</code></h2>
 
@@ -389,6 +389,9 @@ the Unix epoch <em>(1 January <code>1970 00</code>:00:00 UTC)</em>.</p>
 
 _d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;11/4/1973&apos;</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; 121244400000</span>
+
+_d<span class="token punctuation">.</span><span class="token function">getTimestamp</span><span class="token punctuation">(</span><span class="token string">&apos;July 4, 1776&apos;</span><span class="token punctuation">)</span>
+<span class="token comment">// =&gt; -6106035604000</span>
 </pre><hr>
 <h3 id="_d-isDate"><code>_d.isDate(value)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/isDate.js">isDate.js</a>
@@ -452,12 +455,19 @@ console<span class="token punctuation">.</span><span class="token function">log<
 </pre><hr>
 <h2 class="mume-header" id="math-methods"><code>&#x201C;Math&#x201D; Methods</code></h2>
 
-<h3 id="_d-addDays"><code>_d.addDays</code></h3>
+<h3 id="_d-addDays"><code>_d.addDays(Date, days, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addDays.js">addDays.js</a>
 <p>Input <code>_date</code> add <code>nDays</code> with <code>format</code></p>
 <h4 class="mume-header" id="since-4">Since</h4>
 
 <p>1.0.0</p>
+<h4 class="mume-header" id="arguments-3">Arguments</h4>
+
+<ol>
+<li><code>Date</code> <em>(date)</em>:</li>
+<li><code>days</code> <em>(number)</em>: to add</li>
+<li><code>format</code> <em>(string)</em>:</li>
+</ol>
 <h4 class="mume-header" id="example-4">Example</h4>
 
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> any_date <span class="token operator">=</span> <span class="token string">&apos;3/6/19&apos;</span>
@@ -471,12 +481,19 @@ _d<span class="token punctuation">.</span><span class="token function">addDays</
 _d<span class="token punctuation">.</span><span class="token function">addDays</span><span class="token punctuation">(</span>any_date<span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token string">&apos;uk&apos;</span><span class="token punctuation">)</span>
 <span class="token comment">// =&gt; 09 Mar 2019</span>
 </pre><hr>
-<h3 id="_d-subtractDays"><code>_d.subtractDays</code></h3>
+<h3 id="_d-subtractDays"><code>_d.subtractDays(Date, days, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractDays.js">subtractDays.js</a>
 <p>Input <code>_date</code> subtract <code>nDays</code> with <code>format</code></p>
 <h4 class="mume-header" id="since-5">Since</h4>
 
 <p>1.0.0</p>
+<h4 class="mume-header" id="arguments-4">Arguments</h4>
+
+<ol>
+<li><code>Date</code> <em>(date)</em>:</li>
+<li><code>days</code> <em>(number)</em>: to subtract</li>
+<li><code>format</code> <em>(string)</em>:</li>
+</ol>
 <h4 class="mume-header" id="example-5">Example</h4>
 
 <pre data-role="codeBlock" data-info="js" class="language-javascript"><span class="token keyword">const</span> any_date <span class="token operator">=</span> <span class="token string">&apos;3/6/19&apos;</span>
@@ -493,7 +510,7 @@ _d<span class="token punctuation">.</span><span class="token function">subtractD
 
 	</div>
 	<div class="md-sidebar-toc"><ul>
-<li><a href="#a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1031span">datedash v1.0.31</a>
+<li><a href="#a-hrefhttpsgithubcomflavioespinozadatedashdatedasha-spanv1033span">datedash v1.0.33</a>
 <ul>
 <li><a href="#date"><code>Date</code></a></li>
 <li><a href="#math"><code>Math</code></a></li>
@@ -515,8 +532,10 @@ _d<span class="token punctuation">.</span><span class="token function">subtractD
 * <a href="#example-3">Example</a></li>
 <li><a href="#math-methods"><code>&#x201C;Math&#x201D; Methods</code></a><br>
 * <a href="#since-4">Since</a><br>
+* <a href="#arguments-3">Arguments</a><br>
 * <a href="#example-4">Example</a><br>
 * <a href="#since-5">Since</a><br>
+* <a href="#arguments-4">Arguments</a><br>
 * <a href="#example-5">Example</a></li>
 </ul>
 </li>
