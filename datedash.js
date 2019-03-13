@@ -128,8 +128,11 @@
 	 * @returns {number} Returns the timestamp .
 	 * @example
 	 *
-	 * console.log(_d.getTimestamp()) // => 1552353178563
-	 * console.log(_d.getTimestamp('11/4/1973')) // => 121244400000
+	 * _d.getTimestamp()
+	 * // => 1552353178563
+	 *
+	 * _d.getTimestamp('11/4/1973')
+	 * // => 121244400000
 	 */
 	const getTimestamp = require('./methods/getTimestamp')
 
@@ -209,7 +212,7 @@
 	 * _d.subtractDays(any_date, 2, '.')
 	 * // => 03.04.2019
 	 *
-	 * subtractDays(any_date, 3, 'uk')
+	 * _d.subtractDays(any_date, 3, 'uk')
 	 * // => 03 Mar 2019
 	 */
 	const subtractDays = require('./methods/subtractDays')

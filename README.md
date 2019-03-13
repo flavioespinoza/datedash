@@ -1,6 +1,9 @@
 # datedash
 lodash inspired `Date` formatting methods.
 
+## Docs
+[datedash/docs](https://flavioespinoza.github.io/datedash/)
+
 ## Install
 
 yarn
