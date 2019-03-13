@@ -4,7 +4,9 @@
   "description": "lodash inspired date formatting and math methods.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -r esm test/*.test.js"
+	"test": "mocha -r esm test/*.test.js",
+	"doc": "node lib/main/build-doc site",
+	"docg": "node lib/main/build-doc github"
   },
   "repository": {
     "type": "git",
