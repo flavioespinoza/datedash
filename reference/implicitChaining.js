@@ -85,6 +85,6 @@ const result_obj = [
 		departure: '5/22/19',
 		customer: 'Patrick Star',
 		hotel: 'Hilton NYC',
-		info: { _key: '2', _val: 22, _idx: 1 }
+		meta: { _key: '2', _val: 22, _idx: 1 }
 	}
 ]

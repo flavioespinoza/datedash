@@ -1,13 +1,54 @@
 const _ = require('lodash')
+/**
+ * Verifies if `value` is a valid `Date object` and valid `Date`.
+ *
+ * @static
+ * @memberOf _d
+ * @since 1.0.0
+ * @category Date
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a `Date object` & valid `Date`, else `false`.
+ * @example
+ *
+ * isDate(new Date())
+ * // => true
+ *
+ * isDate('Jul 4, 1776')
+ * // => true
+ *
+ * isDate('3/3/19')
+ * // => true
+ *
+ * isDate(25200000)
+ * // => true
+ *
+ * isDate('3/33/19')
+ * // => false
+ *
+ * function getDate() {
+ *     return '1/1/19'
+ * }
+ * isDate(getDate)
+ * // => false
+ *
+ * isDate(getDate())
+ * // => true
+ */
+function isDate(value) {
+    if (!value || !_.isDate(new Date(value))) {
+        return false
+    }
+    if (value && typeof value === 'boolean') {
+        return false
+    }
+    if (typeof value === 'number') {
+        const _timestamp = new Date(value).getTime()
+        const _epochTimestamp = 25200000
+        if (_timestamp < _epochTimestamp && _timestamp > 0) {
+            return false
+        }
+    }
+	return (_.toString(new Date(value)) !== 'Invalid Date')
+}
 
-let invalid_date = new Date('5/33/19')
-let x = JSON.stringify(invalid_date)
-console.log(typeof x)
-console.log(invalid_date) // typeof object => Invalid Date
-console.log(JSON.stringify(invalid_date)) // => null
-console.log(_.isDate(invalid_date)) // => true
-
-let valid_date = new Date('5/3/19')
-console.log(valid_date) // => Fri May 03 2019 00:00:00 GMT-0600 (Mountain Daylight Time)
-console.log(JSON.stringify(valid_date)) // => "2019-05-03T06:00:00.000Z"
-console.log(_.isDate(valid_date)) // true
+module.exports = isDate

@@ -106,7 +106,8 @@
     /*------------------------------------------------------------------------*/
 
     // Core Methods
-    datedash.date = require('./methods/date')
+	datedash.date = require('./methods/date')
+	datedash.isDate = require('./methods/isDate')
     datedash.timestamp = require('./methods/timestamp')
     datedash.getTimestamp = require('./methods/getTimestamp')
 
