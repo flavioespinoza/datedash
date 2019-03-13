@@ -64,72 +64,33 @@
 	 * @since 1.0.0
 	 * @category Date
 	 * @param {date} Date `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. (Not sure if I put valid date string formats here)
-	 * @param {format} String `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
+	 * @param {string} format `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
 	 * @returns {string} Returns the date as a String in specified format.
 	 * @example
 	 *
-	 * // If no value is given for both `date` and `format` defaults to now date (example was done on 03/06/19)
-	 * console.log(_d.date()) // => 03/06/2019
-	 *
-	 * // If no value is given for `format` defaults to now date formatted with the `/` option
-	 * console.log(date('Jan 7, 2019')) // => 01/07/2019
-	 *
-	 * // Formatting options
 	 * let any_date = 'Jan 7, 2019'
-	 * console.log(_d.date(any_date)) // => 01/07/2019
-	 * console.log(_d.date(any_date, '/')) // => 01/07/2019
-	 * console.log(_d.date(any_date, '-')) // => 01-07-2019
-	 * console.log(_d.date(any_date, '.')) // => 01.07.2019
-	 * console.log(_d.date(any_date, 'full')) // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
-	 * console.log(_d.date(any_date, 'MMM DD YYYY')) // => Jan 07 2019
-	 * console.log(_d.date(any_date, 'england')) // => 07 Jan 2019
-	 * console.log(_d.date(any_date, 'uk')) // => 07 Jan 2019
-	 * console.log(_d.date(any_date, 'foo')) // => 01/07/2019
 	 *
-	 * // Works with these valid date formats (example was done on 03/06/19)
-	 * console.log(_d.date()) // => 03/06/2019
-	 * console.log(_d.date(new Date())) // => 03/06/2019
-	 * console.log(_d.date(1551875334611)) // => 03/06/2019
-	 * console.log(_d.date(_.toString(new Date()))) // => 03/06/2019
-	 * console.log(_d.date('3/6/19')) // => 03/06/2019
-	 * console.log(_d.date('3-6-19')) // => 03/06/2019
-	 * console.log(_d.date('3.6.19')) // => 03/06/2019
-	 * console.log(_d.date('Mar 6 19')) // => 03/06/2019
-	 * console.log(_d.date('Mar 6, 19')) // => 03/06/2019
-	 * console.log(_d.date('Mar 6 2019')) // => 03/06/2019
-	 * console.log(_d.date('Mar 6, 2019')) // => 03/06/2019
-	 * console.log(_d.date('March 6 19')) // => 03/06/2019
-	 * console.log(_d.date('March 6, 2019')) // => 03/06/2019
-	 * console.log(_d.date('6 Mar 2019')) // => 03/06/2019
-	 * console.log(_d.date('6 March 2019')) // => 03/06/2019
+	 * _d.date(any_date, '/')
+	 * // => 01/07/2019
 	 *
-	 * // Any date past, present or future
-	 * let past_date = 'Feb 14, 2019'
-	 * console.log(_d.date(past_date)) // => 02/14/2019
-	 * console.log(_d.date(past_date, '/')) // => 02/14/2019
-	 * console.log(_d.date(past_date, '-')) // => 02-14-2019
-	 * console.log(_d.date(past_date, '.')) // => 02.14.2019
-	 * console.log(_d.date(past_date, 'full')) // => Thu Feb 14 2019 00:00:00 GMT-0700 (Mountain Standard Time)
-	 * console.log(_d.date(past_date, 'MMM DD YYYY')) // => Feb 14 2019
-	 * console.log(_d.date(past_date, 'england')) // => 14 Feb 2019
-	 * console.log(_d.date(past_date, 'uk')) // => 14 Feb 2019
+	 * _d.date(any_date, '-')
+	 * // => 01-07-2019
 	 *
-	 * // Any timestamp
-	 * let five_days_ms = 4.32e+8
-	 * let now_timestamp = _.now() // => 1551875334611
-	 * let future_timestamp = _.add(now_timestamp, five_days_ms)
-	 * let past_timestamp = _.subtract(now_timestamp, five_days_ms)
-	 * console.log(_d.date(now_timestamp)) // => 03/06/2019
-	 * console.log(_d.date(future_timestamp)) // => 03/11/2019
-	 * console.log(_d.date(past_timestamp)) // => 03/01/2019
+	 * _d.date(any_date, '.')
+	 * // => 01.07.2019
 	 *
-	 * // Handles undefined or other for 2nd arg 'format'
-	 * console.log(_d.date(my_date, undefined)) // => 02/14/2019
-	 * console.log(_d.date(my_date, false)) // => 02/14/2019
-	 * console.log(_d.date(my_date, true)) // => 02/14/2019
-	 * console.log(_d.date(my_date, 'foo')) // => 02/14/2019
-	 * console.log(_d.date(my_date, 8)) // => 02/14/2019
-	 * console.log(_d.date(my_date, null)) // => 02/14/2019
+	 * _d.date(any_date, 'MMM DD YYYY')
+	 * // => Jan 07 2019
+	 *
+	 * _d.date(any_date, 'england')
+	 * // => 07 Jan 2019
+	 *
+	 * _d.date(any_date, 'uk')
+	 * // => 07 Jan 2019
+	 *
+	 * _d.date(any_date, 'full')
+	 * // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
+	 *
 	 */
 	const date = require('./methods/date')
 
@@ -154,11 +115,113 @@
 	 */
 	const now = require('./methods/now')
 
+	/**
+	 * Gets the timestamp of the number of milliseconds that have elapsed since
+	 * `date` argument. If `date` is `undefined` it gives milliseconds elapsed since
+	 * the Unix epoch (1 January 1970 00:00:00 UTC).
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Date
+	 * @param {date} Date to convert to timestamp .
+	 * @returns {number} Returns the timestamp .
+	 * @example
+	 *
+	 * console.log(_d.getTimestamp()) // => 1552353178563
+	 * console.log(_d.getTimestamp('11/4/1973')) // => 121244400000
+	 */
+	const getTimestamp = require('./methods/getTimestamp')
+
+	/**
+	 * Verifies if `value` is a valid `Date object` and valid `Date`.
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Date
+	 * @param {*} value The value to check.
+	 * @returns {boolean} Returns `true` if `value` is a `Date object` & valid `Date`, else `false`.
+	 * @example
+	 *
+	 * _d.isDate(new Date())
+	 * // => true
+	 *
+	 * _d.isDate('Jul 4, 1776')
+	 * // => true
+	 *
+	 * _d.isDate('3/3/19')
+	 * // => true
+	 *
+	 * _d.isDate(25200000)
+	 * // => true
+	 *
+	 * _d.isDate('3/33/19')
+	 * // => false
+	 *
+	 * function getDate() {
+	 *     return '1/1/19'
+	 * }
+	 * _d.isDate(getDate)
+	 * // => false
+	 *
+	 * _d.isDate(getDate())
+	 * // => true
+	 */
+	const isDate = require('./methods/isDate')
+
+	/**
+	 * Input `_date` add `nDays` with `format`
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Math
+	 * @example
+	 *
+	 * const any_date = '3/6/19'
+	 *
+	 * _d.addDays(any_date, 1, '-')
+	 * // => 03-07-2019
+	 *
+	 * _d.addDays(any_date, 2, '.')
+	 * // => 03.08.2019
+	 *
+	 * _d.addDays(any_date, 3, 'uk')
+	 * // => 09 Mar 2019
+	 */
+	const addDays = require('./methods/addDays')
+
+	/**
+	 * Input `_date` subtract `nDays` with `format`
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Math
+	 * @example
+	 *
+	 * const any_date = '3/6/19'
+	 *
+	 * _d.subtractDays(any_date, 1, '-')
+	 * // => 03-05-2019
+	 *
+	 * _d.subtractDays(any_date, 2, '.')
+	 * // => 03.04.2019
+	 *
+	 * subtractDays(any_date, 3, 'uk')
+	 * // => 03 Mar 2019
+	 */
+	const subtractDays = require('./methods/subtractDays')
+
 	/*------------------------------------------------------------------------*/
 
 	// Add methods that return unwrapped values in chain sequences.
 	lodash.date = date
 	lodash.now = now
+	lodash.getTimestamp = getTimestamp
+	lodash.isDate = isDate
+	lodash.subtractDays = subtractDays
 
 	/*------------------------------------------------------------------------*/
 

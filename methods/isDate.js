@@ -1,39 +1,5 @@
 const _ = require('lodash')
-/**
- * Verifies if `value` is a valid `Date object` and valid `Date`.
- *
- * @static
- * @memberOf _d
- * @since 1.0.0
- * @category Date
- * @param {*} value The value to check.
- * @returns {boolean} Returns `true` if `value` is a `Date object` & valid `Date`, else `false`.
- * @example
- *
- * _d.isDate(new Date())
- * // => true
- *
- * _d.isDate('Jul 4, 1776')
- * // => true
- *
- * _d.isDate('3/3/19')
- * // => true
- *
- * _d.isDate(25200000)
- * // => true
- *
- * _d.isDate('3/33/19')
- * // => false
- *
- * function getDate() {
- *     return '1/1/19'
- * }
- * _d.isDate(getDate)
- * // => false
- *
- * _d.isDate(getDate())
- * // => true
- */
+
 function isDate(value) {
     if (!value || !_.isDate(new Date(value))) {
         return false
