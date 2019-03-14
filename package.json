@@ -63,5 +63,7 @@
     "uuid": "^3.3.2",
     "webpack": "^1.14.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "cryptiles": "^4.1.3"
+  }
 }
