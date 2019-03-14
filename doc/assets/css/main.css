@@ -889,5 +889,5 @@ html.custom-builds li .highlight {
 }
 
 h3 {
-	margin-bottom: 24px;
+	margin-bottom: 24px !important;
 }
