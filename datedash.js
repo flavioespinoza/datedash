@@ -225,6 +225,37 @@
 	 */
 	const subtractDays = require('./methods/subtractDays')
 
+
+		/**
+	 * Input `_date` subtract `nDays` with `format`
+	 *
+	 * @static
+	 * @memberOf _d
+	 * @since 1.0.0
+	 * @category Math
+	 * @param {Date} Date
+	 * @param {number} days to subtract
+	 * @param {string} format
+	 * @example
+	 *
+	 * import _d, { addDays, subtractDays } from 'datedash'
+	 *
+	 * _d.date('Mar 14, 2019', '/')
+	 * // => 3/14/2019
+	 *
+	 * addDays('Mar 14, 2019', 1, '-')
+	 * // => 03-14-2019
+	 *
+	 * subtractDays('Mar 14, 2019', 1, '-')
+	 * // => 03-14-2019
+	 *
+	 */
+	const install = () => {
+			return 'install'
+	}
+
+
+
 	/*------------------------------------------------------------------------*/
 
 	// Date
@@ -235,7 +266,6 @@
 
 	// Math
 	datedash.subtractDays = subtractDays
-	datedash.arrayIncludes = arrayIncludes
 
 	/*------------------------------------------------------------------------*/
 
