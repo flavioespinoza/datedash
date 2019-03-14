@@ -61,8 +61,8 @@
 	 * @memberOf _d
 	 * @since 1.0.0
 	 * @category Date
-	 * @param {date} date `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. (Not sure if I put valid date string formats here)
-	 * @param {string} format `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
+	 * @param {date} Date options are `new Date()`, `timestamp` or `string` in valid date format. See example below.
+	 * @param {string} format
 	 * @returns {string} Returns the date as a String in specified format.
 	 * @example
 	 *
@@ -122,8 +122,8 @@
 	 * @memberOf _d
 	 * @since 1.0.0
 	 * @category Date
-	 * @param {date} Date to convert to timestamp .
-	 * @returns {number} Returns the timestamp .
+	 * @param {date} Date to convert to timestamp.
+	 * @returns {number} Returns the timestamp.
 	 * @example
 	 *
 	 * _d.getTimestamp()
@@ -227,11 +227,13 @@
 
 	/*------------------------------------------------------------------------*/
 
-	// Add methods that return unwrapped values in chain sequences.
+	// Date
 	datedash.date = date
 	datedash.now = now
 	datedash.getTimestamp = getTimestamp
 	datedash.isDate = isDate
+
+	// Math
 	datedash.subtractDays = subtractDays
 	datedash.arrayIncludes = arrayIncludes
 

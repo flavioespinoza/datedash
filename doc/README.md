@@ -30,7 +30,7 @@
 
 <!-- div -->
 
-<h3 id="_d-date"><code>_d.date(date, format)</code></h3>
+<h3 id="_d-date"><code>_d.date(Date, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/date.js">date.js</a>
 
 Computes input `date` converts to string and returns with specified `format`.
@@ -39,8 +39,8 @@ Computes input `date` converts to string and returns with specified `format`.
 1.0.0
 
 #### Arguments
-1. `date` *(date): `date` options are `new Date()`, `timestamp` or `string` in valid date format. See example below. &#42;(Not sure if I put valid date string formats here)*&#42;
-2. `format` *(string)*: `format` options `/`, `-`, `.`, `full`, `MMM DD YYYY`, `england`, `uk`
+1. `Date` *(date)*: options are `new Date()`, `timestamp` or `string` in valid date format. See example below.
+2. `format` *(string)*:
 
 #### Returns
 *(string)*: Returns the date as a String in specified format.
@@ -69,6 +69,8 @@ _d.date(any_date, 'uk')
 
 _d.date(any_date, 'full')
 // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
+
+*
 ```
 ---
 
@@ -87,10 +89,10 @@ the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
 1.0.0
 
 #### Arguments
-1. `Date` *(date)*: to convert to timestamp .
+1. `Date` *(date)*: to convert to timestamp.
 
 #### Returns
-*(number)*: Returns the timestamp .
+*(number)*: Returns the timestamp.
 
 #### Example
 ```js
@@ -103,6 +105,7 @@ _d.getTimestamp('11/4/1973')
 
 _d.getTimestamp('July 4, 1776')
 // => -6106035604000
+*
 ```
 ---
 
@@ -149,6 +152,7 @@ _d.isDate(getDate)
 
 _d.isDate(getDate())
 // => true
+*
 ```
 ---
 
@@ -177,6 +181,7 @@ defer(function(stamp) {
 }, _d.now())
 
 // => Logs milliseconds it took for the deferred invocation.
+*
 ```
 ---
 
@@ -215,6 +220,7 @@ _d.addDays(any_date, 2, '.')
 
 _d.addDays(any_date, 3, 'uk')
 // => 09 Mar 2019
+*
 ```
 ---
 
@@ -247,6 +253,7 @@ _d.subtractDays(any_date, 2, '.')
 
 _d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
+*
 ```
 ---
 
