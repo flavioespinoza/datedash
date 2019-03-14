@@ -1,0 +1,61 @@
+<!doctype html>
+<html class=home lang=en>
+<meta charset=utf-8>
+<meta content="A JavaScript Date utility library boiled down to the essentials. Inspired by Lodash." name=description>
+<meta content=#3492ff name=theme-color>
+<meta content="width=device-width,initial-scale=1" name=viewport>
+<title>datedash</title>
+<link href=/icons/apple-touch-180x180.png rel=apple-touch-icon sizes=180x180>
+<link href=https://github.com/lodash/lodash/commits/master.atom rel=feed type=application/atom+xml>
+<link href=/icons/favicon-32x32.png rel=icon sizes=32x32 type=image/png>
+<link href="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQAQMAAAAlPW0iAAAABlBMVEVMaXExk//ImxjuAAAAAXRSTlMAQObYZgAAAA9JREFUeAFjIBLU/2MC0wALJgGAaiAmLQAAAABJRU5ErkJggg==" rel=icon sizes=16x16 type=image/png>
+<link href=/manifest.webmanifest rel=manifest>
+<link href=/icons/safari-pinned-tab-16x16.svg rel=mask-icon color=#3492ff>
+<link href=/docs/1.0.39 rel=prerender pr=1.0>
+<link href=/assets/css/main.css rel=stylesheet>
+<noscript>
+    <link href=https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css rel=stylesheet crossorigin integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN>
+</noscript>
+<script async src=/assets/js/boot.js></script>
+
+<body class=layout-default>
+    <header>
+        <div class=container>
+            <div class="header-section logo-section">
+                <div class=logo><a href=/ title=Datedash>Datedash</a></div>
+                <div class=header-group>
+                    <h1>Datedash</h1>
+                    <h2>A JavaScript Date utility library boiled down to the essentials. Inspired by Lodash.</h2></div>
+            </div>
+            <div class=header-section><a href=/docs/ class="btn primary">Documentation</a></div>
+        </div>
+    </header>
+    <div class="container main">
+        <section>
+            <div>
+                <div class="highlight js"><pre><div><span class=type>let</span> any_date = <span class=string>'Jan 7, 2019'</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 01/07/2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 01-07-2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'.'</span>)</div><div><span class=comment>// => 01.07.2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'MMM DD YYYY'</span>)</div><div><span class=comment>// => Jan 07 2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'england'</span>)</div><div><span class=comment>// => 07 Jan 2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'uk'</span>)</div><div><span class=comment>// => 07 Jan 2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(any_date<span class=delimiter>,</span> <span class=string>'full'</span>)</div><div><span class=comment>// => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)</span></div><div> </div><div>*</div></pre></div>
+            </div>
+        </section>
+        <section>
+            <h2>Installation Balls</h2>
+            <h2>Installation Balls</h2>
+            <h2>Installation Balls</h2>
+            <h2>Installation Balls</h2>
+            <div class="highlight js"><pre><div><span class=comment>// Using yarn</span></div><div>yarn add datedash</div><div> </div><div><span class=comment>// Using npm</span></div><div>npm i datedash</div></pre></div>
+        </section>
+        <section>
+            <h2>Import ES6 Modules using <span><a href=https://github.com/standard-things/esm target=_blank>esm </a></span>or TypeScript</h2>
+            <div class="highlight js"><pre><div>import _d<span class=delimiter>,</span> { addDays<span class=delimiter>,</span> subtractDays } from <span class=string>'datedash'</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 3/14/2019</span></div><div> </div><div><span class=name>addDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div><div> </div><div><span class=name>subtractDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div></pre></div>
+        </section>
+        <section>
+            <h2>Require</h2>
+            <div class="highlight js"><pre><div><span class=modifier>const</span> _d = <span class=support>require</span>(<span class=string>'datedash'</span>)</div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 3/14/2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>addDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>subtractDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div></pre></div>
+        </section>
+        <section>
+            <h2>Support</h2>
+            <p><span class=rwd-line>Tested in Chrome 65-66, Firefox 58-59, IE 11, Edge 16, Safari 10-11, Node.js 6-10, & PhantomJS 2.1.1.</span> <span class=rwd-line>Automated <a href=https://saucelabs.com/u/lodash>browser</a> & <a href=https://travis-ci.org/lodash>CI</a> test runs are available.</span></section>
+    </div>
+    <footer>
+        <div class=container>
+            <p>Site made with <i aria-label=love class="fa fa-heart"></i> by <a href=https://twitter.com/FlavioEspinoza>@FlavioEspinoza</a></div>
+    </footer>
