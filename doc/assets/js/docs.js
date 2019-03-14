@@ -17,7 +17,7 @@
       urlSearchValue = getSearchQuery(location.search),
       versionMatch = location.pathname.match(/[\d.]+(?=(?:\.html)?$)/),
       versionSelect = document.getElementById('version'),
-      version = versionMatch ? versionMatch[0] : '4.17.11'
+      version = versionMatch ? versionMatch[0] : '1.0.37'
 
   function Searcher(pattern) {
     this.__engine__ = new BitapSearcher(normalizeSearchValue(pattern), { 'threshold': 0.25 })
@@ -379,15 +379,15 @@
   })
 
   // Change the documentation URL.
+  // Change the documentation URL.
   versionSelect.addEventListener('change', function(event) {
     var value = event.target.value
     if (value) {
-      location.href = value == '1.3.1'
-        ? 'https://github.com/lodash/lodash/blob/1.3.1/doc/README.md'
+      location.href = value == version
+        ? '{{ site.links.docs_v1 }}'
         : '/docs/' + value + location.hash
     }
   })
-
   // Toggle the mobile menu.
   mobileMenu.addEventListener('click', function(event) {
     event.preventDefault()
