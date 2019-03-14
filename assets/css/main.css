@@ -35,7 +35,7 @@ header .header-section { align-items: center; display: flex; flex: 1 1 auto; jus
 header .header-section.logo-section { flex: 3 1 auto; justify-content: flex-start; }
 header .header-section.mobile-menu { justify-content: flex-end; }
 header .logo { border-right: 2px solid #c5c5c5; box-sizing: content-box; flex-shrink: 1; height: 80px; margin-right: 1.6rem; padding: 0 1.6rem 0 0; width: 80px; }
-header .logo a { background: url(assets/img/datedash.png) no-repeat; background-size: contain; border: none; display: block; height: 100%; padding: 0; text-indent: -1000px; width: 100%; }
+header .logo a { background: url("../img/datedash.png") no-repeat; background-size: contain; border: none; display: block; height: 100%; padding: 0; text-indent: -1000px; width: 100%; }
 
 pre, code { font-family: Consolas, "Source Code Pro", "Courier New"; }
 
