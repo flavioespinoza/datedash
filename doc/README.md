@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.38</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.39</span>
 
 <!-- div class="toc-container" -->
 
@@ -16,7 +16,6 @@
 
 ## `Math`
 * <a href="#_d-addDays">`_d.addDays`</a>
-* <a href="#_d-install">`_d.install`</a>
 * <a href="#_d-subtractDays">`_d.subtractDays`</a>
 
 <!-- /div -->
@@ -221,40 +220,6 @@ _d.addDays(any_date, 2, '.')
 
 _d.addDays(any_date, 3, 'uk')
 // => 09 Mar 2019
-*
-```
----
-
-<!-- /div -->
-
-<!-- div -->
-
-<h3 id="_d-install"><code>_d.install(Date, days, format)</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/install.js">install.js</a>
-
-Input `_date` subtract `nDays` with `format`
-
-#### Since
-1.0.0
-
-#### Arguments
-1. `Date` *(Date)*:
-2. `days` *(number)*: to subtract
-3. `format` *(string)*:
-
-#### Example
-```js
-import _d, { addDays, subtractDays } from 'datedash'
-
-_d.date('Mar 14, 2019', '/')
-// => 3/14/2019
-
-addDays('Mar 14, 2019', 1, '-')
-// => 03-14-2019
-
-subtractDays('Mar 14, 2019', 1, '-')
-// => 03-14-2019
-
 *
 ```
 ---
