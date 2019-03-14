@@ -214,7 +214,7 @@ header .logo {
 }
 
 header .logo a {
-  background: url(/assets/img/lodash.svg) no-repeat;
+  background: url(../img/datedash.png) no-repeat;
   background-size: contain;
   border: none;
   display: block;
