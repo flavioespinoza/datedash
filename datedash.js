@@ -39,6 +39,10 @@
 
 	/*------------------------------------------------------------------------*/
 
+	const { _log, log } = require('@flavioespinoza/log_log/es5/index')
+
+	/*------------------------------------------------------------------------*/
+
 	/**
 	 * @private
 	 * @name _d
@@ -52,6 +56,63 @@
 	}
 
 	/*------------------------------------------------------------------------*/
+
+	/**
+	 * Import using `esm` or `TypeScript`
+	 *
+	 * @static
+	 * @since 1.0.0
+	 * @category Import
+	 * @example
+	 *
+	 * import _d from 'datedash'
+	 *
+	 * _d.date('Mar 14, 2019', 'uk')
+	 * // => 14 Mar 2019
+	 *
+	 * _d.addDays('3/6/19', 1, '-')
+	 * // => 03-07-2019
+	 *
+	 * _d.subtractDays('3/6/19', 1, '-')
+	 * // => 03-05-2019
+	 */
+	this.import = () => {
+		return new Promise((resolve, reject) => {
+			import('datedash')
+				.then(ns => {
+					resolve(ns.default())
+				})
+				.catch(err => {
+					_log.error('this.import', err)
+				})
+		})
+	}
+
+	/**
+	 * Import individual ES Modules using `esm` or `TypeScript`
+	 *
+	 * @static
+	 * @since 1.0.0
+	 * @category Import
+	 * @example
+	 *
+	 * import { addDate, subtractDate } from 'datedash'
+	 *
+	 * addDays('3/6/19', 1, '-')
+	 * // => 03-07-2019
+	 *
+	 * subtractDays('3/6/19', 1, '-')
+	 * // => 03-05-2019
+	 */
+	this.importModules = async moduleArr => {
+		_.each(moduleArr, obj => {
+			try {
+				import(obj.module).then(ns => ns.default())
+			} catch (err) {
+				_error(obj.module, err)
+			}
+		})
+	}
 
 	/**
 	 *
@@ -225,7 +286,6 @@
 	 */
 	const subtractDays = require('./methods/subtractDays')
 
-	
 	/*------------------------------------------------------------------------*/
 
 	// Date
@@ -254,6 +314,7 @@
 	if (freeModule) {
 		// Export for Node.js.
 		;(freeModule.exports = datedash)._d = datedash
+
 		// Export for CommonJS support.
 		freeExports._d = datedash
 	} else {

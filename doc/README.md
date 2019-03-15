@@ -2,7 +2,7 @@
 
 <!-- div class="toc-container" -->
 
-<!-- div -->
+<!-- div class="import" -->
 
 ## `Date`
 * <a href="#_d-date">`_d.date`</a>
@@ -12,7 +12,15 @@
 
 <!-- /div -->
 
-<!-- div -->
+<!-- div class="import" -->
+
+## `Import`
+* <a href="#import">`import`</a>
+* <a href="#importModules">`importModules`</a>
+
+<!-- /div -->
+
+<!-- div class="import" -->
 
 ## `Math`
 * <a href="#_d-addDays">`_d.addDays`</a>
@@ -69,8 +77,6 @@ _d.date(any_date, 'uk')
 
 _d.date(any_date, 'full')
 // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
-
-*
 ```
 ---
 
@@ -105,7 +111,6 @@ _d.getTimestamp('11/4/1973')
 
 _d.getTimestamp('July 4, 1776')
 // => -6106035604000
-*
 ```
 ---
 
@@ -152,7 +157,6 @@ _d.isDate(getDate)
 
 _d.isDate(getDate())
 // => true
-*
 ```
 ---
 
@@ -181,7 +185,63 @@ defer(function(stamp) {
 }, _d.now())
 
 // => Logs milliseconds it took for the deferred invocation.
-*
+```
+---
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div -->
+
+## `“Import” Methods`
+
+<!-- div -->
+
+<h3 id="import"><code>import</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/import.js">import.js</a>
+
+Import using `esm` or `TypeScript`
+
+#### Since
+1.0.0
+
+#### Example
+```js
+import _d from 'datedash'
+
+_d.date('Mar 14, 2019', 'uk')
+// => 14 Mar 2019
+
+_d.addDays('3/6/19', 1, '-')
+// => 03-07-2019
+
+_d.subtractDays('3/6/19', 1, '-')
+// => 03-05-2019
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
+<h3 id="importModules"><code>importModules</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/importModules.js">importModules.js</a>
+
+Import individual ES Modules using `esm` or `TypeScript`
+
+#### Since
+1.0.0
+
+#### Example
+```js
+import { addDate, subtractDate } from 'datedash'
+
+addDays('3/6/19', 1, '-')
+// => 03-07-2019
+
+subtractDays('3/6/19', 1, '-')
+// => 03-05-2019
 ```
 ---
 
@@ -220,7 +280,6 @@ _d.addDays(any_date, 2, '.')
 
 _d.addDays(any_date, 3, 'uk')
 // => 09 Mar 2019
-*
 ```
 ---
 
@@ -253,7 +312,6 @@ _d.subtractDays(any_date, 2, '.')
 
 _d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
-*
 ```
 ---
 
