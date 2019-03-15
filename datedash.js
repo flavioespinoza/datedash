@@ -104,7 +104,7 @@
 	 * subtractDays('3/6/19', 1, '-')
 	 * // => 03-05-2019
 	 */
-	this.importModules = async moduleArr => {
+	this['ES6 Modules'] = async moduleArr => {
 		_.each(moduleArr, obj => {
 			try {
 				import(obj.module).then(ns => ns.default())

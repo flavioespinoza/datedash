@@ -16,7 +16,7 @@
 
 ## `Import`
 * <a href="#import">`import`</a>
-* <a href="#importModules">`importModules`</a>
+* <a href="#this['ES6 Modules']">`this&#91;'ES6 Modules'&#93;`</a>
 
 <!-- /div -->
 
@@ -225,8 +225,8 @@ _d.subtractDays('3/6/19', 1, '-')
 
 <!-- div -->
 
-<h3 id="importModules"><code>importModules</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/importModules.js">importModules.js</a>
+<h3 id="this['ES6 Modules']"><code>this['ES6 Modules']</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/this['ES6 Modules'].js">this['ES6 Modules'].js</a>
 
 Import individual ES Modules using `esm` or `TypeScript`
 

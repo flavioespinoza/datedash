@@ -207,7 +207,7 @@ header .logo {
 	width: 80px;
 }
 header .logo a {
-	background: url(/assets/img/datedash.png) no-repeat;
+	background: url("../img/datedash.png") no-repeat;
 	background-size: contain;
 	border: none;
 	display: block;
