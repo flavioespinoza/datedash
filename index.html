@@ -14,9 +14,9 @@
     <link href=docs/1.0.39 rel=prerender pr=1.0>
     <link href=assets/css/main.css rel=stylesheet>
     <noscript>
-        <link href=https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css rel=stylesheet crossorigin integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN>
+        <link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css rel=stylesheet crossorigin integrity=sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" />
     </noscript>
-    <script async src=assets/js/boot.js></script>
+    <script async src="assets/js/boot.js"></script>
 </head>
 
 <body class=layout-default>
@@ -47,11 +47,11 @@
         </section>
         <section>
             <h2>Import ES6 Modules using <span><a href=https://github.com/standard-things/esm target=_blank>esm </a></span>or TypeScript</h2>
-            <div class="highlight js"><pre><div>import _d<span class=delimiter>,</span> { addDays<span class=delimiter>,</span> subtractDays } from <span class=string>'datedash'</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 3/14/2019</span></div><div> </div><div><span class=name>addDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div><div> </div><div><span class=name>subtractDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div></pre></div>
+            <div class="highlight js"><pre><div><span class=import>import</span> _d<span class=delimiter>,</span> { addDays<span class=delimiter>,</span> subtractDays } <span class=from>from</span> <span class=string>'datedash'</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 3/14/2019</span></div><div> </div><div><span class=name>addDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div><div> </div><div><span class=name>subtractDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div></pre></div>
         </section>
         <section>
             <h2>Require</h2>
-            <div class="highlight js"><pre><div><span class=modifier>const</span> _d = <span class=support>require</span>(<span class=string>'datedash'</span>)</div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 3/14/2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>addDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>subtractDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div></pre></div>
+            <div class="highlight js"><pre><div><span class=modifier>const</span> _d = <span class=name>require</span>(<span class=string>'datedash'</span>)</div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>date</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=string>'/'</span>)</div><div><span class=comment>// => 3/14/2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>addDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div><div> </div><div>_d<span class="delimiter method">.</span><span class=name>subtractDays</span>(<span class=string>'Mar 14, 2019'</span><span class=delimiter>,</span> <span class=numeric>1</span><span class=delimiter>,</span> <span class=string>'-'</span>)</div><div><span class=comment>// => 03-14-2019</span></div></pre></div>
         </section>
         <section>
             <h2>Support</h2>

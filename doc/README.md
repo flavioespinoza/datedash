@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.40</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.41</span>
 
 <!-- div class="toc-container" -->
 

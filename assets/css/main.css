@@ -262,8 +262,8 @@ ul.chevron li .highlight {
 	position: relative;
 }
 .highlight {
-	background-color: #283646;
-	color: #ddd;
+	background-color: #0d0d0d;
+	color: #b2d5f7;
 	margin: 0 -999rem;
 	padding: 1.5rem 999rem;
 	position: relative;
@@ -651,29 +651,39 @@ html.custom-builds li .highlight {
 	margin-bottom: 1.6rem;
 }
 .highlight.js .comment {
-	color: #b9b9b9;
+	color: #6d8a4e;
 }
 .highlight.js .modifier,
 .highlight.js .numeric,
 .highlight.js .type {
-	color: #7c9fd6;
+	color: #6d8fc9;
 }
-.highlight.js .name,
 .highlight.js .support {
 	color: #86b9f5;
+}
+.highlight.js .name {
+	color: #d5d6a7;
 }
 .highlight.js .console {
 	color: #b2d5f7;
 }
 .highlight.js .from,
 .highlight.js .import {
-	color: #e1beeb;
+	color: #c376d6;
 }
 .highlight.html .string,
 .highlight.js .string {
-	color: #bd967d;
+	color: #b0896f;
 }
-
+.variable.other.module.js {
+	color: #b2d5f7;
+}
+.punctuation.definition.modules.begin.js {
+	color: #b2d5f7;
+}
+.punctuation.definition.modules.end.js {
+	color: #b2d5f7;
+}
 @media (min-width: 768px) {
 	html.docs .mobile-menu {
 			display: none;

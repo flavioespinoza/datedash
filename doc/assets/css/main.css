@@ -603,9 +603,6 @@ html.docs .toc-container > div:first-child:not(.search):not(.react-menu-containe
 	margin-left: -webkit-calc(1.1rem + 11.5px);
 	margin-left: calc(1.1rem + 11.5px);
 }
-html.docs .toc-container > div:nth-of-type(2) {
-	padding-bottom: 13rem;
-}
 html.docs .toc-container div > h2 {
 	margin-bottom: 0.8rem;
 	margin-top: 2.4rem;
