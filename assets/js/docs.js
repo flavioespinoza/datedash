@@ -395,6 +395,7 @@
     // Add Runkit buttons.
     if ('innerText' in docs) {
       _.each(docs.querySelectorAll('.highlight.js'), function(div) {
+				
 				console.log('div Add Runkit buttons.', div)
         var button = document.createElement('a')
         var parent = div.parentNode
