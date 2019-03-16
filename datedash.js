@@ -66,7 +66,7 @@
 	 *
 	 * import _d from 'datedash'
 	 *
-	 * _d.date('Mar 14, 2019', 'uk')
+	 * _d.date('March 14 2019', 'uk')
 	 * // => 14 Mar 2019
 	 *
 	 * _d.addDays('3/6/19', 1, '-')
@@ -112,7 +112,7 @@
 	 * @returns {string} Returns the date as a String in specified format.
 	 * @example
 	 *
-	 * let any_date = 'Jan 7, 2019'
+	 * let any_date = 'January 7 2019'
 	 *
 	 * _d.date(any_date, '/')
 	 * // => 01/07/2019
@@ -179,7 +179,7 @@
 	 * _d.getTimestamp('11/4/1973')
 	 * // => 121244400000
 	 *
-	 * _d.getTimestamp('July 4, 1776')
+	 * _d.getTimestamp('July 4 1776')
 	 * // => -6106035604000
 	 */
 	const getTimestamp = require('./methods/getTimestamp')
@@ -198,7 +198,7 @@
 	 * _d.isDate(new Date())
 	 * // => true
 	 *
-	 * _d.isDate('Jul 4, 1776')
+	 * _d.isDate('Jul 4 1776')
 	 * // => true
 	 *
 	 * _d.isDate('3/3/19')
