@@ -77,15 +77,7 @@
 	 * // => 03-05-2019
 	 */
 	this.import = () => {
-		return new Promise((resolve, reject) => {
-			import('datedash')
-				.then(ns => {
-					resolve(ns.default())
-				})
-				.catch(err => {
-					_log.error('this.import', err)
-				})
-		})
+
 	}
 
 	/**
@@ -104,14 +96,8 @@
 	 * subtractDays('3/6/19', 1, '-')
 	 * // => 03-05-2019
 	 */
-	this['ES6 Modules'] = async moduleArr => {
-		_.each(moduleArr, obj => {
-			try {
-				import(obj.module).then(ns => ns.default())
-			} catch (err) {
-				_error(obj.module, err)
-			}
-		})
+	this.importModules = async moduleArr => {
+
 	}
 
 	/**
