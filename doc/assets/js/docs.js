@@ -370,24 +370,6 @@
     toc
   )
 
-  // Select current doc version.
-  _.each(versionSelect.options, function(option) {
-    if (option.value == version) {
-      option.selected = true
-      return false
-    }
-  })
-
-  // Change the documentation URL.
-  // Change the documentation URL.
-  versionSelect.addEventListener('change', function(event) {
-    var value = event.target.value
-    if (value) {
-      location.href = value == version
-        ? '{{ site.links.docs_v1 }}'
-        : '/docs/' + value + location.hash
-    }
-  })
   // Toggle the mobile menu.
   mobileMenu.addEventListener('click', function(event) {
     event.preventDefault()
