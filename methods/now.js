@@ -1,4 +1,4 @@
 function now() {
-	return root.Date.now()
+	return Date.now()
 }
 module.exports = now

@@ -14,10 +14,7 @@
       referSearchValue = getReferSearchValue(document.referrer),
       slice = Array.prototype.slice,
       toc = document.querySelector('.toc-container'),
-      urlSearchValue = getSearchQuery(location.search),
-      versionMatch = location.pathname.match(/[\d.]+(?=(?:\.html)?$)/),
-      versionSelect = document.getElementById('version'),
-      version = versionMatch ? versionMatch[0] : '4.17.11'
+      urlSearchValue = getSearchQuery(location.search)
 
   function Searcher(pattern) {
     this.__engine__ = new BitapSearcher(normalizeSearchValue(pattern), { 'threshold': 0.25 })
@@ -395,14 +392,14 @@
     if (!document.hidden) {
       carbonate()
     }
-    // Add REPL buttons.
+    // Add Runkit buttons.
     if ('innerText' in docs) {
       _.each(docs.querySelectorAll('.highlight.js'), function(div) {
         var button = document.createElement('a'),
             parent = div.parentNode
 
         button.classList.add('btn-repl')
-        button.textContent = 'Try in REPL'
+        button.textContent = 'Try in Runkit >'
         button.style.display = navigator.onLine ? '' : 'none'
         button.addEventListener('click', function() {
           if (typeof RunKit == 'undefined') {
@@ -416,9 +413,8 @@
             'element': parent,
             'nodeVersion': '*',
             'preamble': [
-              'var _ = require("lodash@' + versionSelect.value + '")',
-              '_.assign(global, require("lodash-doc-globals"))',
-              'Object.observe = _.noop'
+              'var _ = require("lodash")',
+              'var _d = require("datedash")'
             ].join('\n'),
             'source': source,
             'theme': 'atom-light-syntax',

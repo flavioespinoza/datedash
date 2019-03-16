@@ -178,7 +178,7 @@ the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
 
 #### Example
 ```js
-import { defer } from 'lodash'
+const { defer } = require('lodash')
 
 defer(function(stamp) {
   console.log(_d.now() - stamp)

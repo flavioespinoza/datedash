@@ -407,11 +407,11 @@ html.docs select:focus {
 	outline: 0;
 }
 html.docs .btn-repl {
-	bottom: 2.4rem;
-	color: #fff;
+	bottom: -2.4rem;
+	color: green;
 	font-size: 1.3rem;
 	position: absolute;
-	right: 0;
+	left: 0;
 }
 html.docs .container {
 	max-width: 100%;

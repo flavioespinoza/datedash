@@ -151,7 +151,7 @@
 	 * @returns {number} Returns the timestamp.
 	 * @example
 	 *
-	 * import { defer } from 'lodash'
+	 * const { defer } = require('lodash')
 	 *
 	 * defer(function(stamp) {
 	 *   console.log(_d.now() - stamp)
