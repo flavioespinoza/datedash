@@ -98,6 +98,31 @@
 
 	}
 
+	/*------------------------------------------------------------------------*/
+
+	/**
+	 * Import using `esm` or `TypeScript`
+	 *
+	 * @static
+	 * @since 1.0.0
+	 * @category Require
+	 * @example
+	 *
+	 * const _d = require('datedash')
+	 *
+	 * _d.date('3/14/2019', 'uk')
+	 * // => 14 Mar 2019
+	 *
+	 * _d.addDays('3/6/19', 1, '-')
+	 * // => 03-07-2019
+	 *
+	 * _d.subtractDays('3/6/19', 1, '-')
+	 * // => 03-05-2019
+	 */
+	this.require = () => {
+
+	}
+
 	/**
 	 *
 	 * Computes input `date` converts to string and returns with specified `format`.

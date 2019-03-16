@@ -1,22 +1,29 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.48</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.49</span>
 
 <!-- div class="toc-container" -->
-
-<!-- div class="import" -->
-
-## `Date`
-* <a href="#_d-date">`_d.date`</a>
-* <a href="#_d-getTimestamp">`_d.getTimestamp`</a>
-* <a href="#_d-isDate">`_d.isDate`</a>
-* <a href="#_d-now">`_d.now`</a>
-
-<!-- /div -->
 
 <!-- div class="import" -->
 
 ## `Import`
 * <a href="#import">`import`</a>
 * <a href="#importModules">`importModules`</a>
+
+<!-- /div -->
+
+<!-- div class="import" -->
+
+## `Require`
+* <a href="#require">`require`</a>
+
+<!-- /div -->
+
+<!-- div class="import" -->
+
+## `Date`
+* <a href="#_d-date">`_d.date`</a>
+* <a href="#_d-now">`_d.now`</a>
+* <a href="#_d-getTimestamp">`_d.getTimestamp`</a>
+* <a href="#_d-isDate">`_d.isDate`</a>
 
 <!-- /div -->
 
@@ -31,6 +38,96 @@
 <!-- /div -->
 
 <!-- div class="doc-container" -->
+
+<!-- div -->
+
+## `Import`
+
+<!-- div -->
+
+<h3 id="import"><code>import</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/import.js">import.js</a>
+
+Import using `esm` or `TypeScript`
+
+#### Since
+1.0.0
+
+#### Example
+```js
+import _d from 'datedash'
+
+_d.date('3/14/2019', 'uk')
+// => 14 Mar 2019
+
+_d.addDays('3/6/19', 1, '-')
+// => 03-07-2019
+
+_d.subtractDays('3/6/19', 1, '-')
+// => 03-05-2019
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
+<h3 id="importModules"><code>importModules</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/importModules.js">importModules.js</a>
+
+Import individual ES Modules using `esm` or `TypeScript`
+
+#### Since
+1.0.0
+
+#### Example
+```js
+import { addDate, subtractDate } from 'datedash'
+
+addDays('3/6/19', 1, '-')
+// => 03-07-2019
+
+subtractDays('3/6/19', 1, '-')
+// => 03-05-2019
+```
+---
+
+<!-- /div -->
+
+<!-- /div -->
+
+<!-- div -->
+
+## `Require`
+
+<!-- div -->
+
+<h3 id="require"><code>require</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/require.js">require.js</a>
+
+Import using `esm` or `TypeScript`
+
+#### Since
+1.0.0
+
+#### Example
+```js
+const _d = require('datedash')
+
+_d.date('3/14/2019', 'uk')
+// => 14 Mar 2019
+
+_d.addDays('3/6/19', 1, '-')
+// => 03-07-2019
+
+_d.subtractDays('3/6/19', 1, '-')
+// => 03-05-2019
+```
+---
+
+<!-- /div -->
+
+<!-- /div -->
 
 <!-- div -->
 
@@ -77,6 +174,34 @@ _d.date(any_date, 'uk')
 
 _d.date(any_date, 'full')
 // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
+<h3 id="_d-now"><code>_d.now()</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/now.js">now.js</a>
+
+Gets the timestamp of the number of milliseconds that have elapsed since
+the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
+
+#### Since
+1.0.0
+
+#### Returns
+*(number)*: Returns the timestamp.
+
+#### Example
+```js
+const { defer } = require('lodash')
+
+defer(function(stamp) {
+  console.log(_d.now() - stamp)
+}, _d.now())
+
+// => Logs milliseconds it took for the deferred invocation.
 ```
 ---
 
@@ -157,91 +282,6 @@ _d.isDate(getDate)
 
 _d.isDate(getDate())
 // => true
-```
----
-
-<!-- /div -->
-
-<!-- div -->
-
-<h3 id="_d-now"><code>_d.now()</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/now.js">now.js</a>
-
-Gets the timestamp of the number of milliseconds that have elapsed since
-the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
-
-#### Since
-1.0.0
-
-#### Returns
-*(number)*: Returns the timestamp.
-
-#### Example
-```js
-const { defer } = require('lodash')
-
-defer(function(stamp) {
-  console.log(_d.now() - stamp)
-}, _d.now())
-
-// => Logs milliseconds it took for the deferred invocation.
-```
----
-
-<!-- /div -->
-
-<!-- /div -->
-
-<!-- div -->
-
-## `“Import” Methods`
-
-<!-- div -->
-
-<h3 id="import"><code>import</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/import.js">import.js</a>
-
-Import using `esm` or `TypeScript`
-
-#### Since
-1.0.0
-
-#### Example
-```js
-import _d from 'datedash'
-
-_d.date('3/14/2019', 'uk')
-// => 14 Mar 2019
-
-_d.addDays('3/6/19', 1, '-')
-// => 03-07-2019
-
-_d.subtractDays('3/6/19', 1, '-')
-// => 03-05-2019
-```
----
-
-<!-- /div -->
-
-<!-- div -->
-
-<h3 id="importModules"><code>importModules</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/importModules.js">importModules.js</a>
-
-Import individual ES Modules using `esm` or `TypeScript`
-
-#### Since
-1.0.0
-
-#### Example
-```js
-import { addDate, subtractDate } from 'datedash'
-
-addDays('3/6/19', 1, '-')
-// => 03-07-2019
-
-subtractDays('3/6/19', 1, '-')
-// => 03-05-2019
 ```
 ---
 
