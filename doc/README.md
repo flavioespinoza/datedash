@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.45</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.48</span>
 
 <!-- div class="toc-container" -->
 
@@ -55,7 +55,7 @@ Computes input `date` converts to string and returns with specified `format`.
 
 #### Example
 ```js
-let any_date = 'Jan 7, 2019'
+let any_date = "1/07/2019"
 
 _d.date(any_date, '/')
 // => 01/07/2019
@@ -102,14 +102,14 @@ the Unix epoch *(1 January `1970 00`:00:00 UTC)*.
 
 #### Example
 ```js
+_d.getTimestamp('July 4 1776')
+// => 121244400000
+
 _d.getTimestamp()
 // => 1552353178563
 // returns now timestamp
 
 _d.getTimestamp('11/4/1973')
-// => 121244400000
-
-_d.getTimestamp('July 4, 1776')
 // => -6106035604000
 ```
 ---
@@ -134,13 +134,13 @@ Verifies if `value` is a valid `Date object` and valid `Date`.
 
 #### Example
 ```js
+_d.isDate('3/3/19')
+// => true
+
 _d.isDate(new Date())
 // => true
 
-_d.isDate('Jul 4, 1776')
-// => true
-
-_d.isDate('3/3/19')
+_d.isDate('Jul 4 1776')
 // => true
 
 _d.isDate(25200000)
@@ -210,7 +210,7 @@ Import using `esm` or `TypeScript`
 ```js
 import _d from 'datedash'
 
-_d.date('Mar 14, 2019', 'uk')
+_d.date('3/14/2019', 'uk')
 // => 14 Mar 2019
 
 _d.addDays('3/6/19', 1, '-')

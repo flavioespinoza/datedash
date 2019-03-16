@@ -34,7 +34,7 @@ function date(date, format) {
     } else if (format === 'full') {
         return d
     } else if (format === 'england' || format === 'uk') {
-        return date_uk
+        return '' + day + ' ' + month_name + ' ' + year
     } else {
         return date_usa.join('/')
     }

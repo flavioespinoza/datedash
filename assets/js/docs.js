@@ -413,8 +413,8 @@
             'element': parent,
             'nodeVersion': '*',
             'preamble': [
-              'var _ = require("lodash")',
-              'var _d = require("datedash")'
+              "const _ = require('lodash')",
+              "const _d = require('datedash')"
             ].join('\n'),
             'source': source,
             'theme': 'atom-light-syntax',
