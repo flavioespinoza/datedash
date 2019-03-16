@@ -395,8 +395,9 @@
     // Add Runkit buttons.
     if ('innerText' in docs) {
       _.each(docs.querySelectorAll('.highlight.js'), function(div) {
-        var button = document.createElement('a'),
-            parent = div.parentNode
+				console.log('div Add Runkit buttons.', div)
+        var button = document.createElement('a')
+        var parent = div.parentNode
 
         button.classList.add('btn-repl')
         button.textContent = 'Try in Runkit >'
