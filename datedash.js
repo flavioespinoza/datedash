@@ -295,7 +295,7 @@
 	datedash.isDate = isDate
 
 	// Math
-	datedash.addDate = addDate
+	datedash.addDays = addDays
 	datedash.subtractDays = subtractDays
 
 	/*------------------------------------------------------------------------*/
