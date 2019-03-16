@@ -1,6 +1,6 @@
 {
   "name": "datedash",
-  "version": "1.0.46",
+  "version": "1.0.47",
   "description": "lodash inspired date formatting and math methods.",
   "main": "datedash.js",
   "scripts": {
@@ -45,7 +45,6 @@
     "istanbul": "0.4.5",
     "jquery": "^3.1.1",
     "jscs": "^3.0.7",
-    "lit-html": "^1.0.0",
     "lodash": "^4.17.11",
     "markdown-doctest": "^0.9.1",
     "marky-markdown": "^9.0.3",
@@ -61,10 +60,10 @@
     "sauce-tunnel": "^2.5.0",
     "uglify-js": "2.7.5",
     "uuid": "^3.3.2",
-    "webpack": "^1.14.0"
+		"webpack": "^1.14.0",
+    "@flavs/docdash": "^1.0.4"
   },
   "dependencies": {
-    "@flavioespinoza/log_log": "^1.0.52",
-    "@flavs/docdash": "^1.0.4"
+
   }
 }
