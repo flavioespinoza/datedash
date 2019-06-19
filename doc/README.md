@@ -30,10 +30,10 @@
 <!-- div -->
 
 ## `Math`
-* <a href="#_d-addDays">`_d.addDays`</a>
 * <a href="#_d-addHours">`_d.addHours`</a>
-* <a href="#_d-subtractDays">`_d.subtractDays`</a>
 * <a href="#_d-subtractHours">`_d.subtractHours`</a>
+* <a href="#_d-addDays">`_d.addDays`</a>
+* <a href="#_d-subtractDays">`_d.subtractDays`</a>
 
 <!-- /div -->
 
@@ -107,7 +107,7 @@ subtractDays('3/6/19', 1, '-')
 <h3 id="require"><code>require</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/require.js">require.js</a>
 
-Import using `esm` or `TypeScript`
+Use requrie
 
 #### Since
 1.0.0
@@ -297,39 +297,7 @@ _d.isDate(getDate())
 
 <!-- div -->
 
-<h3 id="_d-addDays"><code>_d.addDays(Date, days, format)</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addDays.js">addDays.js</a>
-
-Input `_date` add `nDays` with `format`
-
-#### Since
-1.0.0
-
-#### Arguments
-1. `Date` *(date)*:
-2. `days` *(number)*: to add
-3. `format` *(string)*:
-
-#### Example
-```js
-const any_date = '3/6/19'
-
-_d.addDays(any_date, 1, '-')
-// => 03-07-2019
-
-_d.addDays(any_date, 2, '.')
-// => 03.08.2019
-
-_d.addDays(any_date, 3, 'uk')
-// => 09 Mar 2019
-```
----
-
-<!-- /div -->
-
-<!-- div -->
-
-<h3 id="_d-addHours"><code>_d.addHours(Date, hours, String)</code></h3>
+<h3 id="_d-addHours"><code>_d.addHours(Date, hours, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addHours.js">addHours.js</a>
 
 Input `_date` add `nHours`  with `format`
@@ -339,8 +307,11 @@ Input `_date` add `nHours`  with `format`
 
 #### Arguments
 1. `Date` *(date)*:
-2. `hours` *(number)*: to add
-3. `String` *(||): `full` or `undefined` returns a date object 'Tue Jun `18 2019` `22:37`:29 GMT-0600 &#42;(Mountain Daylight Time)*&#42;';  `ts` or `timestamp` returns the date as a timestamp `1560919049590`
+2. `hours` *(number)*: Number of hours to add
+3. `format` *(string)*: 'ts', 'timestamp', 'full', `undefined`, `null`
+
+#### Returns
+*(date)*: 'ts' or 'timestamp' return numeric timestamp; 'full', `null`, or `undefined` return a complete Date object
 
 #### Example
 ```js
@@ -356,6 +327,75 @@ let add_1hr = _d.addHours(now_date_full, 1, 'full')
 // Add 1hr return timestamp
 let add_1hr_ts = _d.addHours(now_date_full, 1, 'ts')
 // => 1560925030024
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
+<h3 id="_d-subtractHours"><code>_d.subtractHours(Date, hours, String)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractHours.js">subtractHours.js</a>
+
+Input `_date` subtract `nHours` with `format`
+
+#### Since
+1.0.50
+
+#### Arguments
+1. `Date` *(date)*:
+2. `hours` *(number)*: to subtract
+3. `String` *(string): "full", null or undefined returns a date object 'Tue Jun `18 2019` `22:37`:29 GMT-0600 &#42;(Mountain Daylight Time)*&#42;';  "ts" or "timestamp" returns the date as a timestamp `1560919049590`
+
+#### Example
+```js
+let now_date_full = new Date()
+// => Tue Jun 18 2019 23:23:30 GMT-0600 (Mountain Daylight Time)
+let now_date_ts = _d.getTimestamp(now_date_full)
+// => 1560921810079
+
+// Subtract 1hr return full date object
+let add_1hr = _d.subtractHours(now_date_full, 1, 'full')
+// => Tue Jun 18 2019 22:23:30 GMT-0600 (Mountain Daylight Time)
+
+// Subtract 1hr return timestamp
+let add_1hr_ts = _d.subtractHours(now_date_full, 1, 'ts')
+// => 1560918210079
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
+<h3 id="_d-addDays"><code>_d.addDays(Date, days, format)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addDays.js">addDays.js</a>
+
+Input `_date` add `nDays` with `format`
+
+#### Since
+1.0.0
+
+#### Arguments
+1. `Date` *(date)*:
+2. `days` *(number)*: to add
+3. `format` *(string)*: 'ts', 'timestamp', 'full', `undefined`, `null`
+
+#### Returns
+*(date)*: 'ts' or 'timestamp' return numeric timestamp; 'full', `null`, or `undefined` return a complete Date object
+
+#### Example
+```js
+const any_date = '3/6/19'
+
+_d.addDays(any_date, 1, '-')
+// => 03-07-2019
+
+_d.addDays(any_date, 2, '.')
+// => 03.08.2019
+
+_d.addDays(any_date, 3, 'uk')
+// => 09 Mar 2019
 ```
 ---
 
@@ -388,40 +428,6 @@ _d.subtractDays(any_date, 2, '.')
 
 _d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
-```
----
-
-<!-- /div -->
-
-<!-- div -->
-
-<h3 id="_d-subtractHours"><code>_d.subtractHours(Date, hours, String)</code></h3>
-<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractHours.js">subtractHours.js</a>
-
-Input `_date` subtract `nHours` with `format`
-
-#### Since
-1.0.50
-
-#### Arguments
-1. `Date` *(date)*:
-2. `hours` *(number)*: to subtract
-3. `String` *(||): `full` or `undefined` returns a date object 'Tue Jun `18 2019` `22:37`:29 GMT-0600 &#42;(Mountain Daylight Time)*&#42;';  `ts` or `timestamp` returns the date as a timestamp `1560919049590`
-
-#### Example
-```js
-let now_date_full = new Date()
-// => Tue Jun 18 2019 23:23:30 GMT-0600 (Mountain Daylight Time)
-let now_date_ts = _d.getTimestamp(now_date_full)
-// => 1560921810079
-
-// Subtract 1hr return full date object
-let add_1hr = _d.subtractHours(now_date_full, 1, 'full')
-// => Tue Jun 18 2019 22:23:30 GMT-0600 (Mountain Daylight Time)
-
-// Subtract 1hr return timestamp
-let add_1hr_ts = _d.subtractHours(now_date_full, 1, 'ts')
-// => 1560918210079
 ```
 ---
 
