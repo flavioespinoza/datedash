@@ -25,17 +25,7 @@
   }
 
   function carbonate() {
-    if (!carbonated && typeof phantom == 'undefined' &&
-        !document.hidden && navigator.onLine &&
-          getComputedStyle(mobileMenu).display == 'none') {
-      carbonated = true
-      var script = document.createElement('script')
-      script.addEventListener('error', decarbonate)
-      script.id = '_carbonads_js'
-      script.src = 'https://cdn.carbonads.com/carbon.js?serve=CKYIEK37&placement=lodashcom'
-      toc.style.transform = 'none'
-      toc.insertBefore(script, toc.firstChild)
-    }
+
   }
 
   function className() {
