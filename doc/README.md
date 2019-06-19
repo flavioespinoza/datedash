@@ -1,8 +1,8 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.49</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.50</span>
 
 <!-- div class="toc-container" -->
 
-<!-- div class="import" -->
+<!-- div -->
 
 ## `Import`
 * <a href="#import">`import`</a>
@@ -10,14 +10,14 @@
 
 <!-- /div -->
 
-<!-- div class="import" -->
+<!-- div -->
 
 ## `Require`
 * <a href="#require">`require`</a>
 
 <!-- /div -->
 
-<!-- div class="import" -->
+<!-- div -->
 
 ## `Date`
 * <a href="#_d-date">`_d.date`</a>
@@ -27,7 +27,7 @@
 
 <!-- /div -->
 
-<!-- div class="import" -->
+<!-- div -->
 
 ## `Math`
 * <a href="#_d-addDays">`_d.addDays`</a>
@@ -41,7 +41,7 @@
 
 <!-- div -->
 
-## `Import`
+## `“Import” Methods`
 
 <!-- div -->
 
@@ -98,7 +98,7 @@ subtractDays('3/6/19', 1, '-')
 
 <!-- div -->
 
-## `Require`
+## `“Require” Methods`
 
 <!-- div -->
 
