@@ -31,7 +31,9 @@
 
 ## `Math`
 * <a href="#_d-addDays">`_d.addDays`</a>
+* <a href="#_d-addHours">`_d.addHours`</a>
 * <a href="#_d-subtractDays">`_d.subtractDays`</a>
+* <a href="#_d-subtractHours">`_d.subtractHours`</a>
 
 <!-- /div -->
 
@@ -327,6 +329,40 @@ _d.addDays(any_date, 3, 'uk')
 
 <!-- div -->
 
+<h3 id="_d-addHours"><code>_d.addHours(Date, hours, String)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addHours.js">addHours.js</a>
+
+Input `_date` add `nHours`  with `format`
+
+#### Since
+1.0.50
+
+#### Arguments
+1. `Date` *(date)*:
+2. `hours` *(number)*: to add
+3. `String` *(||): `full` or `undefined` returns a date object 'Tue Jun `18 2019` `22:37`:29 GMT-0600 &#42;(Mountain Daylight Time)*&#42;';  `ts` or `timestamp` returns the date as a timestamp `1560919049590`
+
+#### Example
+```js
+let now_date_full = new Date()
+// => Tue Jun 18 2019 23:17:10 GMT-0600 (Mountain Daylight Time)
+let now_date_ts = _d.getTimestamp(now_date_full)
+// => 1560921430024
+
+// Add 1hr return full date object
+let add_1hr = _d.addHours(now_date_full, 1, 'full')
+// => Wed Jun 19 2019 00:17:10 GMT-0600 (Mountain Daylight Time)
+
+// Add 1hr return timestamp
+let add_1hr_ts = _d.addHours(now_date_full, 1, 'ts')
+// => 1560925030024
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
 <h3 id="_d-subtractDays"><code>_d.subtractDays(Date, days, format)</code></h3>
 <a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractDays.js">subtractDays.js</a>
 
@@ -352,6 +388,40 @@ _d.subtractDays(any_date, 2, '.')
 
 _d.subtractDays(any_date, 3, 'uk')
 // => 03 Mar 2019
+```
+---
+
+<!-- /div -->
+
+<!-- div -->
+
+<h3 id="_d-subtractHours"><code>_d.subtractHours(Date, hours, String)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractHours.js">subtractHours.js</a>
+
+Input `_date` subtract `nHours` with `format`
+
+#### Since
+1.0.50
+
+#### Arguments
+1. `Date` *(date)*:
+2. `hours` *(number)*: to subtract
+3. `String` *(||): `full` or `undefined` returns a date object 'Tue Jun `18 2019` `22:37`:29 GMT-0600 &#42;(Mountain Daylight Time)*&#42;';  `ts` or `timestamp` returns the date as a timestamp `1560919049590`
+
+#### Example
+```js
+let now_date_full = new Date()
+// => Tue Jun 18 2019 23:23:30 GMT-0600 (Mountain Daylight Time)
+let now_date_ts = _d.getTimestamp(now_date_full)
+// => 1560921810079
+
+// Subtract 1hr return full date object
+let add_1hr = _d.subtractHours(now_date_full, 1, 'full')
+// => Tue Jun 18 2019 22:23:30 GMT-0600 (Mountain Daylight Time)
+
+// Subtract 1hr return timestamp
+let add_1hr_ts = _d.subtractHours(now_date_full, 1, 'ts')
+// => 1560918210079
 ```
 ---
 
