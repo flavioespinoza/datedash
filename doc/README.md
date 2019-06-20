@@ -1,4 +1,4 @@
-# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.50</span>
+# <a href="https://github.com/flavioespinoza/datedash">datedash</a> <span>v1.0.51</span>
 
 <!-- div class="toc-container" -->
 
@@ -84,7 +84,7 @@ Import individual ES Modules using `esm` or `TypeScript`
 
 #### Example
 ```js
-import { addDate, subtractDate } from 'datedash'
+import { addDays, subtractDays } from 'datedash'
 
 addDays('3/6/19', 1, '-')
 // => 03-07-2019

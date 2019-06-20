@@ -87,7 +87,7 @@
 	 * @category Import
 	 * @example
 	 *
-	 * import { addDate, subtractDate } from 'datedash'
+	 * import { addDays, subtractDays } from 'datedash'
 	 *
 	 * addDays('3/6/19', 1, '-')
 	 * // => 03-07-2019
