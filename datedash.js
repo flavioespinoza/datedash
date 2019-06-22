@@ -77,7 +77,8 @@
 	 * // => 03-05-2019
 	 */
 	this.import = () => {
-
+		// No operation performed.
+		// Required for doc generation
 	}
 
 	/**
@@ -96,8 +97,9 @@
 	 * subtractDays('3/6/19', 1, '-')
 	 * // => 03-05-2019
 	 */
-	this.importModules = async moduleArr => {
-
+	this.importModules = () => {
+		// No operation performed.
+		// Required for doc generation
 	}
 
 	/*------------------------------------------------------------------------*/
