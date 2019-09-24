@@ -1,0 +1,246 @@
+
+			<!DOCTYPE html>
+			<html class="docs gr__Datedash_com" style="overflow: auto;">
+				<head>
+					<meta charset="utf-8">
+					<meta content="IE=edge" http-equiv="X-UA-Compatible">
+					<title>Datedash Docs</title>
+					<meta content="width=device-width, initial-scale=1" name="viewport">
+					<link href="assets/css/main.css" rel="stylesheet" type="text/css">
+					<script src="../vendor/lodash/lodash.min.js"></script>
+					<script src="../vendor/g/fuse@2.6.1,react@15.4.0(react.min.js+react-dom.min.js"></script>
+					<script async src="../assets/js/docs.js"></script>
+					<link href="https://cdn.jsdelivr.net/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+					<script async src="../assets/js/boot.js"></script>
+					<script async src="https://embed.runkit.com" async></script>
+				</head>
+				<body class="layout-docs">
+					<header>
+						<div class="container">
+								<div class="header-section logo-section">
+										<div class="logo">
+												<a href="../index.html" title="Datedash">Datedash</a>
+										</div>
+										<div class="header-group">
+												<h1>Datedash</h1>
+										</div>
+								</div>
+								<div class="header-section mobile-menu">
+      							<a href="#"><i class="fa fa-bars" aria-hidden="true"></i>Menu</a>
+    						</div>
+						</div>
+					</header>
+					<div class="doc-main">
+						<div class="toc-container">
+<div>
+<h2><code>Import</code></h2>
+<ul>
+<li><a href="#import"><code>import</code></a></li>
+<li><a href="#importModules"><code>importModules</code></a></li>
+</ul>
+</div>
+<div>
+<h2><code>Require</code></h2>
+<ul>
+<li><a href="#require"><code>require</code></a></li>
+</ul>
+</div>
+<div>
+<h2><code>Date</code></h2>
+<ul>
+<li><a href="#_d-date"><code>_d.date</code></a></li>
+<li><a href="#_d-now"><code>_d.now</code></a></li>
+<li><a href="#_d-getTimestamp"><code>_d.getTimestamp</code></a></li>
+<li><a href="#_d-isDate"><code>_d.isDate</code></a></li>
+</ul>
+</div>
+<div>
+<h2><code>Math</code></h2>
+<ul>
+<li><a href="#_d-addHours"><code>_d.addHours</code></a></li>
+<li><a href="#_d-subtractHours"><code>_d.subtractHours</code></a></li>
+<li><a href="#_d-addDays"><code>_d.addDays</code></a></li>
+<li><a href="#_d-subtractDays"><code>_d.subtractDays</code></a></li>
+</ul>
+</div>
+</div>
+<div class="doc-container">
+<div>
+<h2><code>&#x201C;Import&#x201D; Methods</code></h2>
+<div>
+<h3 id="import"><code>import</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/import.js">import.js</a>
+<p>Import using <code>esm</code> or <code>TypeScript</code></p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta import js"><span class="keyword control js">import</span>&#xA0;<span class="variable other module js">_d</span>&#xA0;<span class="keyword control js">from</span>&#xA0;<span class="string quoted single js">&apos;datedash&apos;</span></span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/14/2019&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;uk&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;14&#xA0;Mar&#xA0;2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/6/19&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-07-2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/6/19&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-05-2019</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="importModules"><code>importModules</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/importModules.js">importModules.js</a>
+<p>Import individual ES Modules using <code>esm</code> or <code>TypeScript</code></p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="meta import js"><span class="keyword control js">import</span>&#xA0;<span class="punctuation definition modules begin js">{</span>&#xA0;<span class="variable other module js">addDays</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="variable other module js">subtractDays</span>&#xA0;<span class="punctuation definition modules end js">}</span>&#xA0;<span class="keyword control js">from</span>&#xA0;<span class="string quoted single js">&apos;datedash&apos;</span></span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="meta function-call js"><span class="entity name function js">addDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/6/19&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-07-2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="meta function-call js"><span class="entity name function js">subtractDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/6/19&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-05-2019</span></span></div></pre></div>
+<hr>
+</div>
+</div>
+<div>
+<h2><code>&#x201C;Require&#x201D; Methods</code></h2>
+<div>
+<h3 id="require"><code>require</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/require.js">require.js</a>
+<p>Use requrie</p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js">const</span>&#xA0;<span class="constant other js">_d</span>&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="meta function-call js"><span class="support function js">require</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;datedash&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/14/2019&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;uk&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;14&#xA0;Mar&#xA0;2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/6/19&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-07-2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/6/19&apos;</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-05-2019</span></span></div></pre></div>
+<hr>
+</div>
+</div>
+<div>
+<h2><code>&#x201C;Date&#x201D; Methods</code></h2>
+<div>
+<h3 id="_d-date"><code>_d.date(Date, format)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/date.js">date.js</a>
+<p>Computes input <code>date</code> converts to string and returns with specified <code>format</code>.</p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>Date</code> <em>(date)</em>: options are <code>new Date()</code>, <code>timestamp</code> or <code>string</code> in valid date format. See example below.</li>
+<li><code>format</code> <em>(string)</em>:</li>
+</ol>
+<h4>Returns</h4>
+<p><em>(string)</em>: Returns the date as a String in specified format.</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;any_date&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="string quoted double js">&quot;1/07/2019&quot;</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;/&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;01/07/2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;01-07-2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;.&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;01.07.2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;MMM&#xA0;DD&#xA0;YYYY&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Jan&#xA0;07&#xA0;2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;england&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;07&#xA0;Jan&#xA0;2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;uk&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;07&#xA0;Jan&#xA0;2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">date</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;full&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Mon&#xA0;Jan&#xA0;07&#xA0;2019&#xA0;00:00:00&#xA0;GMT-0700&#xA0;(Mountain&#xA0;Standard&#xA0;Time)</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="_d-now"><code>_d.now()</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/now.js">now.js</a>
+<p>Gets the timestamp of the number of milliseconds that have elapsed since
+the Unix epoch <em>(1 January <code>1970 00</code>:00:00 UTC)</em>.</p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Returns</h4>
+<p><em>(number)</em>: Returns the timestamp.</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js">const</span>&#xA0;<span class="meta brace curly js">{</span>&#xA0;<span class="constant other js">defer</span>&#xA0;<span class="meta brace curly js">}</span>&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="meta function-call js"><span class="support function js">require</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;lodash&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="meta function-call js"><span class="entity name function js">defer</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="meta function js"><span class="storage type function js">function</span><span class="meta parameters js"><span class="punctuation definition parameters begin bracket round js">(</span><span class="variable parameter function js">stamp</span><span class="punctuation definition parameters end bracket round js">)</span></span></span>&#xA0;<span class="punctuation definition function body begin bracket curly js">{</span></span></span></span></div><div class="line"><span class="source js"><span class="meta function-call js"><span class="meta arguments js">&#xA0;&#xA0;<span class="entity name type object console js">console</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="support function console js">log</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">now</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="punctuation definition arguments end bracket round js">)</span></span></span>&#xA0;<span class="keyword operator js">-</span>&#xA0;stamp<span class="punctuation definition arguments end bracket round js">)</span></span></span></span></span></span></div><div class="line"><span class="source js"><span class="meta function-call js"><span class="meta arguments js"><span class="punctuation definition function body end bracket curly js">}</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">now</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="punctuation definition arguments end bracket round js">)</span></span></span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Logs&#xA0;milliseconds&#xA0;it&#xA0;took&#xA0;for&#xA0;the&#xA0;deferred&#xA0;invocation.</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="_d-getTimestamp"><code>_d.getTimestamp(Date)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/getTimestamp.js">getTimestamp.js</a>
+<p>Gets the timestamp of the number of milliseconds that have elapsed since
+<code>date</code> argument. If <code>date</code> is <code>undefined</code> it gives milliseconds elapsed since
+the Unix epoch <em>(1 January <code>1970 00</code>:00:00 UTC)</em>.</p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>Date</code> <em>(date)</em>: to convert to timestamp.</li>
+</ol>
+<h4>Returns</h4>
+<p><em>(number)</em>: Returns the timestamp.</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">getTimestamp</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;July&#xA0;4&#xA0;1776&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;121244400000</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">getTimestamp</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;1552353178563</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;returns&#xA0;now&#xA0;timestamp</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">getTimestamp</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;11/4/1973&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;-6106035604000</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="_d-isDate"><code>_d.isDate(value)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/isDate.js">isDate.js</a>
+<p>Verifies if <code>value</code> is a valid <code>Date object</code> and valid <code>Date</code>.</p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>value</code> <em>(*)</em>: The value to check.</li>
+</ol>
+<h4>Returns</h4>
+<p><em>(boolean)</em>: Returns <code>true</code> if <code>value</code> is a <code>Date object</code> &amp; valid <code>Date</code>, else <code>false</code>.</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/3/19&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;true</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="meta class instance constructor"><span class="keyword operator new js">new</span>&#xA0;<span class="entity name type instance js">Date</span></span><span class="meta brace round js">()</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;true</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;Jul&#xA0;4&#xA0;1776&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;true</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="constant numeric decimal js">25200000</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;true</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="string quoted single js">&apos;3/33/19&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;false</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="meta function js"><span class="storage type function js">function</span>&#xA0;<span class="entity name function js">getDate</span><span class="meta parameters js"><span class="punctuation definition parameters begin bracket round js">(</span><span class="punctuation definition parameters end bracket round js">)</span></span></span>&#xA0;<span class="punctuation definition function body begin bracket curly js">{</span></span></div><div class="line"><span class="source js">&#xA0;&#xA0;&#xA0;&#xA0;<span class="keyword control js">return</span>&#xA0;<span class="string quoted single js">&apos;1/1/19&apos;</span></span></div><div class="line"><span class="source js"><span class="punctuation definition function body end bracket curly js">}</span></span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>getDate<span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;false</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">isDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="meta function-call js"><span class="entity name function js">getDate</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span><span class="punctuation definition arguments end bracket round js">)</span></span></span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;true</span></span></div></pre></div>
+<hr>
+</div>
+</div>
+<div>
+<h2><code>&#x201C;Math&#x201D; Methods</code></h2>
+<div>
+<h3 id="_d-addHours"><code>_d.addHours(Date, hours, format)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addHours.js">addHours.js</a>
+<p>Input <code>_date</code> add <code>nHours</code>  with <code>format</code></p>
+<h4>Since</h4>
+<p>1.0.50</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>Date</code> <em>(date)</em>:</li>
+<li><code>hours</code> <em>(number)</em>: Number of hours to add</li>
+<li><code>format</code> <em>(string)</em>: &apos;ts&apos;, &apos;timestamp&apos;, &apos;full&apos;, <code>undefined</code>, <code>null</code></li>
+</ol>
+<h4>Returns</h4>
+<p><em>(date)</em>: &apos;ts&apos; or &apos;timestamp&apos; return numeric timestamp; &apos;full&apos;, <code>null</code>, or <code>undefined</code> return a complete Date object</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;now_date_full&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="meta class instance constructor"><span class="keyword operator new js">new</span>&#xA0;<span class="entity name type instance js">Date</span></span><span class="meta brace round js">()</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Tue&#xA0;Jun&#xA0;18&#xA0;2019&#xA0;23:17:10&#xA0;GMT-0600&#xA0;(Mountain&#xA0;Daylight&#xA0;Time)</span></span></div><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;now_date_ts&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">getTimestamp</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>now_date_full<span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;1560921430024</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;Add&#xA0;1hr&#xA0;return&#xA0;full&#xA0;date&#xA0;object</span></span></div><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;add_1hr&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addHours</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>now_date_full<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;full&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Wed&#xA0;Jun&#xA0;19&#xA0;2019&#xA0;00:17:10&#xA0;GMT-0600&#xA0;(Mountain&#xA0;Daylight&#xA0;Time)</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;Add&#xA0;1hr&#xA0;return&#xA0;timestamp</span></span></div><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;add_1hr_ts&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addHours</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>now_date_full<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;ts&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;1560925030024</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="_d-subtractHours"><code>_d.subtractHours(Date, hours, String)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractHours.js">subtractHours.js</a>
+<p>Input <code>_date</code> subtract <code>nHours</code> with <code>format</code></p>
+<h4>Since</h4>
+<p>1.0.50</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>Date</code> <em>(date)</em>:</li>
+<li><code>hours</code> <em>(number)</em>: to subtract</li>
+<li><code>String</code> <em>(string): &quot;full&quot;, null or undefined returns a date object &apos;Tue Jun <code>18 2019</code> <code>22:37</code>:29 GMT-0600 *(Mountain Daylight Time)</em>*&apos;;  &quot;ts&quot; or &quot;timestamp&quot; returns the date as a timestamp <code>1560919049590</code></li>
+</ol>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;now_date_full&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="meta class instance constructor"><span class="keyword operator new js">new</span>&#xA0;<span class="entity name type instance js">Date</span></span><span class="meta brace round js">()</span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Tue&#xA0;Jun&#xA0;18&#xA0;2019&#xA0;23:23:30&#xA0;GMT-0600&#xA0;(Mountain&#xA0;Daylight&#xA0;Time)</span></span></div><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;now_date_ts&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">getTimestamp</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>now_date_full<span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;1560921810079</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;Subtract&#xA0;1hr&#xA0;return&#xA0;full&#xA0;date&#xA0;object</span></span></div><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;add_1hr&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractHours</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>now_date_full<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;full&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;Tue&#xA0;Jun&#xA0;18&#xA0;2019&#xA0;22:23:30&#xA0;GMT-0600&#xA0;(Mountain&#xA0;Daylight&#xA0;Time)</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;Subtract&#xA0;1hr&#xA0;return&#xA0;timestamp</span></span></div><div class="line"><span class="source js"><span class="storage type var js">let</span>&#xA0;add_1hr_ts&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractHours</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>now_date_full<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;ts&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;1560918210079</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="_d-addDays"><code>_d.addDays(Date, days, format)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/addDays.js">addDays.js</a>
+<p>Input <code>_date</code> add <code>nDays</code> with <code>format</code></p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>Date</code> <em>(date)</em>:</li>
+<li><code>days</code> <em>(number)</em>: to add</li>
+<li><code>format</code> <em>(string)</em>: &apos;ts&apos;, &apos;timestamp&apos;, &apos;full&apos;, <code>undefined</code>, <code>null</code></li>
+</ol>
+<h4>Returns</h4>
+<p><em>(date)</em>: &apos;ts&apos; or &apos;timestamp&apos; return numeric timestamp; &apos;full&apos;, <code>null</code>, or <code>undefined</code> return a complete Date object</p>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js">const</span>&#xA0;<span class="constant other js">any_date</span>&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="string quoted single js">&apos;3/6/19&apos;</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-07-2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">2</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;.&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03.08.2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">addDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">3</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;uk&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;09&#xA0;Mar&#xA0;2019</span></span></div></pre></div>
+<hr>
+</div>
+<div>
+<h3 id="_d-subtractDays"><code>_d.subtractDays(Date, days, format)</code></h3>
+<a href="https://github.com/flavioespinoza/datedash/blob/master/methods/subtractDays.js">subtractDays.js</a>
+<p>Input <code>_date</code> subtract <code>nDays</code> with <code>format</code></p>
+<h4>Since</h4>
+<p>1.0.0</p>
+<h4>Arguments</h4>
+<ol>
+<li><code>Date</code> <em>(Date)</em>:</li>
+<li><code>days</code> <em>(number)</em>: to subtract</li>
+<li><code>format</code> <em>(string)</em>:</li>
+</ol>
+<h4>Example</h4>
+<div class="highlight js"><pre class="editor editor-colors"><div class="line"><span class="source js"><span class="storage modifier js">const</span>&#xA0;<span class="constant other js">any_date</span>&#xA0;<span class="keyword operator assignment js">=</span>&#xA0;<span class="string quoted single js">&apos;3/6/19&apos;</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">1</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;-&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03-05-2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">2</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;.&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03.04.2019</span></span></div><div class="line"><span class="source js">&#xA0;</span></div><div class="line"><span class="source js"><span class="variable other object js">_d</span><span class="meta method-call js"><span class="meta delimiter method period js">.</span><span class="entity name function js">subtractDays</span><span class="meta arguments js"><span class="punctuation definition arguments begin bracket round js">(</span>any_date<span class="meta delimiter object comma js">,</span>&#xA0;<span class="constant numeric decimal js">3</span><span class="meta delimiter object comma js">,</span>&#xA0;<span class="string quoted single js">&apos;uk&apos;</span><span class="punctuation definition arguments end bracket round js">)</span></span></span></span></div><div class="line"><span class="source js"><span class="comment line double-slash js">//&#xA0;=&gt;&#xA0;03&#xA0;Mar&#xA0;2019</span></span></div></pre></div>
+<hr>
+</div>
+</div>
+</div>
+					</div>
+				</body>
+			</html>
+		
