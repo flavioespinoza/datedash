@@ -72,7 +72,10 @@
 	 */
 	this.yarnTest = () => {
 		console.log('yarn_test SUCCESS!')
-		alert('yarn_test SUCCESS!')
+		return {
+			val: 'yarn_test',
+			key: 'Yarn Test Success'
+		}
 	}
 
 	/*------------------------------------------------------------------------*/
