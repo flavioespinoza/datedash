@@ -70,7 +70,7 @@
 	 * _d.yarnTest()
 	 * 
 	 */
-	this.yarnTest = () => {
+	const yarnTest = () => {
 		console.log('yarn_test SUCCESS!')
 		return {
 			val: 'yarn_test',
@@ -386,10 +386,12 @@
 	datedash.getTimestamp = getTimestamp
 	datedash.isDate = isDate
 
+	// Yarn
+	datedash.yarnTest = yarnTest
+
 	// Math Hours
 	datedash.addHours = addHours
 	datedash.subtractHours = subtractHours
-
 
 	// Math Days	
 	datedash.addDays = addDays
