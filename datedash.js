@@ -58,6 +58,26 @@
 	/*------------------------------------------------------------------------*/
 
 	/**
+	 * Test of: `yarn add https://github.com/flavioespinoza/datedash.git#master`
+	 *
+	 * @static
+	 * @since 1.0.0
+	 * @category Yarn
+	 * @example
+	 *
+	 * import _d from 'datedash'
+	 *
+	 * _d.yarnTest()
+	 * 
+	 */
+	this.yarnTest = () => {
+		console.log('yarn_test SUCCESS!')
+		alert('yarn_test SUCCESS!')
+	}
+
+	/*------------------------------------------------------------------------*/
+
+	/**
 	 * Import using `esm` or `TypeScript`
 	 *
 	 * @static
