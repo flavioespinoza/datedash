@@ -58,29 +58,6 @@
 	/*------------------------------------------------------------------------*/
 
 	/**
-	 * Test of: `yarn add https://github.com/flavioespinoza/datedash.git#master`
-	 *
-	 * @static
-	 * @since 1.0.0
-	 * @category Yarn
-	 * @example
-	 *
-	 * import _d from 'datedash'
-	 *
-	 * _d.yarnTest()
-	 * 
-	 */
-	const yarnTest = () => {
-		console.log('yarn_test SUCCESS!')
-		return {
-			val: 'yarn_test',
-			key: 'Yarn Test Success'
-		}
-	}
-
-	/*------------------------------------------------------------------------*/
-
-	/**
 	 * Import using `esm` or `TypeScript`
 	 *
 	 * @static
@@ -380,6 +357,53 @@
 
 	/*------------------------------------------------------------------------*/
 
+	/**
+	 * Test of: `yarn add https://github.com/flavioespinoza/datedash.git#master`
+	 *
+	 * @static
+	 * @since 1.0.0
+	 * @category Yarn
+	 * @example
+	 *
+	 * import _d from 'datedash'
+	 *
+	 * _d.yarnTest()
+	 * 
+	 */
+	const yarnTest = () => {
+		console.log('yarn_test SUCCESS!')
+		return {
+			val: 'yarn_test',
+			key: 'Yarn Test Success'
+		}
+	}
+
+	/*------------------------------------------------------------------------*/
+
+	/**
+	 * Test of: `yarn add https://github.com/flavioespinoza/datedash.git#master`
+	 *
+	 * @static
+	 * @since 1.0.0
+	 * @category Yarn
+	 * @example
+	 *
+	 * import _d from 'datedash'
+	 *
+	 * _d.yarnTest2()
+	 * 
+	 */
+	const yarnTest2 = () => {
+		console.log('yarnTest2 SUCCESS!')
+		return {
+			val: 'yarn_test_2',
+			key: 'Yarn Test 2 Success',
+			date: new Date()
+		}
+	}
+
+	/*------------------------------------------------------------------------*/
+
 	// Date
 	datedash.date = date
 	datedash.now = now
@@ -388,6 +412,7 @@
 
 	// Yarn
 	datedash.yarnTest = yarnTest
+	datedash.yarnTest2 = yarnTest2
 
 	// Math Hours
 	datedash.addHours = addHours
