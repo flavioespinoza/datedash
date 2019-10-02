@@ -1,734 +1,1296 @@
-<!DOCTYPE html><html><head>
-      <title>fhir</title>
-      <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      
-      <link rel="stylesheet" href="file:////Users/flavio/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.4.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css">
-      
-      
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>ra_policy</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-      
-      
-      
-      
-      
-      
+		<link
+			rel="stylesheet"
+			href="file:////Users/flavio/.vscode/extensions/shd101wyy.markdown-preview-enhanced-0.4.3/node_modules/@shd101wyy/mume/dependencies/katex/katex.min.css"
+		/>
 
-      <style>
-      /**
- * Darcula theme
- *
- * Adapted from a theme based on:
- * IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
- *
- * @author Alexandre Paradis <service.paradis@gmail.com>
- * @version 1.0
- */
+		<style>
+			/**
+* Darcula theme
+*
+* Adapted from a theme based on:
+* IntelliJ Darcula Theme (https://github.com/bulenkov/Darcula)
+*
+* @author Alexandre Paradis <service.paradis@gmail.com>
+* @version 1.0
+*/
 
-code[class*="language-"],
-pre[class*="language-"] {
-	color: #a9b7c6;
-	font-family: Consolas, Monaco, 'Andale Mono', monospace;
-	direction: ltr;
-	text-align: left;
-	white-space: pre;
-	word-spacing: normal;
-	word-break: normal;
-	line-height: 1.5;
+			code[class*="language-"],
+			pre[class*="language-"] {
+				color: #a9b7c6;
+				font-family: Consolas, Monaco, "Andale Mono", monospace;
+				direction: ltr;
+				text-align: left;
+				white-space: pre;
+				word-spacing: normal;
+				word-break: normal;
+				line-height: 1.5;
 
-	-moz-tab-size: 4;
-	-o-tab-size: 4;
-	tab-size: 4;
+				-moz-tab-size: 4;
+				-o-tab-size: 4;
+				tab-size: 4;
 
-	-webkit-hyphens: none;
-	-moz-hyphens: none;
-	-ms-hyphens: none;
-	hyphens: none;
-}
+				-webkit-hyphens: none;
+				-moz-hyphens: none;
+				-ms-hyphens: none;
+				hyphens: none;
+			}
 
-pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selection,
-code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
-    color: inherit;
-    background: rgba(33,66,131,.85);
-}
+			pre[class*="language-"]::-moz-selection,
+			pre[class*="language-"] ::-moz-selection,
+			code[class*="language-"]::-moz-selection,
+			code[class*="language-"] ::-moz-selection {
+				color: inherit;
+				background: rgba(33, 66, 131, 0.85);
+			}
 
-pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
-code[class*="language-"]::selection, code[class*="language-"] ::selection {
-    color: inherit;
-    background: rgba(33,66,131,.85);
-}
+			pre[class*="language-"]::selection,
+			pre[class*="language-"] ::selection,
+			code[class*="language-"]::selection,
+			code[class*="language-"] ::selection {
+				color: inherit;
+				background: rgba(33, 66, 131, 0.85);
+			}
 
-/* Code blocks */
-pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
-	overflow: auto;
-}
+			/* Code blocks */
+			pre[class*="language-"] {
+				padding: 1em;
+				margin: 0.5em 0;
+				overflow: auto;
+			}
 
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #2b2b2b;
-}
+			:not(pre) > code[class*="language-"],
+			pre[class*="language-"] {
+				background: #2b2b2b;
+			}
 
-/* Inline code */
-:not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-}
+			/* Inline code */
+			:not(pre) > code[class*="language-"] {
+				padding: 0.1em;
+				border-radius: 0.3em;
+			}
 
-.token.comment,
-.token.prolog,
-.token.cdata {
-	color: #808080;
-}
+			.token.comment,
+			.token.prolog,
+			.token.cdata {
+				color: #808080;
+			}
 
-.token.delimiter,
-.token.boolean,
-.token.keyword,
-.token.selector,
-.token.important,
-.token.atrule {
-	color: #cc7832;
-}
+			.token.delimiter,
+			.token.boolean,
+			.token.keyword,
+			.token.selector,
+			.token.important,
+			.token.atrule {
+				color: #cc7832;
+			}
 
-.token.operator,
-.token.punctuation,
-.token.attr-name {
-    color: #a9b7c6;
-}
+			.token.operator,
+			.token.punctuation,
+			.token.attr-name {
+				color: #a9b7c6;
+			}
 
-.token.tag,
-.token.tag .punctuation,
-.token.doctype,
-.token.builtin {
-    color: #e8bf6a;
-}
+			.token.tag,
+			.token.tag .punctuation,
+			.token.doctype,
+			.token.builtin {
+				color: #e8bf6a;
+			}
 
-.token.entity,
-.token.number,
-.token.symbol {
-    color: #6897bb;
-}
+			.token.entity,
+			.token.number,
+			.token.symbol {
+				color: #6897bb;
+			}
 
-.token.property,
-.token.constant,
-.token.variable {
-    color: #9876aa;
-}
+			.token.property,
+			.token.constant,
+			.token.variable {
+				color: #9876aa;
+			}
 
-.token.string,
-.token.char {
-	color: #6a8759;
-}
+			.token.string,
+			.token.char {
+				color: #6a8759;
+			}
 
-.token.attr-value,
-.token.attr-value .punctuation {
-    color: #a5c261;
-}
-.token.attr-value .punctuation:first-child {
-    color: #a9b7c6;
-}
+			.token.attr-value,
+			.token.attr-value .punctuation {
+				color: #a5c261;
+			}
+			.token.attr-value .punctuation:first-child {
+				color: #a9b7c6;
+			}
 
-.token.url {
-	color: #287bde;
-	text-decoration: underline;
-}
+			.token.url {
+				color: #287bde;
+				text-decoration: underline;
+			}
 
-.token.function {
-	color: #ffc66d;
-}
+			.token.function {
+				color: #ffc66d;
+			}
 
-.token.regex {
-    background: #364135;
-}
+			.token.regex {
+				background: #364135;
+			}
 
-.token.bold {
-	font-weight: bold;
-}
+			.token.bold {
+				font-weight: bold;
+			}
 
-.token.italic {
-	font-style: italic;
-}
+			.token.italic {
+				font-style: italic;
+			}
 
-.token.inserted {
-    background: #294436;
-}
+			.token.inserted {
+				background: #294436;
+			}
 
-.token.deleted {
-    background: #484a4a;
-}
+			.token.deleted {
+				background: #484a4a;
+			}
 
-/*code.language-css .token.punctuation {
-	color: #cc7832;
+			/*code.language-css .token.punctuation {
+color: #cc7832;
 }*/
 
-code.language-css .token.property,
-code.language-css .token.property + .token.punctuation {
-	color: #a9b7c6;
-}
+			code.language-css .token.property,
+			code.language-css .token.property + .token.punctuation {
+				color: #a9b7c6;
+			}
 
-code.language-css .token.id {
-	color: #ffc66d;
-}
+			code.language-css .token.id {
+				color: #ffc66d;
+			}
 
-code.language-css .token.selector > .token.class,
-code.language-css .token.selector > .token.attribute,
-code.language-css .token.selector > .token.pseudo-class,
-code.language-css .token.selector > .token.pseudo-element {
-	color: #ffc66d;
-}
+			code.language-css .token.selector > .token.class,
+			code.language-css .token.selector > .token.attribute,
+			code.language-css .token.selector > .token.pseudo-class,
+			code.language-css .token.selector > .token.pseudo-element {
+				color: #ffc66d;
+			}
 
-/* highlight */
-pre[data-line] {
-	position: relative;
-	padding: 1em 0 1em 3em;
-  }
-  pre[data-line] .line-highlight-wrapper {
-	position: absolute;
-	top: 0;
-	left: 0;
-	background-color: transparent;
-	display: block;
-	width: 100%;
-  }
-  
-  pre[data-line] .line-highlight {
-	position: absolute;
-	left: 0;
-	right: 0;
-	padding: inherit 0;
-	margin-top: 1em;
-	background: hsla(24, 20%, 50%,.08);
-	background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
-	pointer-events: none;
-	line-height: inherit;
-	white-space: pre;
-  }
-  
-  pre[data-line] .line-highlight:before, 
-  pre[data-line] .line-highlight[data-end]:after {
-	content: attr(data-start);
-	position: absolute;
-	top: .4em;
-	left: .6em;
-	min-width: 1em;
-	padding: 0 .5em;
-	background-color: hsla(24, 20%, 50%,.4);
-	color: hsl(24, 20%, 95%);
-	font: bold 65%/1.5 sans-serif;
-	text-align: center;
-	vertical-align: .3em;
-	border-radius: 999px;
-	text-shadow: none;
-	box-shadow: 0 1px white;
-  }
-  
-  pre[data-line] .line-highlight[data-end]:after {
-	content: attr(data-end);
-	top: auto;
-	bottom: .4em;
-  }html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
-html body code {
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 0.85em !important;
-  color: #de245c;
-  background-color: #f8f8f8;
-  border-radius: 3px;
-  border: 1px solid #dfdfdf;
-  padding: 0.2em 0;
-}
-html body {
-  text-decoration: none;
-}
-html body :not(pre) > code[class*="language-"],
-html body pre[class*="language-"] {
-  background: #2b2b2b;
-}
-html body :not(pre) > code[class*="language-"] code,
-html body pre[class*="language-"] code {
-  color: white !important;
-}
-html body .markdown-preview .mume-header {
-  border-bottom: 1px solid gainsboro;
-}
-html body .markdown-preview h2 {
-  margin-bottom: 0.25em;
-}
-html body .markdown-preview h3 {
-  padding-bottom: 0.5em;
-  margin-bottom: 0.5em;
-}
-html body .markdown-preview h4 {
-  margin-top: 1em;
-  margin-bottom: 0.5em;
-}
-html body .markdown-preview h5 {
-  margin-top: 1.25em;
-  margin-bottom: 0.25em;
-  opacity: 0.7;
-}
-html body .markdown-preview ul {
-  margin-bottom: 12px;
-}
-html body .markdown-preview li.task-list-item {
-  margin-left: 24px;
-}
-html body .markdown-preview blockquote {
-  padding: 0 2px;
-  border-left: 5px solid orange;
-}
-html body .markdown-preview blockquote p {
-  background-color: #f1f1f1;
-  padding: 4px 12px;
-  margin-bottom: 1em;
-  font-weight: 800px;
-}
-html body .markdown-preview .bt {
-  border-top: 1px solid orange;
-  padding-top: 12px;
-}
-html body .markdown-preview .bb {
-  border-bottom: 1px solid orange;
-  padding-bottom: 12px;
-}
-html body .md-header {
-  padding-top: 6px;
-  margin-bottom: 6px;
-  border-bottom: 1px solid orange;
-  border-top: 1px solid #a9a9a9;
-}
-html body .md-header h3 {
-  margin-top: 0;
-  margin-bottom: 6px;
-}
-html body .md-theory {
-  padding-left: 24px;
-  padding-top: 6px;
-  color: crimson;
-}
-html body .md-theory strong {
-  color: crimson;
-}
-html body .md-block-quote li {
-  margin-left: 40px;
-}
-html body .md-title {
-  font-size: 24px;
-  font-weight: bold;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-html body .md-label {
-  font-size: 16px;
-  margin-top: 8px;
-  margin-bottom: 0;
-}
-a html body .md-label {
-  margin-bottom: 0;
-}
-html body .md-pink {
-  color: hotpink;
-  font-weight: bold;
-}
-html body .md-label-output {
-  margin-left: 3em;
-  margin-bottom: -0.35em;
-}
-html body .md-label-output--multi-line {
-  margin-bottom: 0.15em;
-}
-html body .md-key {
-  background-color: orange;
-  color: black;
-  padding: 0 0.5em 0.15em;
-}
-html body .bold {
-  font-weight: bold;
-}
-html body .md-label-header {
-  padding-top: 12px;
-  margin-bottom: 12px;
-  border-bottom: 1px solid orange;
-}
-html body .md-label-header p {
-  margin-bottom: -24px;
-}
-html body .md-label-header-todo,
-html body .md-label-header-strategy {
-  margin-left: 24px;
-}
-html body .md-strategy {
-  margin-left: 24px;
-}
-html body a {
-  text-decoration: underline;
-}
-html body a.md-link-bold {
-  font-weight: bold;
-}
-html body .language-json,
-html body .language-yaml,
-html body .language-js,
-html body .language-javascript,
-html body .language-ts,
-html body .language-typescript,
-html body .language-bash,
-html body .language-shell {
-  padding: 1em;
-  margin: 0.25em 0 1.25em;
-  overflow: auto;
-}
-html body li .language-json,
-html body li .language-yaml,
-html body li .language-js,
-html body li .language-javascript,
-html body li .language-ts,
-html body li .language-typescript,
-html body li .language-bash,
-html body li .language-shell {
-  padding: 1em;
-  margin: 0.25em 0 1.25em;
-  overflow: auto;
-}
-html body .line-highlight {
-  background: rgba(255, 105, 180, 0.1) !important;
-  border-bottom: 1px dashed hotpink;
-  border-top: 1px dashed hotpink;
-  left: 0;
-  line-height: inherit;
-  margin-top: 0.75em;
-  padding: inherit 0;
-  pointer-events: none;
-  position: absolute;
-  right: 0;
-  white-space: pre;
-  z-index: 0;
-}
-html body .md-output {
-  margin-left: 3em;
-}
-html body .md-output--emphasis {
-  margin-top: 0.15em;
-  margin-bottom: 0.15em;
-}
-html body .mb4 {
-  margin-bottom: 0.25em;
-}
-html body .copy-paste-icon {
-  width: 20px;
-  height: 20px;
-  margin-bottom: -0.25em;
-  background-color: transparent;
-}
-html body .md-cmd-block {
-  position: relative;
-  overflow: hidden;
-}
-html body .md-cmd-block .copy-clip-icon {
-  position: absolute;
-  right: 0.125em;
-  top: 0.525em;
-  width: 20px;
-  height: 20px;
-  background-color: white;
-  z-index: 100;
-  padding: 0.15em;
-}
-html body .md-img--wrapper {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-html body .md-img {
-  position: relative;
-  margin: 0 auto;
-}
-html body .md-title__main {
-  border-bottom: 1px solid #ebe0e0;
-}
-html body .md-alert {
-  border: 0.25em solid hotpink;
-  margin-top: 1em;
-  padding-left: 0.5em;
-  padding-right: 0.5em;
-}
-html body .redline {
-  color: red;
-  font-size: 1em;
-  font-weight: bold;
-}
-html body .mt-12 {
-  margin-top: 0.5em;
-}
-html body .mb-12 {
-  margin-bottom: 0.5em;
-}
-html body .md-code-chunk {
-  background-color: orange;
-  padding: 2px 8px 6px;
-}
-html body iframe .tabs.bartabs {
-  display: none;
-}
-html body span.token.comment {
-  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
-  font-size: 0.85em !important;
-  color: #2387af;
-  border-radius: 3px;
-  padding: 0.2em 0;
-}
+			/* highlight */
+			pre[data-line] {
+				position: relative;
+				padding: 1em 0 1em 3em;
+			}
+			pre[data-line] .line-highlight-wrapper {
+				position: absolute;
+				top: 0;
+				left: 0;
+				background-color: transparent;
+				display: block;
+				width: 100%;
+			}
 
-      </style>
-    </head>
-    <body for="html-export">
-      <div class="mume markdown-preview  ">
-      <h1 class="mume-header" id="fhir-diagnostic-report-json-to-html">FHIR Diagnostic Report -- JSON to HTML</h1>
+			pre[data-line] .line-highlight {
+				position: absolute;
+				left: 0;
+				right: 0;
+				padding: inherit 0;
+				margin-top: 1em;
+				background: hsla(24, 20%, 50%, 0.08);
+				background: linear-gradient(
+					to right,
+					hsla(24, 20%, 50%, 0.1) 70%,
+					hsla(24, 20%, 50%, 0)
+				);
+				pointer-events: none;
+				line-height: inherit;
+				white-space: pre;
+			}
 
-<p>Example of an FHIR Diagnostic Report from JSON response to React Component</p>
-<hr>
-<h2 class="mume-header" id="fhir-diagnostic-report-for-an-ultrasound">FHIR Diagnostic Report for an Ultrasound</h2>
+			pre[data-line] .line-highlight:before,
+			pre[data-line] .line-highlight[data-end]:after {
+				content: attr(data-start);
+				position: absolute;
+				top: 0.4em;
+				left: 0.6em;
+				min-width: 1em;
+				padding: 0 0.5em;
+				background-color: hsla(24, 20%, 50%, 0.4);
+				color: hsl(24, 20%, 95%);
+				font: bold 65%/1.5 sans-serif;
+				text-align: center;
+				vertical-align: 0.3em;
+				border-radius: 999px;
+				text-shadow: none;
+				box-shadow: 0 1px white;
+			}
 
-<ul>
-<li>Example of a single patient record of type <code>DiagnosticReport</code></li>
-<li><strong>NOTE Line 6</strong>: Under the property <code>text</code> there is a child prop called <code>div</code> -- this is a JSON string which can be parsed to HTML for easy viewing of the record.</li>
-</ul>
-<pre data-role="codeBlock" data-info="json {.line-numbers, highlight=[6}" class="language-json line-numbers" data-line="6"><span class="token punctuation">{</span>
-  <span class="token property">&quot;resourceType&quot;</span><span class="token operator">:</span> <span class="token string">&quot;DiagnosticReport&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;ultrasound&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;text&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token string">&quot;generated&quot;</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;div&quot;</span><span class="token operator">:</span> <span class="token string">&quot;\u003cdiv xmlns\u003d\&quot;http://www.w3.org/1999/xhtml\&quot;\u003e\u003cp\u003e\u003cb\u003eGenerated Narrative with Details\u003c/b\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003eid\u003c/b\u003e: ultrasound\u003c/p\u003e\u003cp\u003e\u003cb\u003estatus\u003c/b\u003e: final\u003c/p\u003e\u003cp\u003e\u003cb\u003ecategory\u003c/b\u003e: Radiology \u003cspan\u003e(Details : {SNOMED CT code \u0027394914008\u0027 \u003d \u0027Radiology - speciality\u0027, given as \u0027Radiology\u0027}; {http://terminology.hl7.org/CodeSystem/v2-0074 code \u0027RAD\u0027 \u003d \u0027Radiology)\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003ecode\u003c/b\u003e: Abdominal Ultrasound \u003cspan\u003e(Details : {SNOMED CT code \u002745036003\u0027 \u003d \u0027Ultrasonography of abdomen\u0027, given as \u0027Ultrasonography of abdomen\u0027})\u003c/span\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003esubject\u003c/b\u003e: \u003ca\u003ePatient/example\u003c/a\u003e\u003c/p\u003e\u003cp\u003e\u003cb\u003eeffective\u003c/b\u003e: 01/12/2012 12:00:00 PM\u003c/p\u003e\u003cp\u003e\u003cb\u003eissued\u003c/b\u003e: 01/12/2012 12:00:00 PM\u003c/p\u003e\u003cp\u003e\u003cb\u003eperformer\u003c/b\u003e: \u003ca\u003ePractitioner/example\u003c/a\u003e\u003c/p\u003e\u003ch3\u003eMedia\u003c/h3\u003e\u003ctable\u003e\u003ctr\u003e\u003ctd\u003e-\u003c/td\u003e\u003ctd\u003e\u003cb\u003eComment\u003c/b\u003e\u003c/td\u003e\u003ctd\u003e\u003cb\u003eLink\u003c/b\u003e\u003c/td\u003e\u003c/tr\u003e\u003ctr\u003e\u003ctd\u003e*\u003c/td\u003e\u003ctd\u003eA comment about the image\u003c/td\u003e\u003ctd\u003e\u003ca\u003eWADO example image\u003c/a\u003e\u003c/td\u003e\u003c/tr\u003e\u003c/table\u003e\u003cp\u003e\u003cb\u003econclusion\u003c/b\u003e: Unremarkable study\u003c/p\u003e\u003c/div\u003e&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;status&quot;</span><span class="token operator">:</span> <span class="token string">&quot;final&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;category&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      <span class="token property">&quot;coding&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">&quot;system&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://snomed.info/sct&quot;</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;394914008&quot;</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;display&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Radiology&quot;</span>
-        <span class="token punctuation">}</span><span class="token punctuation">,</span>
-        <span class="token punctuation">{</span>
-          <span class="token property">&quot;system&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://terminology.hl7.org/CodeSystem/v2-0074&quot;</span><span class="token punctuation">,</span>
-          <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;RAD&quot;</span>
-        <span class="token punctuation">}</span>
-      <span class="token punctuation">]</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;coding&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        <span class="token property">&quot;system&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://snomed.info/sct&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;45036003&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;display&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Ultrasonography of abdomen&quot;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token property">&quot;text&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Abdominal Ultrasound&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;subject&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;reference&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Patient/example&quot;</span>
-  <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;effectiveDateTime&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2012-12-01T12:00:00+01:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;issued&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2012-12-01T12:00:00+01:00&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;performer&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      <span class="token property">&quot;reference&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Practitioner/example&quot;</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;media&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-    <span class="token punctuation">{</span>
-      <span class="token property">&quot;comment&quot;</span><span class="token operator">:</span> <span class="token string">&quot;A comment about the image&quot;</span><span class="token punctuation">,</span>
-      <span class="token property">&quot;link&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-        <span class="token property">&quot;reference&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Media/1.2.840.11361907579238403408700.3.1.04.19970327150033&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;display&quot;</span><span class="token operator">:</span> <span class="token string">&quot;WADO example image&quot;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span>
-  <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;conclusion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Unremarkable study&quot;</span><span class="token punctuation">,</span>
-  <span class="token property">&quot;meta&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token property">&quot;tag&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
-      <span class="token punctuation">{</span>
-        <span class="token property">&quot;system&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;code&quot;</span><span class="token operator">:</span> <span class="token string">&quot;HTEST&quot;</span><span class="token punctuation">,</span>
-        <span class="token property">&quot;display&quot;</span><span class="token operator">:</span> <span class="token string">&quot;test health data&quot;</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">]</span>
-  <span class="token punctuation">}</span>
+			pre[data-line] .line-highlight[data-end]:after {
+				content: attr(data-end);
+				top: auto;
+				bottom: 0.4em;
+			}
+			html body {
+				font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial,
+					freesans, sans-serif;
+				font-size: 16px;
+				line-height: 1.6;
+				color: #333;
+				background-color: #fff;
+				overflow: initial;
+				box-sizing: border-box;
+				word-wrap: break-word;
+			}
+			html body > :first-child {
+				margin-top: 0;
+			}
+			html body h1,
+			html body h2,
+			html body h3,
+			html body h4,
+			html body h5,
+			html body h6 {
+				line-height: 1.2;
+				margin-top: 1em;
+				margin-bottom: 16px;
+				color: #000;
+			}
+			html body h1 {
+				font-size: 2.25em;
+				font-weight: 300;
+				padding-bottom: 0.3em;
+			}
+			html body h2 {
+				font-size: 1.75em;
+				font-weight: 400;
+				padding-bottom: 0.3em;
+			}
+			html body h3 {
+				font-size: 1.5em;
+				font-weight: 500;
+			}
+			html body h4 {
+				font-size: 1.25em;
+				font-weight: 600;
+			}
+			html body h5 {
+				font-size: 1.1em;
+				font-weight: 600;
+			}
+			html body h6 {
+				font-size: 1em;
+				font-weight: 600;
+			}
+			html body h1,
+			html body h2,
+			html body h3,
+			html body h4,
+			html body h5 {
+				font-weight: 600;
+			}
+			html body h5 {
+				font-size: 1em;
+			}
+			html body h6 {
+				color: #5c5c5c;
+			}
+			html body strong {
+				color: #000;
+			}
+			html body del {
+				color: #5c5c5c;
+			}
+			html body a:not([href]) {
+				color: inherit;
+				text-decoration: none;
+			}
+			html body a {
+				color: #08c;
+				text-decoration: none;
+			}
+			html body a:hover {
+				color: #00a3f5;
+				text-decoration: none;
+			}
+			html body img {
+				max-width: 100%;
+			}
+			html body > p {
+				margin-top: 0;
+				margin-bottom: 16px;
+				word-wrap: break-word;
+			}
+			html body > ul,
+			html body > ol {
+				margin-bottom: 16px;
+			}
+			html body ul,
+			html body ol {
+				padding-left: 2em;
+			}
+			html body ul.no-list,
+			html body ol.no-list {
+				padding: 0;
+				list-style-type: none;
+			}
+			html body ul ul,
+			html body ul ol,
+			html body ol ol,
+			html body ol ul {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			html body li {
+				margin-bottom: 0;
+			}
+			html body li.task-list-item {
+				list-style: none;
+			}
+			html body li > p {
+				margin-top: 0;
+				margin-bottom: 0;
+			}
+			html body .task-list-item-checkbox {
+				margin: 0 0.2em 0.25em -1.8em;
+				vertical-align: middle;
+			}
+			html body .task-list-item-checkbox:hover {
+				cursor: pointer;
+			}
+			html body blockquote {
+				margin: 16px 0;
+				font-size: inherit;
+				padding: 0 15px;
+				color: #5c5c5c;
+				border-left: 4px solid #d6d6d6;
+			}
+			html body blockquote > :first-child {
+				margin-top: 0;
+			}
+			html body blockquote > :last-child {
+				margin-bottom: 0;
+			}
+			html body hr {
+				height: 4px;
+				margin: 32px 0;
+				background-color: #d6d6d6;
+				border: 0 none;
+			}
+			html body table {
+				margin: 10px 0 15px 0;
+				border-collapse: collapse;
+				border-spacing: 0;
+				display: block;
+				width: 100%;
+				overflow: auto;
+				word-break: normal;
+				word-break: keep-all;
+			}
+			html body table th {
+				font-weight: bold;
+				color: #000;
+			}
+			html body table td,
+			html body table th {
+				border: 1px solid #d6d6d6;
+				padding: 6px 13px;
+			}
+			html body dl {
+				padding: 0;
+			}
+			html body dl dt {
+				padding: 0;
+				margin-top: 16px;
+				font-size: 1em;
+				font-style: italic;
+				font-weight: bold;
+			}
+			html body dl dd {
+				padding: 0 16px;
+				margin-bottom: 16px;
+			}
+			html body code {
+				font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+				font-size: 0.85em !important;
+				color: #000;
+				background-color: #f0f0f0;
+				border-radius: 3px;
+				padding: 0.2em 0;
+			}
+			html body code::before,
+			html body code::after {
+				letter-spacing: -0.2em;
+				content: "\00a0";
+			}
+			html body pre > code {
+				padding: 0;
+				margin: 0;
+				font-size: 0.85em !important;
+				word-break: normal;
+				white-space: pre;
+				background: transparent;
+				border: 0;
+			}
+			html body .highlight {
+				margin-bottom: 16px;
+			}
+			html body .highlight pre,
+			html body pre {
+				padding: 1em;
+				overflow: auto;
+				font-size: 0.85em !important;
+				line-height: 1.45;
+				border: #d6d6d6;
+				border-radius: 3px;
+			}
+			html body .highlight pre {
+				margin-bottom: 0;
+				word-break: normal;
+			}
+			html body pre code,
+			html body pre tt {
+				display: inline;
+				max-width: initial;
+				padding: 0;
+				margin: 0;
+				overflow: initial;
+				line-height: inherit;
+				word-wrap: normal;
+				background-color: transparent;
+				border: 0;
+			}
+			html body pre code:before,
+			html body pre tt:before,
+			html body pre code:after,
+			html body pre tt:after {
+				content: normal;
+			}
+			html body p,
+			html body blockquote,
+			html body ul,
+			html body ol,
+			html body dl,
+			html body pre {
+				margin-top: 0;
+				margin-bottom: 16px;
+			}
+			html body kbd {
+				color: #000;
+				border: 1px solid #d6d6d6;
+				border-bottom: 2px solid #c7c7c7;
+				padding: 2px 4px;
+				background-color: #f0f0f0;
+				border-radius: 3px;
+			}
+			@media print {
+				html body {
+					background-color: #fff;
+				}
+				html body h1,
+				html body h2,
+				html body h3,
+				html body h4,
+				html body h5,
+				html body h6 {
+					color: #000;
+					page-break-after: avoid;
+				}
+				html body blockquote {
+					color: #5c5c5c;
+				}
+				html body pre {
+					page-break-inside: avoid;
+				}
+				html body table {
+					display: table;
+				}
+				html body img {
+					display: block;
+					max-width: 100%;
+					max-height: 100%;
+				}
+				html body pre,
+				html body code {
+					word-wrap: break-word;
+					white-space: pre;
+				}
+			}
+			.markdown-preview {
+				width: 100%;
+				height: 100%;
+				box-sizing: border-box;
+			}
+			.markdown-preview .pagebreak,
+			.markdown-preview .newpage {
+				page-break-before: always;
+			}
+			.markdown-preview pre.line-numbers {
+				position: relative;
+				padding-left: 3.8em;
+				counter-reset: linenumber;
+			}
+			.markdown-preview pre.line-numbers > code {
+				position: relative;
+			}
+			.markdown-preview pre.line-numbers .line-numbers-rows {
+				position: absolute;
+				pointer-events: none;
+				top: 1em;
+				font-size: 100%;
+				left: 0;
+				width: 3em;
+				letter-spacing: -1px;
+				border-right: 1px solid #999;
+				-webkit-user-select: none;
+				-moz-user-select: none;
+				-ms-user-select: none;
+				user-select: none;
+			}
+			.markdown-preview pre.line-numbers .line-numbers-rows > span {
+				pointer-events: none;
+				display: block;
+				counter-increment: linenumber;
+			}
+			.markdown-preview
+				pre.line-numbers
+				.line-numbers-rows
+				> span:before {
+				content: counter(linenumber);
+				color: #999;
+				display: block;
+				padding-right: 0.8em;
+				text-align: right;
+			}
+			.markdown-preview .mathjax-exps .MathJax_Display {
+				text-align: center !important;
+			}
+			.markdown-preview:not([for="preview"]) .code-chunk .btn-group {
+				display: none;
+			}
+			.markdown-preview:not([for="preview"]) .code-chunk .status {
+				display: none;
+			}
+			.markdown-preview:not([for="preview"]) .code-chunk .output-div {
+				margin-bottom: 16px;
+			}
+			.scrollbar-style::-webkit-scrollbar {
+				width: 8px;
+			}
+			.scrollbar-style::-webkit-scrollbar-track {
+				border-radius: 10px;
+				background-color: transparent;
+			}
+			.scrollbar-style::-webkit-scrollbar-thumb {
+				border-radius: 5px;
+				background-color: rgba(150, 150, 150, 0.66);
+				border: 4px solid rgba(150, 150, 150, 0.66);
+				background-clip: content-box;
+			}
+			html body[for="html-export"]:not([data-presentation-mode]) {
+				position: relative;
+				width: 100%;
+				height: 100%;
+				top: 0;
+				left: 0;
+				margin: 0;
+				padding: 0;
+				overflow: auto;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])
+				.markdown-preview {
+				position: relative;
+				top: 0;
+			}
+			@media screen and (min-width: 914px) {
+				html
+					body[for="html-export"]:not([data-presentation-mode])
+					.markdown-preview {
+					padding: 2em calc(50% - 457px + 2em);
+				}
+			}
+			@media screen and (max-width: 914px) {
+				html
+					body[for="html-export"]:not([data-presentation-mode])
+					.markdown-preview {
+					padding: 2em;
+				}
+			}
+			@media screen and (max-width: 450px) {
+				html
+					body[for="html-export"]:not([data-presentation-mode])
+					.markdown-preview {
+					font-size: 14px !important;
+					padding: 1em;
+				}
+			}
+			@media print {
+				html
+					body[for="html-export"]:not([data-presentation-mode])
+					#sidebar-toc-btn {
+					display: none;
+				}
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])
+				#sidebar-toc-btn {
+				position: fixed;
+				bottom: 8px;
+				left: 8px;
+				font-size: 28px;
+				cursor: pointer;
+				color: inherit;
+				z-index: 99;
+				width: 32px;
+				text-align: center;
+				opacity: 0.4;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				#sidebar-toc-btn {
+				opacity: 1;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc {
+				position: fixed;
+				top: 0;
+				left: 0;
+				width: 300px;
+				height: 100%;
+				padding: 32px 0 48px 0;
+				font-size: 14px;
+				box-shadow: 0 0 4px rgba(150, 150, 150, 0.33);
+				box-sizing: border-box;
+				overflow: auto;
+				background-color: inherit;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc::-webkit-scrollbar {
+				width: 8px;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc::-webkit-scrollbar-track {
+				border-radius: 10px;
+				background-color: transparent;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc::-webkit-scrollbar-thumb {
+				border-radius: 5px;
+				background-color: rgba(150, 150, 150, 0.66);
+				border: 4px solid rgba(150, 150, 150, 0.66);
+				background-clip: content-box;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc
+				a {
+				text-decoration: none;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc
+				ul {
+				padding: 0 1.6em;
+				margin-top: 0.8em;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc
+				li {
+				margin-bottom: 0.8em;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.md-sidebar-toc
+				ul {
+				list-style-type: none;
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+				.markdown-preview {
+				left: 300px;
+				width: calc(100% - 300px);
+				padding: 2em calc(50% - 457px - 150px);
+				margin: 0;
+				box-sizing: border-box;
+			}
+			@media screen and (max-width: 1274px) {
+				html
+					body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+					.markdown-preview {
+					padding: 2em;
+				}
+			}
+			@media screen and (max-width: 450px) {
+				html
+					body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc]
+					.markdown-preview {
+					width: 100%;
+				}
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc])
+				.markdown-preview {
+				left: 50%;
+				transform: translateX(-50%);
+			}
+			html
+				body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc])
+				.md-sidebar-toc {
+				display: none;
+			}
+			html body code {
+				font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+				font-size: 0.85em !important;
+				color: #de245c;
+				background-color: #f8f8f8;
+				border-radius: 3px;
+				border: 1px solid #dfdfdf;
+				padding: 0.2em 0;
+			}
+			html body {
+				text-decoration: none;
+			}
+			html body :not(pre) > code[class*="language-"],
+			html body pre[class*="language-"] {
+				background: #2b2b2b;
+			}
+			html body :not(pre) > code[class*="language-"] code,
+			html body pre[class*="language-"] code {
+				color: white !important;
+			}
+			html body .markdown-preview .mume-header {
+				border-bottom: 1px solid gainsboro;
+			}
+			html body .markdown-preview h2 {
+				margin-bottom: 0.25em;
+			}
+			html body .markdown-preview h3 {
+				padding-bottom: 0.5em;
+				margin-bottom: 0.5em;
+			}
+			html body .markdown-preview h4 {
+				margin-top: 1em;
+				margin-bottom: 0.5em;
+			}
+			html body .markdown-preview h5 {
+				margin-top: 1.25em;
+				margin-bottom: 0.25em;
+				opacity: 0.7;
+			}
+			html body .markdown-preview ul {
+				margin-bottom: 12px;
+			}
+			html body .markdown-preview li.task-list-item {
+				margin-left: 24px;
+			}
+			html body .markdown-preview blockquote {
+				padding: 0 2px;
+				border-left: 5px solid orange;
+			}
+			html body .markdown-preview blockquote p {
+				background-color: #f1f1f1;
+				padding: 4px 12px;
+				margin-bottom: 1em;
+				font-weight: 800px;
+			}
+			html body .markdown-preview .bt {
+				border-top: 1px solid orange;
+				padding-top: 12px;
+			}
+			html body .markdown-preview .bb {
+				border-bottom: 1px solid orange;
+				padding-bottom: 12px;
+			}
+			html body .md-header {
+				padding-top: 6px;
+				margin-bottom: 6px;
+				border-bottom: 1px solid orange;
+				border-top: 1px solid #a9a9a9;
+			}
+			html body .md-header h3 {
+				margin-top: 0;
+				margin-bottom: 6px;
+			}
+			html body .md-theory {
+				padding-left: 24px;
+				padding-top: 6px;
+				color: crimson;
+			}
+			html body .md-theory strong {
+				color: crimson;
+			}
+			html body .md-block-quote li {
+				margin-left: 40px;
+			}
+			html body .md-title {
+				font-size: 24px;
+				font-weight: bold;
+				margin-top: 8px;
+				margin-bottom: 8px;
+			}
+			html body .md-label {
+				font-size: 16px;
+				margin-top: 8px;
+				margin-bottom: 0;
+			}
+			a html body .md-label {
+				margin-bottom: 0;
+			}
+			html body .md-pink {
+				color: hotpink;
+				font-weight: bold;
+			}
+			html body .md-label-output {
+				margin-left: 3em;
+				margin-bottom: -0.35em;
+			}
+			html body .md-label-output--multi-line {
+				margin-bottom: 0.15em;
+			}
+			html body .md-key {
+				background-color: orange;
+				color: black;
+				padding: 0 0.5em 0.15em;
+			}
+			html body .bold {
+				font-weight: bold;
+			}
+			html body .md-label-header {
+				padding-top: 12px;
+				margin-bottom: 12px;
+				border-bottom: 1px solid orange;
+			}
+			html body .md-label-header p {
+				margin-bottom: -24px;
+			}
+			html body .md-label-header-todo,
+			html body .md-label-header-strategy {
+				margin-left: 24px;
+			}
+			html body .md-strategy {
+				margin-left: 24px;
+			}
+			html body a {
+				text-decoration: underline;
+			}
+			html body a.md-link-bold {
+				font-weight: bold;
+			}
+			html body .language-json,
+			html body .language-yaml,
+			html body .language-js,
+			html body .language-javascript,
+			html body .language-ts,
+			html body .language-typescript,
+			html body .language-bash,
+			html body .language-shell {
+				padding: 1em;
+				margin: 0.25em 0 1.25em;
+				overflow: auto;
+			}
+			html body li .language-json,
+			html body li .language-yaml,
+			html body li .language-js,
+			html body li .language-javascript,
+			html body li .language-ts,
+			html body li .language-typescript,
+			html body li .language-bash,
+			html body li .language-shell {
+				padding: 1em;
+				margin: 0.25em 0 1.25em;
+				overflow: auto;
+			}
+			html body .line-highlight {
+				background: rgba(255, 105, 180, 0.1) !important;
+				border-bottom: 1px dashed hotpink;
+				border-top: 1px dashed hotpink;
+				left: 0;
+				line-height: inherit;
+				margin-top: 0.75em;
+				padding: inherit 0;
+				pointer-events: none;
+				position: absolute;
+				right: 0;
+				white-space: pre;
+				z-index: 0;
+			}
+			html body .md-output {
+				margin-left: 3em;
+			}
+			html body .md-output--emphasis {
+				margin-top: 0.15em;
+				margin-bottom: 0.15em;
+			}
+			html body .mb4 {
+				margin-bottom: 0.25em;
+			}
+			html body .copy-paste-icon {
+				width: 20px;
+				height: 20px;
+				margin-bottom: -0.25em;
+				background-color: transparent;
+			}
+			html body .md-cmd-block {
+				position: relative;
+				overflow: hidden;
+			}
+			html body .md-cmd-block .copy-clip-icon {
+				position: absolute;
+				right: 0.125em;
+				top: 0.525em;
+				width: 20px;
+				height: 20px;
+				background-color: white;
+				z-index: 100;
+				padding: 0.15em;
+			}
+			html body .md-img--wrapper {
+				position: relative;
+				width: 100%;
+				overflow: hidden;
+			}
+			html body .md-img {
+				position: relative;
+				margin: 0 auto;
+			}
+			html body .md-title__main {
+				border-bottom: 1px solid #ebe0e0;
+			}
+			html body .md-alert {
+				border: 0.25em solid hotpink;
+				margin-top: 1em;
+				padding-left: 0.5em;
+				padding-right: 0.5em;
+			}
+			html body .redline {
+				color: red;
+				font-size: 1em;
+				font-weight: bold;
+			}
+			html body .mt-12 {
+				margin-top: 0.5em;
+			}
+			html body .mb-12 {
+				margin-bottom: 0.5em;
+			}
+			html body .md-code-chunk {
+				background-color: orange;
+				padding: 2px 8px 6px;
+			}
+			html body iframe .tabs.bartabs {
+				display: none;
+			}
+			html body span.token.comment {
+				font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+				font-size: 0.85em !important;
+				color: #2387af;
+				border-radius: 3px;
+				padding: 0.2em 0;
+			}
+		</style>
+	</head>
+	<body for="html-export">
+		<div class="mume markdown-preview  ">
+			<h1 class="mume-header" id="ra-openid-connect-policy-issues">
+				RA OpenID Connect Policy Issues
+			</h1>
+
+			<p>
+				Questions regarding RA OpenID Policies. Older ones work, but new
+				ones we have created this past week do not work.
+			</p>
+			<hr />
+			<h1 class="mume-header" id="working">WORKING</h1>
+
+			<h2 class="mume-header" id="authnet_openid_connect">
+				Authnet_OpenID_Connect
+			</h2>
+
+			<ul>
+				<li>
+					RA policy:
+					<a
+						href="https://ra-authnet.resilient-networks.com/app/policy/222772"
+						>https://ra-authnet.resilient-networks.com/app/policy/222772</a
+					>
+				</li>
+				<li><code>Works as expected!</code> &#x1F603;</li>
+				<li>Created by Sandip for Flavio in July</li>
+				<li>
+					Flavio created an exact duplicate of this policy named
+					<code>Authnet_OpenID_Connect_Duplicate</code> and it does
+					not work.
+				</li>
+			</ul>
+			<h4>Authenticate URL:</h4>
+			<pre
+				data-role="codeBlock"
+				data-info="bash"
+				class="language-bash"
+			>https://ra-authnet.resilient-networks.com/openId/authenticate?response_type<span class="token operator">=</span>code<span class="token operator">&amp;</span>client_id<span class="token operator">=</span>014067503773484<span class="token operator">&amp;</span>redirect_uri<span class="token operator">=</span>http://localhost:8080/auth/openIdClient/redirect<span class="token operator">&amp;</span>scope<span class="token operator">=</span>openid%20admin%20profile%20email<span class="token operator">&amp;</span>state<span class="token operator">=</span>9d8d6310-d1f0-46f1-a753-a19c46050299<span class="token operator">&amp;</span>nonce<span class="token operator">=</span>1570020801510
+</pre>
+			<h4>Authenticate as a JSON request:</h4>
+			<pre
+				data-role="codeBlock"
+				data-info="json"
+				class="language-json"
+			><span class="token punctuation">{</span>
+<span class="token property">&quot;method&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://ra-authnet.resilient-networks.com/openId/authenticate&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;qs&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token property">&quot;response_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;code&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;client_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;196632370292869&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;redirect_uri&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/auth/openIdClient/redirect&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;scope&quot;</span><span class="token operator">:</span> <span class="token string">&quot;openid%20admin%20profile%20email&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;state&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4563baec-20ea-4953-9fee-da2c66bbf278&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;nonce&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1570023237050&quot;</span>
 <span class="token punctuation">}</span>
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><div class="line-highlight-wrapper">
-
-
-
-
-<div aria-hidden="true" class="line-highlight" data-range="6" data-start="6">
-</div></div></pre><hr>
-<h2 class="mume-header" id="parse-json-with-react-component">Parse JSON with React Component</h2>
-
-<p>Actual React Component in the Health Demo</p>
-<ul>
-<li><strong>Lines: 17-22</strong>: This will be replaced with an GraphQL Query to our Discovery Service</li>
-<li><strong>Lines: 42</strong>: FHIR Diagnostic Report JSON is parsed in a React Component</li>
-</ul>
-<pre data-role="codeBlock" data-info="js {.line-numbers, highlight=[17-22, 42}" class="language-javascript line-numbers" data-line="17-22,42"><span class="token keyword">import</span> <span class="token operator">*</span> <span class="token keyword">as</span> React <span class="token keyword">from</span> <span class="token string">&apos;react&apos;</span>
-<span class="token keyword">import</span> _ <span class="token keyword">from</span> <span class="token string">&apos;lodash&apos;</span>
-<span class="token keyword">import</span> ReactHtmlParser <span class="token keyword">from</span> <span class="token string">&apos;react-html-parser&apos;</span>
-
-<span class="token comment">// These imports represents medical records retrieved by your API call</span>
-<span class="token keyword">import</span> ReportBloodExam <span class="token keyword">from</span> <span class="token string">&apos;components/DiagnosticReports/diagnosticreport-example-f001-bloodexam&apos;</span>
-<span class="token keyword">import</span> ReportPgx <span class="token keyword">from</span> <span class="token string">&apos;components/DiagnosticReports/diagnosticreport-example-pgx&apos;</span>
-<span class="token keyword">import</span> ReportUltraSound <span class="token keyword">from</span> <span class="token string">&apos;components/DiagnosticReports/diagnosticreport-example-ultrasound&apos;</span>
-
-<span class="token keyword">const</span> <span class="token function-variable function">SimpleDiagnosticReports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter"><span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span></span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-  <span class="token keyword">const</span> <span class="token punctuation">{</span><span class="token operator">...</span>prop<span class="token punctuation">}</span> <span class="token operator">=</span> props
-  <span class="token keyword">const</span> patientInfo <span class="token operator">=</span> prop<span class="token punctuation">.</span>patientInfo
-  
-  <span class="token keyword">const</span> <span class="token function-variable function">getDiagnosticReports</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token parameter">patient_info</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-    <span class="token keyword">const</span> records <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
-
-    <span class="token comment">// TODO: Add API Call to fetch medical records based on patient_info</span>
-    <span class="token keyword">const</span> fhirMedicalRecords <span class="token operator">=</span> <span class="token punctuation">[</span>
-      ReportBloodExam<span class="token punctuation">,</span> 
-      ReportPgx<span class="token punctuation">,</span>
-      ReportUltraSound
-    <span class="token punctuation">]</span>
-
-    <span class="token comment">// Create Array of FHIR records with resource type &quot;DiagnosticReport&quot;</span>
-    _<span class="token punctuation">.</span><span class="token function">each</span><span class="token punctuation">(</span>fhirMedicalRecords<span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-      <span class="token keyword">if</span> <span class="token punctuation">(</span>obj<span class="token punctuation">.</span>resourceType <span class="token operator">===</span> <span class="token string">&apos;DiagnosticReport&apos;</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-        records<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
-          id<span class="token punctuation">:</span> obj<span class="token punctuation">.</span>id<span class="token punctuation">,</span>
-          subject<span class="token punctuation">:</span> obj<span class="token punctuation">.</span>subject<span class="token punctuation">.</span>reference<span class="token punctuation">,</span>
-          title<span class="token punctuation">:</span> obj<span class="token punctuation">.</span>code<span class="token punctuation">.</span>text<span class="token punctuation">,</span>
-          html<span class="token punctuation">:</span> obj<span class="token punctuation">.</span>text<span class="token punctuation">.</span>div<span class="token punctuation">,</span>
-        <span class="token punctuation">}</span><span class="token punctuation">)</span>
-      <span class="token punctuation">}</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-
-    <span class="token comment">// Render list of records by parsing the JSON string</span>
-    <span class="token keyword">const</span> _records <span class="token operator">=</span> records<span class="token punctuation">.</span><span class="token function">map</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">obj</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
-      <span class="token keyword">let</span> jsObj <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span><span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span><span class="token punctuation">)</span>
-      <span class="token keyword">return</span> <span class="token punctuation">(</span>
-        <span class="token operator">&lt;</span>div className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;p24 mb48 bg-white&apos;</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-          <span class="token operator">&lt;</span>h3 className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;p12 bg-gray&apos;</span><span class="token punctuation">}</span><span class="token operator">&gt;</span><span class="token punctuation">{</span>obj<span class="token punctuation">.</span>title<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>h3<span class="token operator">&gt;</span>
-          <span class="token punctuation">{</span><span class="token function">ReactHtmlParser</span><span class="token punctuation">(</span>jsObj<span class="token punctuation">.</span>html<span class="token punctuation">)</span><span class="token punctuation">}</span>
-        <span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-      <span class="token punctuation">)</span>
-    <span class="token punctuation">}</span><span class="token punctuation">)</span>
-    <span class="token keyword">return</span> _records
-  <span class="token punctuation">}</span>
-
-  <span class="token keyword">return</span> <span class="token punctuation">(</span>
-    <span class="token operator">&lt;</span>section className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token string">&apos;mb24 p12&apos;</span><span class="token punctuation">}</span><span class="token operator">&gt;</span>
-      <span class="token operator">&lt;</span>div<span class="token operator">&gt;</span><span class="token punctuation">{</span><span class="token function">getDiagnosticReports</span><span class="token punctuation">(</span>patientInfo<span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">&gt;</span>
-    <span class="token operator">&lt;</span><span class="token operator">/</span>section<span class="token operator">&gt;</span>
-  <span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-
-<span class="token keyword">export</span> <span class="token keyword">default</span> SimpleDiagnosticReports
-<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><div class="line-highlight-wrapper">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div aria-hidden="true" class="line-highlight" data-range="17-22" data-start="17" data-end="22">
-
-
-
-
-
-</div></div><div class="line-highlight-wrapper">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<div aria-hidden="true" class="line-highlight" data-range="42" data-start="42">
-</div></div></pre><hr>
-<h2 class="mume-header" id="health-demo-view-medical-records">Health Demo - View Medical Records</h2>
-
-<p>Screen shot of FHIR Diagnostic Reports from API JSON string</p>
-<p><img src="https://i.imgur.com/1Gbq3be.png" alt="Imgur"></p>
-<p>And another fancy version, because flavio is a fancy boy! -- but only when I salsa dance &#x1F609;</p>
-<p><img src="https://i.imgur.com/kcahoNb.png" alt="Imgur"></p>
-
-      </div>
-      <div class="md-sidebar-toc"><ul>
-<li><a href="#fhir-diagnostic-report-json-to-html">FHIR Diagnostic Report -- JSON to HTML</a>
-<ul>
-<li><a href="#fhir-diagnostic-report-for-an-ultrasound">FHIR Diagnostic Report for an Ultrasound</a></li>
-<li><a href="#parse-json-with-react-component">Parse JSON with React Component</a></li>
-<li><a href="#health-demo-view-medical-records">Health Demo - View Medical Records</a></li>
-</ul>
-</li>
-</ul>
-</div>
-      <a id="sidebar-toc-btn">&#x2261;</a>
-    
-    
-    
-    
-    
-    
-    
-    
-<script>
-
-var sidebarTOCBtn = document.getElementById('sidebar-toc-btn')
-sidebarTOCBtn.addEventListener('click', function(event) {
-  event.stopPropagation()
-  if (document.body.hasAttribute('html-show-sidebar-toc')) {
-    document.body.removeAttribute('html-show-sidebar-toc')
-  } else {
-    document.body.setAttribute('html-show-sidebar-toc', true)
-  }
-})
-</script>
-      
-  
-    </body></html>
+</pre>
+			<hr />
+			<hr />
+			<h1 class="mume-header" id="not-working">NOT WORKING</h1>
+
+			<h2 class="mume-header" id="authnet_openid_connect_duplicate">
+				Authnet_OpenID_Connect_Duplicate
+			</h2>
+
+			<ul>
+				<li>
+					RA policy:
+					<a
+						href="https://ra-authnet.resilient-networks.com/app/policy/342540"
+						>https://ra-authnet.resilient-networks.com/app/policy/342540</a
+					>
+				</li>
+				<li><code>Does not work!</code> &#x1F626;</li>
+				<li>Created by Flavio on 10/02/2019</li>
+			</ul>
+			<h4 class="mume-header" id="breaks-at-authenticate-url">
+				<code>Breaks at Authenticate URL</code>
+			</h4>
+
+			<h4>Authenticate URL:</h4>
+			<pre
+				data-role="codeBlock"
+				data-info="bash"
+				class="language-bash"
+			>https://ra-authnet.resilient-networks.com/openId/authenticate?response_type<span class="token operator">=</span>code<span class="token operator">&amp;</span>client_id<span class="token operator">=</span>196632370292869<span class="token operator">&amp;</span>redirect_uri<span class="token operator">=</span>http://localhost:8080/auth/openIdClient/redirect<span class="token operator">&amp;</span>scope<span class="token operator">=</span>openid email<span class="token operator">&amp;</span>state<span class="token operator">=</span>4563baec-20ea-4953-9fee-da2c66bbf278<span class="token operator">&amp;</span>nonce<span class="token operator">=</span>1570023237050
+</pre>
+			<h4>Authenticate as a JSON request:</h4>
+			<pre
+				data-role="codeBlock"
+				data-info="json"
+				class="language-json"
+			><span class="token punctuation">{</span>
+<span class="token property">&quot;method&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;https://ra-authnet.resilient-networks.com/openId/authenticate&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;qs&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token property">&quot;response_type&quot;</span><span class="token operator">:</span> <span class="token string">&quot;code&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;client_id&quot;</span><span class="token operator">:</span> <span class="token string">&quot;196632370292869&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;redirect_uri&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/auth/openIdClient/redirect&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;scope&quot;</span><span class="token operator">:</span> <span class="token string">&quot;openid%20email&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;state&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4563baec-20ea-4953-9fee-da2c66bbf278&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;nonce&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1570023237050&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre>
+			<h4>Redirect URL with errors:</h4>
+			<pre
+				data-role="codeBlock"
+				data-info="bash"
+				class="language-bash"
+			>http://localhost:8080/auth/openIdClient/redirect?error<span class="token operator">=</span>request_not_supported<span class="token operator">&amp;</span>error_description<span class="token operator">=</span>Failed+to+build+the+OpenID+Client+specific+authentication+page.<span class="token operator">&amp;</span>state<span class="token operator">=</span>4563baec-20ea-4953-9fee-da2c66bbf278
+</pre>
+			<h4>Redirect url with errors as a JSON response:</h4>
+			<pre
+				data-role="codeBlock"
+				data-info="json"
+				class="language-json"
+			><span class="token punctuation">{</span>
+<span class="token property">&quot;method&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GET&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;url&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://localhost:8080/auth/openIdClient/redirect&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;qs&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+<span class="token property">&quot;error&quot;</span><span class="token operator">:</span> <span class="token string">&quot;request_not_supported&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;error_description&quot;</span><span class="token operator">:</span> <span class="token string">&quot;Failed+to+build+the+OpenID+Client+specific+authentication+page.&quot;</span><span class="token punctuation">,</span>
+<span class="token property">&quot;state&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4563baec-20ea-4953-9fee-da2c66bbf278&quot;</span>
+<span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</pre>
+			<hr />
+			<h2 class="mume-header" id="demo_localhost_jumio">
+				Demo_Localhost_Jumio
+			</h2>
+
+			<ul>
+				<li>
+					RA policy:
+					<a
+						href="https://ra-authnet.resilient-networks.com/app/policy/342523"
+						>https://ra-authnet.resilient-networks.com/app/policy/342523</a
+					>
+				</li>
+				<li><code>Does not work!</code> &#x1F626;</li>
+				<li>Created by Flavio on 10/01/2019</li>
+			</ul>
+			<h4
+				class="mume-header"
+				id="same-as-above-breaks-at-authenticate-url"
+			>
+				<code>Same as above: Breaks at Authenticate URL</code>
+			</h4>
+
+			<hr />
+			<h2 class="mume-header" id="demo_sms_localhost">
+				Demo_SMS_Localhost
+			</h2>
+
+			<ul>
+				<li>
+					RA policy:
+					<a
+						href="https://ra-authnet.resilient-networks.com/app/policy/342384"
+						>https://ra-authnet.resilient-networks.com/app/policy/342384</a
+					>
+				</li>
+				<li><code>Does not work!</code> &#x1F626;</li>
+				<li>Created by Flavio on 10/01/2019</li>
+			</ul>
+			<h4
+				class="mume-header"
+				id="same-as-above-breaks-at-authenticate-url-1"
+			>
+				<code>Same as above: Breaks at Authenticate URL</code>
+			</h4>
+
+			<hr />
+			<h2 class="mume-header" id="test_demo_server_sms">
+				Test_demo_server_sms
+			</h2>
+
+			<ul>
+				<li>
+					RA policy:
+					<a
+						href="https://ra-authnet.resilient-networks.com/app/policy/342374"
+						>https://ra-authnet.resilient-networks.com/app/policy/342374</a
+					>
+				</li>
+				<li><code>Does not work!</code> &#x1F626;</li>
+				<li>Created by Rich on 10/01/2019</li>
+			</ul>
+			<h4
+				class="mume-header"
+				id="same-as-above-breaks-at-authenticate-url-2"
+			>
+				<code>Same as above: Breaks at Authenticate URL</code>
+			</h4>
+
+			<p>the end</p>
+		</div>
+		<div class="md-sidebar-toc">
+			<ul>
+				<li>
+					<a href="#ra-openid-connect-policy-issues"
+						>RA OpenID Connect Policy Issues</a
+					>
+				</li>
+				<li>
+					<a href="#working">WORKING</a>
+					<ul>
+						<li>
+							<a href="#authnet_openid_connect"
+								>Authnet_OpenID_Connect</a
+							>
+						</li>
+					</ul>
+				</li>
+				<li>
+					<a href="#not-working">NOT WORKING</a>
+					<ul>
+						<li>
+							<a href="#authnet_openid_connect_duplicate"
+								>Authnet_OpenID_Connect_Duplicate</a
+							>
+							<ul>
+								<li>
+									<a href="#breaks-at-authenticate-url"
+										><code
+											>Breaks at Authenticate URL</code
+										></a
+									>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#demo_localhost_jumio"
+								>Demo_Localhost_Jumio</a
+							>
+							<ul>
+								<li>
+									<a
+										href="#same-as-above-breaks-at-authenticate-url"
+										><code
+											>Same as above: Breaks at
+											Authenticate URL</code
+										></a
+									>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#demo_sms_localhost">Demo_SMS_Localhost</a>
+							<ul>
+								<li>
+									<a
+										href="#same-as-above-breaks-at-authenticate-url-1"
+										><code
+											>Same as above: Breaks at
+											Authenticate URL</code
+										></a
+									>
+								</li>
+							</ul>
+						</li>
+						<li>
+							<a href="#test_demo_server_sms"
+								>Test_demo_server_sms</a
+							>
+							<ul>
+								<li>
+									<a
+										href="#same-as-above-breaks-at-authenticate-url-2"
+										><code
+											>Same as above: Breaks at
+											Authenticate URL</code
+										></a
+									>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<a id="sidebar-toc-btn">&#x2261;</a>
+
+		<script>
+			var sidebarTOCBtn = document.getElementById("sidebar-toc-btn");
+			sidebarTOCBtn.addEventListener("click", function(event) {
+				event.stopPropagation();
+				if (document.body.hasAttribute("html-show-sidebar-toc")) {
+					document.body.removeAttribute("html-show-sidebar-toc");
+				} else {
+					document.body.setAttribute("html-show-sidebar-toc", true);
+				}
+			});
+		</script>
+	</body>
+</html>
