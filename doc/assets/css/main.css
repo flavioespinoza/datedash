@@ -520,10 +520,9 @@ html.docs .mobile-menu a i {
 }
 html.docs .repl {
 	background-color: transparent;
-	margin: 0 0 0 -75px;
+	margin: 0;
 	padding: 0;
-	width: -webkit-calc(100% + 175px);
-	width: calc(100% + 175px);
+	width: 100%;
 }
 html.docs .search {
 	position: relative;
@@ -815,8 +814,4 @@ html.custom-builds li .highlight {
 }
 h3 {
 	margin-bottom: 12px !important;
-}
-
-.source-cell {
-	margin-left: 0 !important;
 }
