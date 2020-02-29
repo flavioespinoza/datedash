@@ -60,6 +60,7 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
-    "cryptiles": "^4.1.2"
+    "cryptiles": "^4.1.2",
+    "mime": "^1.4.1"
   }
 }
