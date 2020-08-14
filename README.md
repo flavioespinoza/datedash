@@ -14,8 +14,7 @@ yarn add datedash
 
 ## import
 
-using ES6 modules with [esm](https://github.com/standard-things/esm) or typescript
-
+using ES6 modules
 ```js
 import _d from 'datedash'
 
@@ -136,7 +135,6 @@ _d.date(1551875334611)
 
 _d.date(_.toString(new Date()))
 // => 03/06/2019
-
 ```
 
 Any date `past`, `present` or `future`
@@ -183,9 +181,10 @@ _d.date(future_timestamp)
 
 _d.date(past_timestamp)
 // => 03/01/2019
-
 ```
+
 Handles `undefined` or other for 2nd arg `format`
+
 ```js
 let my_date = '02/14/2019'
 
@@ -206,7 +205,6 @@ _d.date(my_date, 8)
 
 _d.date(my_date, null)
 // => 02/14/2019
-
 ```
 
 ## Testing
@@ -349,5 +347,4 @@ Test expected output:
   78 passing (44ms)
 
 ✨  Done in 0.36s.
-
 ```
