@@ -2,7 +2,7 @@
 lodash inspired `Date` formatting methods.
 
 ## Docs
-[datedash/docs](https://flavioespinoza.github.io/datedash/doc/doc.html)
+[datedash/docs](https://flavioespinoza.github.io/datedash)
 
 ## Install
 
