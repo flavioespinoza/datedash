@@ -12,12 +12,6 @@ yarn
 yarn add datedash
 ```
 
-npm
-
-```bash
-npm i datedash
-```
-
 ## import
 
 using ES6 modules with [esm](https://github.com/standard-things/esm) or typescript
@@ -212,5 +206,148 @@ _d.date(my_date, 8)
 
 _d.date(my_date, null)
 // => 02/14/2019
+
+```
+
+## Testing
+
+Clone repo:
+
+```bash
+git clone https://github.com/flavioespinoza/datedash.git
+```
+
+CD into datedash directory:
+
+```bash
+cd <your-path>/datedash
+```
+
+Install dependencies:
+
+```bash
+yarn
+```
+
+Run tests:
+
+```bash
+yarn run test
+```
+
+Test expected output:
+
+```bash
+  add
+    ✓ should add two numbers
+    ✓ should not coerce arguments to numbers
+
+  addDays
+    ✓ should add 1 day '3/6/19' format '-' return '03-07-2019'
+    ✓ should add 2 day '3/6/19' format '.' return '03.08.2019'
+    ✓ should add 3 day '3/6/19' format 'uk' return '09 Mar 2019'
+
+  date format options
+    ✓ format '/' should return '01/07/2019'
+    ✓ format '-' should return '01-07-2019'
+    ✓ format '.' should return '01.07.2019'
+    ✓ format 'england' should return '07 Jan 2019'
+    ✓ format 'uk' should return '07 Jan 2019'
+    ✓ format 'full' should return 'Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)'
+
+  date valid string input with all format options
+    date input '1/7/19' converted to all formats
+      ✓ date 1/7/19 with format / should return 01/07/2019
+      ✓ date 1/7/19 with format - should return 01-07-2019
+      ✓ date 1/7/19 with format . should return 01.07.2019
+      ✓ date 1/7/19 with format england should return 07 Jan 2019
+      ✓ date 1/7/19 with format uk should return 07 Jan 2019
+    date input '1-7-19' converted to all formats
+      ✓ date 1-7-19 with format / should return 01/07/2019
+      ✓ date 1-7-19 with format - should return 01-07-2019
+      ✓ date 1-7-19 with format . should return 01.07.2019
+      ✓ date 1-7-19 with format england should return 07 Jan 2019
+      ✓ date 1-7-19 with format uk should return 07 Jan 2019
+    date input '1.7.19' converted to all formats
+      ✓ date 1.7.19 with format / should return 01/07/2019
+      ✓ date 1.7.19 with format - should return 01-07-2019
+      ✓ date 1.7.19 with format . should return 01.07.2019
+      ✓ date 1.7.19 with format england should return 07 Jan 2019
+      ✓ date 1.7.19 with format uk should return 07 Jan 2019
+    date input 'Jan 7 19' converted to all formats
+      ✓ date Jan 7 19 with format / should return 01/07/2019
+      ✓ date Jan 7 19 with format - should return 01-07-2019
+      ✓ date Jan 7 19 with format . should return 01.07.2019
+      ✓ date Jan 7 19 with format england should return 07 Jan 2019
+      ✓ date Jan 7 19 with format uk should return 07 Jan 2019
+    date input 'January 7 19' converted to all formats
+      ✓ date January 7 19 with format / should return 01/07/2019
+      ✓ date January 7 19 with format - should return 01-07-2019
+      ✓ date January 7 19 with format . should return 01.07.2019
+      ✓ date January 7 19 with format england should return 07 Jan 2019
+      ✓ date January 7 19 with format uk should return 07 Jan 2019
+    date input '7 Jan 2019' converted to all formats
+      ✓ date 7 Jan 2019 with format / should return 01/07/2019
+      ✓ date 7 Jan 2019 with format - should return 01-07-2019
+      ✓ date 7 Jan 2019 with format . should return 01.07.2019
+      ✓ date 7 Jan 2019 with format england should return 07 Jan 2019
+      ✓ date 7 Jan 2019 with format uk should return 07 Jan 2019
+    date input '7 January 2019' converted to all formats
+      ✓ date 7 January 2019 with format / should return 01/07/2019
+      ✓ date 7 January 2019 with format - should return 01-07-2019
+      ✓ date 7 January 2019 with format . should return 01.07.2019
+      ✓ date 7 January 2019 with format england should return 07 Jan 2019
+      ✓ date 7 January 2019 with format uk should return 07 Jan 2019
+
+  date other valid inputs
+    ✓ date '1/7/19' should return '01/07/2019'
+    ✓ date '1-7-19' should return '01/07/2019'
+    ✓ date '1.7.19' should return '01/07/2019'
+    ✓ date 'Jan 7 19' should return '01/07/2019'
+    ✓ date 'January 7 19' should return '01/07/2019'
+    ✓ date '7 Jan 2019' should return '01/07/2019'
+    ✓ date '7 January 2019' should return '01/07/2019'
+    ✓ date undefined or new Date() should return todays date 08/14/2020
+
+  date format undefined
+    ✓ format `undefined` should return `01/07/2019`
+    ✓ format `null` should return `01/07/2019`
+    ✓ format `foo` should return `01/07/2019`
+    ✓ format `8` should return `01/07/2019`
+
+  getTimestamp
+    ✓ should get timestamp after epoch Noveber 4, 1973
+    ✓ should get timestamp before epoch July 4, 1776
+
+  _import
+    ✓ should import @flavioespinoza/log_log
+
+  isDate
+    ✓ value Fri Aug 14 2020 12:16:04 GMT-0600 (Mountain Daylight Time) returns true
+    ✓ value 3/3/19 returns true
+    ✓ value Jul 4, 1776 returns true
+    ✓ value -6106035604000 returns true
+    ✓ value 25200000 returns true
+    ✓ value [object Object] returns false
+    ✓ value 3/33/19 returns false
+    ✓ value true returns false
+    ✓ value false returns false
+    ✓ value 1 returns false
+    ✓ value null returns false
+    ✓ value undefined returns false
+
+  subtract
+    ✓ should subtract two numbers
+    ✓ should coerce arguments to numbers
+
+  subtractDays
+    ✓ should subtract 1 day '3/6/19' format '-' return '03-05-2019'
+    ✓ should subtract 2 day '3/6/19' format '.' return '03.04.2019'
+    ✓ should subtract 3 day '3/6/19' format 'uk' return '03 Mar 2019'
+
+
+  78 passing (44ms)
+
+✨  Done in 0.36s.
 
 ```

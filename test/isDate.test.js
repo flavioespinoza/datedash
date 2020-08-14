@@ -4,10 +4,6 @@ import isDate from '../methods/isDate'
 
 const independence = new Date('Jul 4 1776').getTime()
 
-function _getDate() {
-	return '3/3/19'
-}
-
 const isDateTests = [
 	{
 		value: new Date(),
@@ -56,14 +52,6 @@ const isDateTests = [
 	{
 		value: undefined,
 		expected: false
-	},
-	{
-		value: _getDate,
-		expected: false
-	},
-	{
-		value: _getDate(),
-		expected: true
 	},
 ]
 

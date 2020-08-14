@@ -124,10 +124,3 @@ describe('date format undefined', () => {
 		done()
 	})
 })
-
-describe(`date wallaby`, () => {
-	it(`is amazeballs`, (done) => {
-		assert.strictEqual(date(any_date, 8), '01/07/2019')
-		done()
-	})
-})
