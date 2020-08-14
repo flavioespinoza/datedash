@@ -1,41 +1,38 @@
 /**
  * @license
  * datedash <https://github.com/flavioespinoza/datedash>
- * Copyright JS Foundation and other contributors <https://js.foundation/>
- * Released under MIT license <https://github.com/flavioespinoza/datedash/blob/master/LICENSE>
- * Based on lodash.js 5.0.0 <https://lodash.com/>
- * Based on lodash.js by John-David Dalton <https://github.com/jdalton>
+ * Inspired by lodash.js <https://lodash.com/> by John-David Dalton <https://github.com/jdalton>
  */
 ;
 (function () {
 
 	/** Used as the semantic version number. */
-	var __package = require('./package.json')
+	const __package = require('./package.json')
 
-	var VERSION = __package.version
+	const VERSION = __package.version
 
 	/** Detect free variable `global` from Node.js. */
-	var freeGlobal = typeof global == 'object' && global && global.Object === Object && global
+	const freeGlobal = typeof global == 'object' && global && global.Object === Object && global
 
 	/** Detect free variable `self`. */
-	var freeSelf = typeof self == 'object' && self && self.Object === Object && self
+	const freeSelf = typeof self == 'object' && self && self.Object === Object && self
 
 	/** Used as a reference to the global object. */
-	var root = freeGlobal || freeSelf || Function('return this')()
+	const root = freeGlobal || freeSelf || Function('return this')()
 
 	/** Detect free variable `exports`. */
-	var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
+	const freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
 
 	/** Detect free variable `module`. */
-	var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
+	const freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module
 
 	/*--------------------------------------------------------------------------*/
 
 	/** Built-in value references. */
-	var Symbol = root.Symbol
+	const Symbol = root.Symbol
 
 	/** Used to lookup unminified function names. */
-	var realNames = {}
+	const realNames = {}
 
 	/*------------------------------------------------------------------------*/
 

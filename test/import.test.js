@@ -2,9 +2,8 @@ import assert from 'assert'
 
 describe('_import', () => {
 	it(`should import @flavioespinoza/log_log`, done => {
-		import(`@flavioespinoza/log_log`).then((ns) => {
-			const _log = ns.default
-			_log.alert('Boobies!')
+		import(`@flavioespinoza/log_log`).then((_log) => {
+			_log.blue('import @flavioespinoza/log_log Success!')
 		})
 		done()
 	})
