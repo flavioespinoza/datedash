@@ -13,3 +13,4 @@ describe('subtract', function() {
         assert.deepStrictEqual(subtract('x', 'y'), NaN)
     })
 })
+

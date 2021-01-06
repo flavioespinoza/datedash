@@ -1,7 +1,9 @@
 # datedash
+
 lodash inspired `Date` formatting methods.
 
 ## Docs
+
 [datedash/docs](https://flavioespinoza.github.io/datedash)
 
 ## Install
@@ -15,6 +17,7 @@ yarn add datedash
 ## import
 
 using ES6 modules
+
 ```js
 import _d from 'datedash'
 
@@ -87,6 +90,7 @@ _d.date(any_date, 'full')
 ```
 
 ## Valid date string inputs
+
 ```js
 _d.date('3/6/19')
 // => 03/06/2019
@@ -123,6 +127,7 @@ _d.date('6 March 2019')
 ```
 
 ## Other valid inputs
+
 ```js
 _d.date()
 // => 03/06/2019
@@ -138,6 +143,7 @@ _d.date(_.toString(new Date()))
 ```
 
 Any date `past`, `present` or `future`
+
 ```js
 let past_date = 'Feb 14, 2019'
 
@@ -167,7 +173,10 @@ _d.date(past_date, 'full')
 ```
 
 Any `timestamp`
+
 ```js
+const _ = require('lodash')
+
 let five_days_ms = 4.32e8
 let now_timestamp = _.now() // => 1551875334611
 let future_timestamp = _.add(now_timestamp, five_days_ms)
