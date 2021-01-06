@@ -26,8 +26,8 @@
 	},
 	"homepage": "https://github.com/flavioespinoza/datedash#readme",
 	"devDependencies": {
-
+		"lodash": "^4.17.20",
+		"mocha": "^8.2.1"
 	},
-	"dependencies": {
-	}
+	"dependencies": {}
 }

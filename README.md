@@ -39,7 +39,7 @@ getTimestamp('Apr 4, 2017')
 
 ## require
 
-using CommonJS
+using require
 
 ```js
 const _d = require('datedash')
