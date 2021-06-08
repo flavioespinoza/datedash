@@ -1,5 +1,4 @@
 export {default as CallToActionBlock} from "./CallToActionBlock";
-export {default as ParagraphBlock} from "./ParagraphBlock";
 export {default as add} from "./add";
 export {default as addDays} from "./addDays";
 export {default as addHours} from "./addHours";
