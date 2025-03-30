@@ -1,0 +1,34 @@
+{
+	"name": "datedash",
+	"version": "1.4.6",
+	"description": "A Lodash inspired NPM module for date formatting and date math calculations.",
+	"main": "datedash.js",
+	"types": "./datedash.d.ts",
+	"scripts": {
+		"test": "mocha -r esm test/*.test.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/flavioespinoza/datedash.git"
+	},
+	"keywords": [
+		"node",
+		"esm",
+		"es6",
+		"es5",
+		"date",
+		"moment",
+		"formatting"
+	],
+	"author": "Flavio Espinoza <flavio.espinoza@gmail.com>",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/flavioespinoza/datedash/issues"
+	},
+	"homepage": "https://github.com/flavioespinoza/datedash#readme",
+	"devDependencies": {
+		"lodash": "^4.17.21",
+		"mocha": "^8.4.0"
+	},
+	"dependencies": {}
+}
