@@ -1,5 +1,5 @@
 {
-	"name": "datedash",
+	"name": "@flavioespinoza/datedash",
 	"version": "1.4.6",
 	"description": "A Lodash inspired NPM module for date formatting and date math calculations.",
 	"main": "datedash.js",
