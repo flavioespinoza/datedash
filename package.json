@@ -7,7 +7,8 @@
 	"types": "./datedash.d.ts",
 	"scripts": {
 		"test": "mocha -r esm test/*.test.js",
-		"clean": "prettier --write ."
+		"clean": "prettier --write .",
+		"release": "npm version patch && npm publish --access public"
 	},
 	"repository": {
 		"type": "git",
@@ -33,9 +34,5 @@
 		"assert": "^2.1.0",
 		"lodash": "^4.17.21",
 		"prettier": "^3.5.3"
-	},
-	"dependencies": {
-		"publish": "^0.6.0",
-		"yarn": "^1.22.22"
 	}
 }
