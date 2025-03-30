@@ -3,45 +3,35 @@
  * datedash <https://github.com/flavioespinoza/datedash>
  * Inspired by lodash.js <https://lodash.com/> by John-David Dalton <https://github.com/jdalton>
  */
-(function () {
+;(function () {
 	/** Used as the semantic version number. */
-	const __package = require("./package.json");
+	const __package = require('./package.json')
 
-	const VERSION = __package.version;
+	const VERSION = __package.version
 
 	/** Detect free variable `global` from Node.js. */
-	const freeGlobal =
-		typeof global == "object" &&
-		global &&
-		global.Object === Object &&
-		global;
+	const freeGlobal = typeof global == 'object' && global && global.Object === Object && global
 
 	/** Detect free variable `self`. */
-	const freeSelf =
-		typeof self == "object" && self && self.Object === Object && self;
+	const freeSelf = typeof self == 'object' && self && self.Object === Object && self
 
 	/** Used as a reference to the global object. */
-	const root = freeGlobal || freeSelf || Function("return this")();
+	const root = freeGlobal || freeSelf || Function('return this')()
 
 	/** Detect free variable `exports`. */
-	const freeExports =
-		typeof exports == "object" && exports && !exports.nodeType && exports;
+	const freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports
 
 	/** Detect free variable `module`. */
 	const freeModule =
-		freeExports &&
-		typeof module == "object" &&
-		module &&
-		!module.nodeType &&
-		module;
+		freeExports && typeof module == 'object' && module && !module.nodeType && module
 
 	/*--------------------------------------------------------------------------*/
 
 	/** Built-in value references. */
-	const Symbol = root.Symbol;
+	const Symbol = root.Symbol
 
 	/** Used to lookup non-minified function names. */
-	const realNames = {};
+	const realNames = {}
 
 	/*------------------------------------------------------------------------*/
 
@@ -85,7 +75,7 @@
 	this.import = () => {
 		// No operation performed.
 		// Required for doc generation
-	};
+	}
 
 	/**
 	 * Import individual ES Modules using `esm` or `TypeScript`
@@ -106,7 +96,7 @@
 	this.importModules = () => {
 		// No operation performed.
 		// Required for doc generation
-	};
+	}
 
 	/*------------------------------------------------------------------------*/
 
@@ -129,7 +119,7 @@
 	 * _d.subtractDays('3/6/19', 1, '-')
 	 * // => 03-05-2019
 	 */
-	this.require = () => {};
+	this.require = () => {}
 
 	/**
 	 *
@@ -168,7 +158,7 @@
 	 * // => Mon Jan 07 2019 00:00:00 GMT-0700 (Mountain Standard Time)
 	 *
 	 */
-	const date = require("./methods/date");
+	const date = require('./methods/date')
 
 	/**
 	 * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -189,7 +179,7 @@
 	 *
 	 * // => Logs milliseconds it took for the deferred invocation.
 	 */
-	const now = require("./methods/now");
+	const now = require('./methods/now')
 
 	/**
 	 * Gets the timestamp of the number of milliseconds that have elapsed since
@@ -214,7 +204,7 @@
 	 * _d.getTimestamp('11/4/1973')
 	 * // => -6106035604000
 	 */
-	const getTimestamp = require("./methods/getTimestamp");
+	const getTimestamp = require('./methods/getTimestamp')
 
 	/**
 	 * Verifies if `value` is a valid `Date object` and valid `Date`.
@@ -251,7 +241,7 @@
 	 * _d.isDate(getDate())
 	 * // => true
 	 */
-	const isDate = require("./methods/isDate");
+	const isDate = require('./methods/isDate')
 
 	/**
 	 * Input `_date` add `nHours`  with `format`
@@ -279,7 +269,7 @@
 	 * let add_1hr_ts = _d.addHours(now_date_full, 1, 'ts')
 	 * // => 1560925030024
 	 */
-	const addHours = require("./methods/addHours");
+	const addHours = require('./methods/addHours')
 
 	/**
 	 * Input `_date` subtract `nHours` with `format`
@@ -306,7 +296,7 @@
 	 * let add_1hr_ts = _d.subtractHours(now_date_full, 1, 'ts')
 	 * // => 1560918210079
 	 */
-	const subtractHours = require("./methods/subtractHours");
+	const subtractHours = require('./methods/subtractHours')
 
 	/**
 	 * Input `_date` add `nDays` with `format`
@@ -332,7 +322,7 @@
 	 * _d.addDays(any_date, 3, 'uk')
 	 * // => 09 Mar 2019
 	 */
-	const addDays = require("./methods/addDays");
+	const addDays = require('./methods/addDays')
 
 	/**
 	 * Input `_date` subtract `nDays` with `format`
@@ -357,7 +347,7 @@
 	 * _d.subtractDays(any_date, 3, 'uk')
 	 * // => 03 Mar 2019
 	 */
-	const subtractDays = require("./methods/subtractDays");
+	const subtractDays = require('./methods/subtractDays')
 
 	/*------------------------------------------------------------------------*/
 
@@ -375,12 +365,12 @@
 	 *
 	 */
 	const yarnTest = () => {
-		console.log("yarn_test SUCCESS!");
+		console.log('yarn_test SUCCESS!')
 		return {
-			val: "yarn_test",
-			key: "Yarn Test Success",
-		};
-	};
+			val: 'yarn_test',
+			key: 'Yarn Test Success'
+		}
+	}
 
 	/*------------------------------------------------------------------------*/
 
@@ -398,33 +388,33 @@
 	 *
 	 */
 	const yarnTest2 = () => {
-		console.log("yarnTest2 SUCCESS!");
+		console.log('yarnTest2 SUCCESS!')
 		return {
-			val: "yarn_test_2",
-			key: "Yarn Test 2 Success",
-			date: new Date(),
-		};
-	};
+			val: 'yarn_test_2',
+			key: 'Yarn Test 2 Success',
+			date: new Date()
+		}
+	}
 
 	/*------------------------------------------------------------------------*/
 
 	// Date
-	datedash.date = date;
-	datedash.now = now;
-	datedash.getTimestamp = getTimestamp;
-	datedash.isDate = isDate;
+	datedash.date = date
+	datedash.now = now
+	datedash.getTimestamp = getTimestamp
+	datedash.isDate = isDate
 
 	// Yarn
-	datedash.yarnTest = yarnTest;
-	datedash.yarnTest2 = yarnTest2;
+	datedash.yarnTest = yarnTest
+	datedash.yarnTest2 = yarnTest2
 
 	// Math Hours
-	datedash.addHours = addHours;
-	datedash.subtractHours = subtractHours;
+	datedash.addHours = addHours
+	datedash.subtractHours = subtractHours
 
 	// Math Days
-	datedash.addDays = addDays;
-	datedash.subtractDays = subtractDays;
+	datedash.addDays = addDays
+	datedash.subtractDays = subtractDays
 
 	/*------------------------------------------------------------------------*/
 
@@ -435,17 +425,17 @@
 	 * @memberOf _d
 	 * @type {string}
 	 */
-	datedash.VERSION = VERSION;
+	datedash.VERSION = VERSION
 
 	/*--------------------------------------------------------------------------*/
 
 	if (freeModule) {
 		// Export for Node.js.
-		(freeModule.exports = datedash)._d = datedash;
+		;(freeModule.exports = datedash)._d = datedash
 		// Export for CommonJS support.
-		freeExports._d = datedash;
+		freeExports._d = datedash
 	} else {
 		// Export to the global object.
-		root._d = datedash;
+		root._d = datedash
 	}
-}.call(this));
+}).call(this)

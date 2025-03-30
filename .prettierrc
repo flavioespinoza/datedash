@@ -9,15 +9,7 @@
 	"importOrderSeparation": false,
 	"importOrderSortSpecifiers": true,
 	"importOrderGroupNamespaceSpecifiers": true,
-	"importOrderParserPlugins": ["typescript", "jsx", "decorators-legacy"],
-	"importOrder": [
-		"^react$",
-		"^react-dom$",
-		"^react",
-		"^next",
-		"<THIRD_PARTY_MODULES>",
-		"^@blockless/(.*)$",
-		"^[./]"
-	],
-	"plugins": ["@trivago/prettier-plugin-sort-imports", "prettier-plugin-tailwindcss"]
+	"importOrderParserPlugins": ["typescript", "javascript", "decorators-legacy"],
+	"importOrder": ["<THIRD_PARTY_MODULES>", "^[./]"],
+	"plugins": ["@trivago/prettier-plugin-sort-imports"]
 }

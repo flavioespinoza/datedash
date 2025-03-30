@@ -157,7 +157,7 @@ _d.date(past_date, '-')
 // => 02-14-2019
 
 _d.date(past_date, '.')
- // => 02.14.2019
+// => 02.14.2019
 
 _d.date(past_date, 'MMM DD YYYY')
 // => Feb 14 2019

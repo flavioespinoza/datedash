@@ -5,4 +5,4 @@ function getTimestamp(value) {
 	return new Date(value).getTime()
 }
 
-module.exports = getTimestamp;
+module.exports = getTimestamp

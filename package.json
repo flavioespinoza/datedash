@@ -5,7 +5,8 @@
 	"main": "datedash.js",
 	"types": "./datedash.d.ts",
 	"scripts": {
-		"test": "mocha -r esm test/*.test.js"
+		"test": "mocha -r esm test/*.test.js",
+		"clean": "prettier --write ."
 	},
 	"repository": {
 		"type": "git",
@@ -27,8 +28,9 @@
 	},
 	"homepage": "https://github.com/flavioespinoza/datedash#readme",
 	"devDependencies": {
+		"@trivago/prettier-plugin-sort-imports": "^5.2.2",
+		"assert": "^2.1.0",
 		"lodash": "^4.17.21",
-		"mocha": "^8.4.0"
-	},
-	"dependencies": {}
+		"prettier": "^3.5.3"
+	}
 }

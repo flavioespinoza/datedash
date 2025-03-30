@@ -1,4 +1,4 @@
 function now() {
-	return Date.now();
+	return Date.now()
 }
-module.exports = now;
+module.exports = now
